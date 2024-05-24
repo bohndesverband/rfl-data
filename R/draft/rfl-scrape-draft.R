@@ -1,4 +1,9 @@
-library(tidyverse)
+library(magrittr)
+library(dplyr)
+library(tidyr)
+library(readr)
+library(jsonlite)
+library(piggyback)
 library(nflreadr)
 
 temp_dir <- tempdir()
