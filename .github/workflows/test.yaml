@@ -1,11 +1,4 @@
 on:
-  - push
-  - workflow_dispatch
-
-name: upload_rfl_data
-
-
-on:
   # schedule:
     # At 15:15 on Thursdays every week in Sep - Jan
     # - cron: '15 15 * 9-12,1 4'
@@ -17,13 +10,7 @@ name: upload_rfl_data
 
 jobs:
   create_data:
-    runs-on: ${{ matrix.config.os }}
-      name: ${{ matrix.tag }}
-      strategy:
-        fail-fast: false
-        matrix:
-          config:
-            - {os: ubuntu-22.04,   r: 'release'}
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
       - uses: r-lib/actions/setup-r@v2
