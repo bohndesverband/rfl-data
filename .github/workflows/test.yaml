@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: rocker/tidyverse:latest
+    env:
+      R_LIBS_USER: /github/home/R/Library
     steps:
       - name: Checkout
         uses: actions/checkout@v4
