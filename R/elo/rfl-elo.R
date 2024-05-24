@@ -1,0 +1,128 @@
+# https://fivethirtyeight.com/methodology/how-our-nfl-predictions-work/
+
+library(tidyverse)
+library(nflreadr)
+
+current_season <- nflreadr::most_recent_season()
+current_week <- nflreadr::get_current_week() - 1
+
+#for (current_week in 1:13) {
+  if(current_week == 1) {
+    # in WK 1 die letzte ELO der vorsaison lesen
+    read_season <- current_season - 1
+  } else {
+    read_season <- current_season
+  }
+
+  # wenn WK 2 2016
+  #elo_past <- readr::read_csv("data/elo/rfl-elo-init.csv")
+
+  #elo_past <- readr::read_csv(paste0("https://raw.githubusercontent.com/jak3sch/rfl/main/data/elo/rfl-elo-", read_season, ".csv"), col_types = c("franchise_id" = "character", "franchise_elo_postgame" = "integer")) %>%
+  #  dplyr::filter(season == read_season)
+
+  elo_past <- readr::read_csv(paste0("data/elo/rfl-elo-", read_season, ".csv"), col_types = c("franchise_id" = "character", "franchise_elo_postgame" = "integer")) %>%
+    dplyr::filter(season == read_season)
+
+  if (current_week == 1) {
+    elo_past <- elo_past %>%
+      dplyr::filter(week == max(week))
+  } else {
+    elo_past <- elo_past %>%
+      dplyr::filter(week < current_week)
+  }
+
+  elo_last_week <- elo_past %>%
+    dplyr::group_by(franchise_id) %>%
+    dplyr::arrange(week) %>%
+    dplyr::summarise(franchise_elo_postgame = dplyr::last(franchise_elo_postgame), .groups = "drop") # der weg ist so nötig um für bye weeks in den PO daten zu kriegen
+
+  scores <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", current_season, "/export?TYPE=weeklyResults&L=63018&APIKEY=&W=", current_week, "&JSON=1")) %>%
+    #purrr::pluck("weeklyResults", "franchise") %>% # pre 2020
+    purrr::pluck("weeklyResults", "matchup") %>% # since 2020
+    tibble::tibble() %>%
+    tidyr::unnest_wider(1) %>%
+    #dplyr::rename(franchiseid = id, franchisescore = score) %>%  # pre 2020
+    tidyr::unnest(franchise) %>%  # since 2020
+    tidyr::unnest_wider(franchise, names_sep = "") %>% # since 2020
+    dplyr::select(franchiseid, franchisescore) %>%
+    dplyr::mutate(franchisescore = round(as.numeric(franchisescore), 2)) %>%
+    dplyr::distinct()
+
+  schedule <- readr::read_csv("https://raw.githubusercontent.com/jak3sch/rfl/main/data/rfl-schedules.csv", col_types=c("franchise_id" = "character", "opponent_id" = "character")) %>%
+    dplyr::filter(season == current_season) %>%
+    dplyr::mutate(week = as.integer(stringr::str_remove(week, "^0+"))) %>%
+
+    # für jedes spiel zwei zeilen erstellen mit jedem team als franchise und opponent
+    dplyr::mutate(
+      game_id = paste0(season, week, franchise_id, opponent_id),
+      away_opponent = opponent_id,
+      home_opponent = franchise_id
+    ) %>%
+    tidyr::gather(key, value, dplyr::ends_with("_opponent")) %>%
+    dplyr::mutate(
+      opponent_id = ifelse(opponent_id == value, franchise_id, opponent_id),
+      franchise_id = ifelse(franchise_id == opponent_id, value, franchise_id),
+    ) %>%
+    dplyr::select(game_id, season:opponent_id) %>%
+    dplyr::distinct() %>%
+
+    # punkte
+    dplyr::left_join(scores %>% dplyr::rename(franchise_score = franchisescore), by = c("franchise_id" = "franchiseid")) %>%
+    dplyr::left_join(scores %>% dplyr::rename(opponent_score = franchisescore), by = c("opponent_id" = "franchiseid"))
+
+
+  elo <- schedule %>%
+    dplyr::filter(season == current_season, week == current_week) %>%
+
+    # previous elo
+    dplyr::left_join(
+      elo_last_week %>%
+        dplyr::rename(franchise_elo_pregame = franchise_elo_postgame) %>%
+        dplyr::mutate(franchise_id = as.character(franchise_id)),
+      by = "franchise_id",
+    ) %>%
+    dplyr::left_join(
+      elo_last_week %>%
+        dplyr::rename(opponent_elo_pregame = franchise_elo_postgame) %>%
+        dplyr::mutate(franchise_id = as.character(franchise_id)),
+      by = c("opponent_id" = "franchise_id")
+    ) %>%
+
+    dplyr::mutate(
+      # if week 1 of season, recalc to default value
+      franchise_elo_pregame = ifelse(week == 1, round((franchise_elo_pregame * (2/3)) + (1500 * (1/3))), franchise_elo_pregame),
+      opponent_elo_pregame = ifelse(week == 1, round((opponent_elo_pregame * (2/3)) + (1500 * (1/3))), opponent_elo_pregame),
+
+      score_diff = round(franchise_score - opponent_score, 2),
+      result = case_when(
+        score_diff > 0 ~ 1, # 1 für win
+        score_diff < 0 ~ 0, # 0 für loss
+        T ~ 0.5 # 0.5 für tie
+      ),
+      forecast = 1 / (10^(-(franchise_elo_pregame - opponent_elo_pregame) / 400 ) + 1),
+      k = 36,
+      forecast_delta = result - forecast,
+      winning_elo = ifelse(result == 1, franchise_elo_pregame, opponent_elo_pregame),
+      losing_elo = ifelse(result != 1, franchise_elo_pregame, opponent_elo_pregame),
+      mov_multiplier = log(abs(score_diff) + 1) * (2.2 / (((winning_elo - losing_elo) * 0.001) + 2.2)),
+      elo_shift = round(k * forecast_delta + mov_multiplier),
+    ) %>%
+    dplyr::group_by(franchise_id) %>%
+    dplyr::mutate(
+      franchise_elo_postgame = first(franchise_elo_pregame) + sum(elo_shift),
+      franchise_id = as.character(franchise_id)
+    ) %>%
+    dplyr::ungroup() %>%
+    dplyr::select(1:7, score_diff, franchise_elo_pregame, opponent_elo_pregame, elo_shift, franchise_elo_postgame)
+
+  if (current_week == 1) {
+    readr::write_csv(elo, "output.csv")
+    #readr::write_csv(elo, paste0("data/elo/rfl-elo-", current_season, ".csv"))
+  } else {
+    elo_old <- elo_past %>% filter(week < current_week)
+    readr::write_csv(rbind(elo_old, elo), "output.csv")
+    #readr::write_csv(rbind(elo_old, elo), paste0("data/elo/rfl-elo-", current_season, ".csv"))
+  }
+
+  #print(paste("Wrote week", current_week))
+#}

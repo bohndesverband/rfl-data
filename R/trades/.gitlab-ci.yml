@@ -1,0 +1,38 @@
+stages:
+  - create-csv
+  - artifact-to-git
+
+create-trade-data:
+  stage: create-csv
+  image: rocker/tidyverse:latest
+  before_script:
+    - Rscript -e "install.packages('nflreadr')"
+  script:
+    - Rscript rfl-trades.R
+  artifacts:
+    paths:
+      - output.csv
+    expire_in: 1 week
+  only:
+    - schedules
+
+artifact-to-git:
+  stage: artifact-to-git
+  image: ubuntu:latest
+  needs:
+    - job: create-trade-data
+      artifacts: true
+  before_script:
+    - apt-get update
+    - apt-get install -y git
+    - git config --global user.email "mail@jakob-eschler.de"
+    - git config --global user.name "Jakob Eschler"
+  script:
+    - git clone $GITLAB_URL
+    - cd rfl
+    - cp $CI_PROJECT_DIR/output.csv data/trades/rfl-trades.csv
+    - git add data/trades/rfl-trades.csv
+    - git commit -m "rfl trade data via pipepline hinzugefügt"
+    - git push origin main
+  only:
+    - schedules

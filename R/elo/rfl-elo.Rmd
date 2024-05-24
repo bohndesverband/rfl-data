@@ -1,0 +1,95 @@
+---
+title: "RFL ELO Rating System"
+author: "Jakob Eschler"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Was ist das RFL ELO System?
+
+Das RFL ELO Rating ist ein einfaches System, das Spieler und Teams anhand ihrer Head-to-Head Matchups bewertet. Es basiert auf der [Methologie von FiveThirtyEight](https://fivethirtyeight.com/methodology/how-our-nfl-predictions-work/).
+
+## Wie funktioniert das RFL ELO System?
+
+Mit Start der Liga hat jedes Team und jeder Spieler eine initiale ELO von 1500 bekommen (Für Rookies gilt das Selbe). Nach jedem regular Season Head-to-Head Matchup verändert sich dieses Rating - je nach dem ob der Spieler oder das Team sein Matchup gewonnen oder verloren hat, wie hoch der Sieg oder die Niederlage war und wie hoch die ELO des Gegners gewesen ist.
+
+Das Ergebnis ist eine ELO für Spieler und Teams für alle regular Season Wochen.
+
+Um Offseason Veränderungen mit einzubeziehen, werden vor derm ersten Spieltag einer neuen Saison alle ELO Ratings um $\frac{1}{3}$ zum Ausgangswert 1500 korrigiert.
+
+## Wie wird die ELO berechnet?
+
+Nachdem ein Spiel beendet wurde (bei uns Donnerstagnachmittag nach den Stat-Corrections) wird das ELO Rating angepasst - für Spieler/Teams die ihr Matchup gewonnen haben nach oben, für die anderen nach unten. Dabei spielen einige Faktoren eine Rolle:
+
+- **Der K-Faktor:**  
+  ELO Systeme haben einen speziellen Faktor, der bestimmt, wie drastisch sich ein Wert ändert, wenn er neu berechnet wird. Je höher der K-Faktor, desto sensibler reagiert das System und die ELO Werte springen schnell hin und her.
+
+  Da wir eine relativ geringe Spielanzahl pro Saison haben und ein Spiel relativ großen Einfluss auf Teams und Spieler haben, arbeitet das RFL ELO Rating mit relativ hohen K-Faktoren (36).
+
+- **Das Forecast Delta:**  
+  Die Wahrscheinlichkeit, dass ein Spieler/Team sein Matchup gewinnt wird mit folgender Formel berechnet:
+
+  $Pr_A = \frac{1}{10^\frac{-(Elo A - Elo B)}{400}+1}$
+
+  Für das Ergebnis $r$ des Matchups gibt es drei verschiedenen Möglichkeiten.
+
+  $r_{Win} = 1$
+
+  $r_{Loss} = 0$
+
+  $r_{Tie} = 0.5$
+
+  Das Forecast Delta ist der Unterschied zwischen dem tatsächlichen Ergebnis und der Siegwahrscheinlichkeit.
+
+  $DPr_A = r - Pr_A$
+
+  Je größer das Delta ist (egal ob positiv oder negativ), desto größer ist auch die ELO Änderung.
+
+- **Margin-of-victory Faktor:**  
+  Spieler und Teams performen in gleichen Matchups unterschiedlich. Diese Varianz wird mit dem Mov Faktor abgebildet.
+
+  $Mov_A=ln(|Points_A - Points_B| +1) x \frac{2.2}{(ELO_{Winning} - ELO_{Losing} x 0.001) + 2.2}$
+
+  Der zweite Teil der Formel ist ein zusätzlicher Faktor um Autokorrelation zu vermeiden.
+
+  In unserem Fall bedeutet das, es besteht das Risiko, dass ELO Ratings von guten Spielern/Teams inflationiert werden. Favoriten gewinnen nämlich nicht nur öfters, sondern erzielen in ihren Siegen auch mehr Punkte als die Underdogs.
+
+  Das hätte zur Folge, dass die ELO Top Teams durch das System bevorzugt würden. Um dem zuvorzukommen, wird der Mov Faktor anhand der Pre-Game Elo Differenz herunter skaliert.
+
+Multipliziert man alle Faktoren, erhält man die Anzahl an ELO Punkten, die mit der Pre Game ELO des Teams/Spielers verrechnet werden.
+
+$DElo_A = K * DPr_A * Mov_A$
+
+$Elo_{Post} = Elo_{Pre} + DElo_A$
+
+ELO ist ein geschlossenes System - die Punkte, die ein Team/Spieler gewinnt, verliert ein anderes.
+
+Die $Elo_{Post}$ des Teams/Spielers wird automatisch seine $Elo_{Pre}$ für das nächste Matchup.
+
+## Was ist das Matchup für die Spieler?
+
+Treffen zwei Teams aufeinander, ist das Matchup klar - Team A gegen Team B. Aber gegen wen treten die einzelnen Spieler dieses Matchups an?
+
+Das RFL Elo System orientiert sich dabei an diesem [Prozess der Fantasy Footballers](https://www.thefantasyfootballers.com/articles/elo-you-how-this-rating-system-affects-fantasy-football/).
+
+Als Matchup spielt jeder Spieler mit seinen erzielten Fantasy Punkten gegen die Punkte seines Replacement Level Spielers[^1].
+
+Dann wird geschaut, gegen welches NFL Team der Spieler spielt. Dieses Unit wird als Gegner für alle anderen Spieler der selben Positionsgruppe interpretiert und erhält über die Saison hinweg die selben ELO Anpassungen.
+
+Da es pro Woche mehrere Spieler geben kann, die gegen das Selbe NFL Team spielen, wird für die ELO Veränderung des NFL Teams der Durchschnitt aller Matchups gebildet.
+
+**Ein Beispiel**
+Wide Receiver A, B und C spielen in Woche 1 gegen die Cardinals.
+
+In den einzelnen Matchups kreieren sie +15, +10 und -10 Elo Punkte.
+
+$DElo = \frac{15+10-10}{3} = 5$
+
+Das Cardinals Unit gegen WRs hat dieses Matchup verloren und erhält in dieser Woche insgesamt -5 ELO Punkte.
+
+Jedes NFL Unit erhält zu Saisonbegin eine ELO von 1500.
+
+[^1]: Für jede Woche werden Positionsrankings nach erzielten Fantasy Punkten erstellt. Der Replacement Level Spieler ist der erste Spieler hinter allen gestarteten Spielern seiner Positionsgruppe. **Bsp.:** In der Woche sind 30 RBs in den Top 84 Offense Flex Spielern (2RB + 2WR + 1TE + 2FLEX mal 12 Teams), dann ist RB #31 der Replacement Level Spieler.

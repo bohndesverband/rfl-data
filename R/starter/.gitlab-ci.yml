@@ -1,0 +1,35 @@
+stages:
+  - create-csv
+  - artifact-to-git
+
+create-csv:
+  stage: create-csv
+  image: rocker/tidyverse:latest
+  script:
+    - Rscript rfl-weekly-starter-since-2020.R
+  artifacts:
+    paths:
+      - output.csv
+  only:
+    - schedules
+
+artifact-to-git:
+  stage: artifact-to-git
+  image: ubuntu:latest
+  needs:
+    - job: create-csv
+      artifacts: true
+  before_script:
+    - apt-get update
+    - apt-get install -y git
+    - git config --global user.email "mail@jakob-eschler.de"
+    - git config --global user.name "Jakob Eschler"
+  script:
+    - git clone $GITLAB_URL
+    - cd rfl
+    - cp $CI_PROJECT_DIR/output.csv data/starter/rfl-starter-$CURRENT_YEAR.csv
+    - git add data/starter/rfl-starter-$CURRENT_YEAR.csv
+    - git commit -m "rfl starter data via pipepline hinzugefügt"
+    - git push origin main
+  only:
+    - schedules
