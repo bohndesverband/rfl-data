@@ -9,7 +9,7 @@ on:
 name: upload_rfl_data
 
 jobs:
-  setup-r:
+  upload_rfl_data:
     runs-on: ubuntu-latest
     container:
       image: rocker/tidyverse:latest
@@ -20,7 +20,5 @@ jobs:
         uses: r-lib/actions/setup-r@v1
       - name: Install dependencies
         run: Rscript -e "install.packages(c('nflreadr', 'piggyback', 'tidyverse'))"
-  data_handling:
-    steps:
       - name: Data handling
         run: Rscript -e "source('R/draft/rfl-scrape-draft.R')"
