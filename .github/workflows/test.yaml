@@ -19,7 +19,11 @@ jobs:
           cache-version: 2
           packages: |
             ropensci/piggyback
-            tidyverse/tidyverse
+            tidyverse/magrittr
+            tidyverse/dplyr
+            tidyverse/tidyr
+            tidyverse/readr
+            tidyverse/jsonlite
             nflverse/nflreadr
 
       - name: Archive nflverse release
