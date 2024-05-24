@@ -39,4 +39,4 @@ draft_data <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", v
 
 readr::write_csv(draft_data, "rfl-draft.csv")
 
-piggyback::pb_upload("rfl-draft.csv", "bohndesverband/rfl-data", release_name, overwrite = TRUE)
+piggyback::pb_upload("rfl-draft.csv", "bohndesverband/rfl-data", "draft_data", overwrite = TRUE)
