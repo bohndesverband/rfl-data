@@ -1,12 +1,6 @@
-library(magrittr)
-library(dplyr)
-library(tidyr)
-library(readr)
-library(jsonlite)
+library(tidyverse)
 library(piggyback)
 library(nflreadr)
-
-temp_dir <- tempdir()
 
 var_draft_season <- nflreadr::get_current_season(TRUE)
 
@@ -43,6 +37,6 @@ draft_data <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", v
   ) %>%
   dplyr::select(season, overall, round, pick, franchise, mfl_id, gsis_id, player_name, position, team, is_rookie)
 
-readr::write_csv(draft_data, paste(temp_dir, "/rfl-draft.csv"))
+readr::write_csv(draft_data, "rfl-draft.csv")
 
-piggyback::pb_upload(data, "bohndesverband/rfl-data", release_name, overwrite = TRUE)
+piggyback::pb_upload("rfl-draft.csv", "bohndesverband/rfl-data", release_name, overwrite = TRUE)
