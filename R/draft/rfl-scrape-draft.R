@@ -4,7 +4,7 @@ library(nflreadr)
 
 cli::cli_alert_info("Create Data")
 
-var_draft_season <- nflreadr::get_current_season(TRUE)
+var_draft_season <- nflreadr::get_current_season(TRUE) -1
 
 draft_data <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", var_draft_season, "/export?TYPE=draftResults&L=63018&APIKEY=&JSON=1"))$draftResults$draftUnit$draftPick %>%
   dplyr::tibble() %>%
@@ -40,11 +40,9 @@ draft_data <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", v
   dplyr::select(season, overall, round, pick, franchise, mfl_id, gsis_id, player_name, position, team, is_rookie)
 
 cli::cli_alert_info("Write Data")
-readr::write_csv(draft_data, "rfl-draft.csv")
+readr::write_csv(draft_data, paste0("rfl_draft_", var_draft_season, ".csv"))
 
-list <- piggyback::pb_list("bohndesverband/rfl-data")
-
-echo(list)
+piggyback::pb_delete("rfl-draft.csv", "bohndesverband/rfl-data")
 
 cli::cli_alert_info("Upload Data")
-piggyback::pb_upload("rfl-draft.csv", "bohndesverband/rfl-data", "draft_data", overwrite = TRUE)
+piggyback::pb_upload(paste0("rfl_draft_", var_draft_season, ".csv"), "bohndesverband/rfl-data", "draft_data", overwrite = TRUE)
