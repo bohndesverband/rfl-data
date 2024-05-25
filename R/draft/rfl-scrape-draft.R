@@ -40,11 +40,7 @@ draft_data <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", v
   dplyr::select(season, overall, round, pick, franchise, mfl_id, gsis_id, player_name, position, team, is_rookie)
 
 cli::cli_alert_info("Write Data")
-readr::write_csv(draft_data, "rfl-draft.csv")
-
-list <- piggyback::pb_list("bohndesverband/rfl-data")
-
-echo(list)
+readr::write_csv(draft_data, paste0("rfl_draft_", var_draft_season, ".csv"))
 
 cli::cli_alert_info("Upload Data")
-piggyback::pb_upload("rfl-draft.csv", "bohndesverband/rfl-data", "draft_data", overwrite = TRUE)
+piggyback::pb_upload(paste0("rfl_draft_", var_draft_season, ".csv"), "bohndesverband/rfl-data", "draft_data", overwrite = TRUE)
