@@ -22,6 +22,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
+          file: dockerfile
           push: true
           tags: ghcr.io/${{ github.repository }}/rfl-data:latest
           cache-from: type=gha
