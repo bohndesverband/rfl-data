@@ -1,4 +1,8 @@
-library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(jsonlite)
+library(margrittr)
+library(readr)
 library(piggyback)
 library(nflreadr)
 
