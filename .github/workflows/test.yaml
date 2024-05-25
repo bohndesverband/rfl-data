@@ -16,14 +16,6 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: Cache Docker images
-        id: cache
-        uses: ScribeMD/docker-cache@0.5.0
-        with:
-          key: docker-${{ runner.os }}-${{ hashFiles('README.md') }}
-      - name: Check Cache
-        run: |
-          echo "Cache hit: ${{ steps.cache.outputs.cache-hit }}"
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup R
