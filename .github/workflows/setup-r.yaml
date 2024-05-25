@@ -20,5 +20,15 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GH_TOKEN }}
 
+      - name: Build production image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: Dockerfile
+          push: true
+          tags: ghcr.io/${{ github.repository }}/rfl-data:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
       - run: ls -l
 
