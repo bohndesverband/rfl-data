@@ -21,8 +21,7 @@ jobs:
       - name: Build production image
         uses: docker/build-push-action@v5
         with:
-          context: .
-          file: dockerfile
+          file: Dockerfile
           push: true
           tags: ghcr.io/${{ github.repository }}/rfl-data:latest
           cache-from: type=gha
