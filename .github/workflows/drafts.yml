@@ -10,7 +10,9 @@ jobs:
   handle_draft_data:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Environment
-        uses: ./.github/workflows/setup-r.yaml@feature/pipeline
+        uses: bohndesverband/rfl-data/workflows/setup-r.yml@main
       - name: Data handling
         run: Rscript -e "source('R/draft/rfl-scrape-draft.R', echo = TRUE)"
