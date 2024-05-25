@@ -1,19 +1,29 @@
+name: "Setup R environment"
+
 on:
-  workflow_call:
   workflow_dispatch:
-
-name: setup_r
-
+    
 jobs:
-  create_data:
-    runs-on: ubuntu-22.04
+  build_and_push_image:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: r-lib/actions/setup-r@v2
-      - uses: r-lib/actions/setup-r-dependencies@v2
+      - uses: actions/checkout@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
         with:
-          cache-version: 2
-          packages: |
-            ropensci/piggyback
-            tidyverse/tidyverse
-            nflverse/nflreadr
+          registry: ghcr.io,
+          username: ${{ github.actor }}
+          password: ${{ secrets.GH_TOKEN }}
+
+      - name: Build production image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: Dockerfile
+          push: true
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
