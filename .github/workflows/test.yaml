@@ -14,7 +14,7 @@ jobs:
     container:
       image: rocker/tidyverse:latest
     env:
-      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      GITHUB_PAT: ${{ secrets.GH_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,4 +23,4 @@ jobs:
       - name: Install dependencies
         run: Rscript -e "install.packages(c('nflreadr', 'piggyback', 'dplyr', 'tidyr', 'jsonlite', 'readr'))"
       - name: Data handling
-        run: Rscript -e "source('R/draft/rfl-scrape-draft.R')"
+        run: Rscript -e "source('R/draft/rfl-scrape-draft.R', echo = TRUE)"
