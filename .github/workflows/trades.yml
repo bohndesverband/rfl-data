@@ -1,0 +1,45 @@
+name: RFL Trades Pipeline
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Führt die Aktion täglich um Mitternacht aus
+
+jobs:
+  create-trade-data:
+    runs-on: ubuntu-latest
+    container: 
+      image: rocker/tidyverse:latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Install R Packages
+        run: Rscript -e "install.packages('nflreadr')"
+      - name: Run R Script
+        run: Rscript rfl-trades.R
+      - name: Upload CSV as Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: output.csv
+          path: output.csv
+
+  artifact-to-git:
+    needs: create-trade-data
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Setup Git
+        run: |
+          git config --global user.email "mail@jakob-eschler.de"
+          git config --global user.name "Github Action"
+      - name: Download CSV Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: output.csv
+      - name: Move CSV to Data Directory
+        run: mv output.csv data/trades/rfl-trades.csv
+      - name: Commit and Push CSV
+        run: |
+          git add data/trades/rfl-trades.csv
+          git commit -m "rfl trade data via pipeline hinzugefügt"
+          git push origin main

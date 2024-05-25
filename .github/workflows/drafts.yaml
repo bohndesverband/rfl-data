@@ -1,0 +1,16 @@
+name: "Create and Upload Draft Data"
+
+on:
+  schedule:
+    # At 00:00 every day in May
+    - cron: '0 0 * 5 *'
+  workflow_dispatch:
+
+jobs:
+  handle_draft_data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Environment
+        uses: ./.github/workflows/setup-r.yaml@feature/pipeline
+      - name: Data handling
+        run: Rscript -e "source('R/draft/rfl-scrape-draft.R', echo = TRUE)"

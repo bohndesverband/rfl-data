@@ -1,19 +1,21 @@
-on:
-  workflow_call:
-  workflow_dispatch:
+name: "Setup R environment"
 
-name: setup_r
+on:
+  workflow_dispatch:
+  workflow_call:
 
 jobs:
-  create_data:
-    runs-on: ubuntu-22.04
+  build_and_push_image:
+    runs-on: ubuntu-latest
+    container:
+      image: rocker/tidyverse:latest
+    env:
+      GITHUB_PAT: ${{ secrets.GH_TOKEN }}
+    
     steps:
-      - uses: actions/checkout@v3
-      - uses: r-lib/actions/setup-r@v2
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          cache-version: 2
-          packages: |
-            ropensci/piggyback
-            tidyverse/tidyverse
-            nflverse/nflreadr
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+      - name: Install dependencies
+        run: Rscript -e "install.packages(c('nflreadr', 'piggyback', 'dplyr', 'tidyr', 'jsonlite', 'readr'))"
