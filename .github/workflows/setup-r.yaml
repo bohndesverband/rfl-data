@@ -24,6 +24,7 @@ jobs:
           context: .
           file: Dockerfile
           push: true
+          tags: ghcr.io/${{ github.repository }}/rfl-data:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
