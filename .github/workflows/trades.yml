@@ -1,8 +1,9 @@
 name: RFL Trades Pipeline
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Führt die Aktion täglich um Mitternacht aus
+  workflow_dispatch:
+  #schedule:
+    #- cron: '0 0 * * *'  # Führt die Aktion täglich um Mitternacht aus
 
 jobs:
   create-trade-data:
