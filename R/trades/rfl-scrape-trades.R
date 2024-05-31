@@ -123,6 +123,8 @@ if (dim(trade_data_raw)[1] != 0) {
 
   cli::cli_alert_info("Upload Data")
   piggyback::pb_upload(paste0("rfl_trades_", var_season, ".csv"), "bohndesverband/rfl-data", "trade_data", overwrite = TRUE)
+  jsonlite::write_json(jsonlite::toJSON(c("last_updated", format(Sys.time(), "%Y-%m-%d %X GMT"))), "timestamp.json")
+  piggyback::pb_upload("timestamp.json", "timestamp.json", "bohndesverband/rfl-data", "trade_data", overwrite = TRUE)
 } else {
   cli::cli_alert_info("No new Trades")
 }
