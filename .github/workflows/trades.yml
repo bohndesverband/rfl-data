@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  handle_draft_data:
+  handle_trade_data:
     runs-on: ubuntu-latest
     container:
       image: rocker/tidyverse:latest
