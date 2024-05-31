@@ -1,4 +1,4 @@
-name: "Create and Upload Draft Data"
+name: "Create and Upload Trade Data"
 
 on:
   schedule:
