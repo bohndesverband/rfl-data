@@ -1,46 +1,35 @@
-name: RFL Trades Pipeline
+name: "Create and Upload Draft Data"
 
 on:
+  schedule:
+    # At 00:00 every day in May
+    - cron: '0 0 * 5 *'
+    # Once every week on thursday 18 MEZ
+    - cron: '0 16 * * 4'
   workflow_dispatch:
-  #schedule:
-    #- cron: '0 0 * * *'  # Führt die Aktion täglich um Mitternacht aus
 
 jobs:
-  create-trade-data:
+  handle_draft_data:
     runs-on: ubuntu-latest
-    container: 
+    container:
       image: rocker/tidyverse:latest
+    env:
+      GITHUB_PAT: ${{ secrets.GH_TOKEN }}
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-      - name: Install R Packages
-        run: Rscript -e "install.packages('nflreadr')"
-      - name: Run R Script
-        run: Rscript rfl-trades.R
-      - name: Upload CSV as Artifact
-        uses: actions/upload-artifact@v2
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+      - name: Install dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          name: output.csv
-          path: output.csv
-
-  artifact-to-git:
-    needs: create-trade-data
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-      - name: Setup Git
-        run: |
-          git config --global user.email "mail@jakob-eschler.de"
-          git config --global user.name "Github Action"
-      - name: Download CSV Artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: output.csv
-      - name: Move CSV to Data Directory
-        run: mv output.csv data/trades/rfl-trades.csv
-      - name: Commit and Push CSV
-        run: |
-          git add data/trades/rfl-trades.csv
-          git commit -m "rfl trade data via pipeline hinzugefügt"
-          git push origin main
+          cache-version: 1
+          extra-packages: |
+            tidyverse/dplyr
+            tidyverse/tidyr
+            jeroen/jsonlite
+            tidyverse/readr
+            tidyverse/lubridate/
+            ropensci/piggyback
+      - name: Data handling
+        run: Rscript -e "source('R/trades/rfl-scrape-trades.R', echo = TRUE)"
