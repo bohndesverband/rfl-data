@@ -29,4 +29,4 @@ jobs:
           r-version: ${{ matrix.config.r }}
           use-public-rspm: true
       - name: Install dependencies
-        uses: r-lib/actions/setup-r-dependencies@v2
+        run: Rscript -e "install.packages(c('nflreadr', 'piggyback', 'tidyverse'))"
