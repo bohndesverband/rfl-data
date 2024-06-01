@@ -7,13 +7,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  create_environment:
+  handle_draft_data:
     runs-on: ${{ matrix.config.os }}
     strategy:
       fail-fast: false
       matrix:
         config:
           - { os: ubuntu-22.04, r: "4.4" }
+    env:
+      GITHUB_PAT: ${{ secrets.GH_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,14 +32,5 @@ jobs:
           use-public-rspm: true
       - name: Install dependencies
         run: Rscript -e "install.packages(c('nflreadr', 'piggyback', 'tidyverse'))"
-
-  handle_draft_data:
-    runs-on: ubuntu-latest
-    needs: create_environment
-    env:
-      GITHUB_PAT: ${{ secrets.GH_TOKEN }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
       - name: Data handling
         run: Rscript -e "source('R/draft/rfl-scrape-draft.R', echo = TRUE)"
