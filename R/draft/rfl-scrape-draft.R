@@ -45,7 +45,7 @@ readr::write_csv(draft_data, paste0("rfl_draft_", var_draft_season, ".csv"))
 cli::cli_alert_info("Upload Data")
 piggyback::pb_upload(paste0("rfl_draft_", var_draft_season, ".csv"), "bohndesverband/rfl-data", "draft_data", overwrite = TRUE)
 
-timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X GMT")) |>
+timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X", tz = "Europe/Berlin")) |>
   jsonlite::toJSON(auto_unbox = TRUE)
 
 write(timestamp, "timestamp.json")

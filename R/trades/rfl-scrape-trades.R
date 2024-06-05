@@ -122,7 +122,7 @@ if (dim(trade_data_raw)[1] != 0) {
   cli::cli_alert_info("No new Trades")
 }
 
-timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X GMT")) |>
+timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X", tz = "Europe/Berlin")) |>
   jsonlite::toJSON(auto_unbox = TRUE)
 
 write(timestamp, "timestamp.json")
