@@ -12,6 +12,7 @@ jobs:
   setup_environment:
     uses: ./.github/workflows/setup-r.yml
   handle_starter_data:
+    runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GH_TOKEN }}
     steps:
