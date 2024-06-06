@@ -3,6 +3,8 @@
 library(tidyverse)
 library(nflreadr)
 
+cli::cli_alert_info("Create Data")
+
 current_season <- nflreadr::most_recent_season()
 current_week <- nflreadr::get_current_week() - 1
 
@@ -116,13 +118,24 @@ current_week <- nflreadr::get_current_week() - 1
     dplyr::select(1:7, score_diff, franchise_elo_pregame, opponent_elo_pregame, elo_shift, franchise_elo_postgame)
 
   if (current_week == 1) {
-    readr::write_csv(elo, "output.csv")
+    cli::cli_alert_info("Write Data")
+    readr::write_csv(elo, paste0("rfl_team-elo_", current_season, ".csv"))
     #readr::write_csv(elo, paste0("data/elo/rfl-elo-", current_season, ".csv"))
   } else {
+    cli::cli_alert_info("Write Data")
     elo_old <- elo_past %>% filter(week < current_week)
-    readr::write_csv(rbind(elo_old, elo), "output.csv")
+    readr::write_csv(rbind(elo_old, elo), paste0("rfl_team-elo_", current_season, ".csv"))
     #readr::write_csv(rbind(elo_old, elo), paste0("data/elo/rfl-elo-", current_season, ".csv"))
   }
 
   #print(paste("Wrote week", current_week))
 #}
+
+cli::cli_alert_info("Upload Data")
+piggyback::pb_upload(paste0("rfl_team-elo_", current_season, ".csv"), "bohndesverband/rfl-data", "elo_data", overwrite = TRUE)
+
+timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X", tz = "Europe/Berlin")) %>%
+  jsonlite::toJSON(auto_unbox = TRUE)
+
+write(timestamp, "timestamp.json")
+piggyback::pb_upload("timestamp.json", "bohndesverband/rfl-data", "elo_data", overwrite = TRUE)

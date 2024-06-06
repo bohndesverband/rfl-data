@@ -1,0 +1,27 @@
+name: "Create and Upload ELO Data"
+
+on:
+  schedule:
+    # every thursday at 17 pm from september to december
+    - cron: "0 17 * 9-12 4"
+  workflow_dispatch:
+
+jobs:
+  handle_war_data:
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - { os: ubuntu-22.04, r: "4.4" }
+    env:
+      GITHUB_PAT: ${{ secrets.GH_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup
+        uses: ./.github/actions/setup-r
+      - name: Team ELO Data handling
+        run: Rscript -e "source('R/elo/rfl-team-elo.R', echo = TRUE)"
+      - name: Player ELO Data handling
+        run: Rscript -e "source('R/elo/rfl-player-elo.R', echo = TRUE)"

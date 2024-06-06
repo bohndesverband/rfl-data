@@ -3,6 +3,8 @@
 library(tidyverse)
 library(nflreadr)
 
+cli::cli_alert_info("Create Data")
+
 current_season <- nflreadr::most_recent_season()
 current_week <- nflreadr::get_current_week() - 1
 
@@ -202,11 +204,13 @@ nfl_schedule <- nflreadr::load_schedules(current_season) %>%
       dplyr::select(season, week, mfl_id, gsis_id, position, team, opponent_id, score, score_diff, player_elo_pre, opponent_elo_pre, elo_shift, player_elo_post, opponent_elo_post)
 
   if (current_week == 1) {
-      readr::write_csv(elo, "player-elo.csv")
+      cli::cli_alert_info("Write Data")
+      readr::write_csv(elo, paste0("rfl_team-elo_", current_season, ".csv"))
       #readr::write_csv(elo, paste0("data/elo/rfl-player-elo-", current_season, ".csv"))
   } else {
+      cli::cli_alert_info("Write Data")
       elo_old <- elo_past %>% filter(week < current_week)
-      readr::write_csv(rbind(elo_old, elo), "player-elo.csv")
+      readr::write_csv(rbind(elo_old, elo), paste0("rfl_team-elo_", current_season, ".csv"))
       #readr::write_csv(rbind(elo_old, elo), paste0("data/elo/rfl-player-elo-", current_season, ".csv"))
   }
 
@@ -214,3 +218,12 @@ nfl_schedule <- nflreadr::load_schedules(current_season) %>%
 
   #rm(elo, elo_past, last_player_elo, last_opponent_elo, scores, start, flex, read_season)
 #}
+
+cli::cli_alert_info("Upload Data")
+piggyback::pb_upload(paste0("rfl_player-elo_", current_season, ".csv"), "bohndesverband/rfl-data", "elo_data", overwrite = TRUE)
+
+timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X", tz = "Europe/Berlin")) %>%
+  jsonlite::toJSON(auto_unbox = TRUE)
+
+write(timestamp, "timestamp.json")
+piggyback::pb_upload("timestamp.json", "bohndesverband/rfl-data", "elo_data", overwrite = TRUE)
