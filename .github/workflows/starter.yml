@@ -1,0 +1,35 @@
+name: "Create and Upload Starter Data"
+
+on:
+  schedule:
+    # every tuesday at 8 am from september to december
+    - cron: '0 6 * 9-12 2'
+    # every thursday ar 16 pm from september to december
+    - cron: '0 14 * 9-12 4'
+  workflow_dispatch:
+
+jobs:
+  handle_draft_data:
+    runs-on: ubuntu-latest
+    container:
+      image: rocker/tidyverse:latest
+    env:
+      GITHUB_PAT: ${{ secrets.GH_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+      - name: Install dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          cache-version: 1
+          extra-packages: |
+            nflverse/nflreadr
+            tidyverse/dplyr
+            tidyverse/tidyr
+            jeroen/jsonlite
+            tidyverse/readr
+            ropensci/piggyback
+      - name: Data handling
+        run: Rscript -e "source('R/starter/rfl-weekly-starter-since-2020.R', echo = TRUE)"
