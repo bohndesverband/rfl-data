@@ -1,9 +1,4 @@
-library(dplyr)
-library(tidyr)
-library(jsonlite)
-library(readr)
 library(piggyback)
-library(lubridate)
 library(tidyverse)
 
 current_year <- lubridate::year(Sys.Date())
@@ -126,3 +121,9 @@ if (dim(trade_data_raw)[1] != 0) {
 } else {
   cli::cli_alert_info("No new Trades")
 }
+
+timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X", tz = "Europe/Berlin")) |>
+  jsonlite::toJSON(auto_unbox = TRUE)
+
+write(timestamp, "timestamp.json")
+piggyback::pb_upload("timestamp.json", "bohndesverband/rfl-data", "trade_data", overwrite = TRUE)
