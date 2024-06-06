@@ -1,4 +1,10 @@
-## Pipelines
+# RFL data repository
+
+This repository contains all code for automatic data creation for the RFL. All data is found in the releases.
+
+## Workflow
+
+1. 
 
 ### Variables
 
