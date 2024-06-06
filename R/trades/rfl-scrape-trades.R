@@ -24,59 +24,59 @@ find_week <- function(use_date) {
 
 past_trades <- readr::read_csv(paste0("https://github.com/bohndesverband/rfl-data/releases/download/trade_data/rfl_trades_", var_season, ".csv"), col_types = "dddTdcccc")
 
-last_entry <- past_trades |>
-  dplyr::select(trade_id) |>
-  dplyr::filter(trade_id == max(trade_id)) |>
-  dplyr::distinct() |>
+last_entry <- past_trades %>%
+  dplyr::select(trade_id) %>%
+  dplyr::filter(trade_id == max(trade_id)) %>%
+  dplyr::distinct() %>%
   dplyr::pull()
 
-trade_data_raw <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", var_season, "/export?TYPE=transactions&L=63018&TRANS_TYPE=TRADE&JSON=1"))$transactions$transaction |>
-  dplyr::tibble() |>
-  tidyr::unnest_wider(1) |>
-  dplyr::select(timestamp, franchise, franchise2, franchise1_gave_up, franchise2_gave_up) |>
-  dplyr::arrange(timestamp) |>
+trade_data_raw <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", var_season, "/export?TYPE=transactions&L=63018&TRANS_TYPE=TRADE&JSON=1"))$transactions$transaction %>%
+  dplyr::tibble() %>%
+  tidyr::unnest_wider(1) %>%
+  dplyr::select(timestamp, franchise, franchise2, franchise1_gave_up, franchise2_gave_up) %>%
+  dplyr::arrange(timestamp) %>%
   dplyr::mutate(
     trade_id = paste0(var_season, sprintf("%003d", row_number()))
-  ) |>
+  ) %>%
   dplyr::filter(trade_id > last_entry)
 
 if (dim(trade_data_raw)[1] != 0) {
-  franchise1 <- trade_data_raw |>
-    dplyr::select(trade_id, franchise, franchise1_gave_up) |>
-    tidyr::separate_rows(franchise1_gave_up, sep = ",") |>
-    dplyr::filter(franchise1_gave_up != "") |>
-    dplyr::rename(asset = franchise1_gave_up, franchise_id = franchise) |>
+  franchise1 <- trade_data_raw %>%
+    dplyr::select(trade_id, franchise, franchise1_gave_up) %>%
+    tidyr::separate_rows(franchise1_gave_up, sep = ",") %>%
+    dplyr::filter(franchise1_gave_up != "") %>%
+    dplyr::rename(asset = franchise1_gave_up, franchise_id = franchise) %>%
     dplyr::mutate(franchise = "franchise_1")
 
-  franchise2 <- trade_data_raw |>
-    dplyr::select(trade_id, franchise2, franchise2_gave_up) |>
-    tidyr::separate_rows(franchise2_gave_up, sep = ",") |>
-    dplyr::filter(franchise2_gave_up != "") |>
-    dplyr::rename(asset = franchise2_gave_up, franchise_id = franchise2) |>
+  franchise2 <- trade_data_raw %>%
+    dplyr::select(trade_id, franchise2, franchise2_gave_up) %>%
+    tidyr::separate_rows(franchise2_gave_up, sep = ",") %>%
+    dplyr::filter(franchise2_gave_up != "") %>%
+    dplyr::rename(asset = franchise2_gave_up, franchise_id = franchise2) %>%
     dplyr::mutate(franchise = "franchise_2")
 
-  trade_data <- rbind(franchise1, franchise2) |>
-    dplyr::arrange(trade_id) |>
+  trade_data <- rbind(franchise1, franchise2) %>%
+    dplyr::arrange(trade_id) %>%
     dplyr::left_join(
-      trade_data_raw |>
+      trade_data_raw %>%
         dplyr::select(trade_id, timestamp),
       by = "trade_id",
       relationship = "many-to-many"
-    ) |>
+    ) %>%
     dplyr::left_join(
-      jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", var_season, "/export?TYPE=contestPlayers&L=63018&APIKEY=aRNp3s%2BWvuWrx0WmPlrBYDoeErox&W&JSON=1"))$contest_players$player |>
-        dplyr::tibble() |>
+      jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", var_season, "/export?TYPE=contestPlayers&L=63018&APIKEY=aRNp3s%2BWvuWrx0WmPlrBYDoeErox&W&JSON=1"))$contest_players$player %>%
+        dplyr::tibble() %>%
         tidyr::unnest_wider(1),
       by = c("asset" = "id")
-    ) |>
-    dplyr::rowwise() |>
+    ) %>%
+    dplyr::rowwise() %>%
     dplyr::mutate(
       date = lubridate::as_datetime(as.numeric(timestamp), tz = "GMT"),
       season = lubridate::year(date),
       week = find_week(as.Date(date))
-    ) |>
+    ) %>%
 
-    dplyr::rowwise() |>
+    dplyr::rowwise() %>%
     dplyr::mutate(
       draft_pick = ifelse(grepl("DP_", asset), stringr::str_pad(as.numeric(stringr::str_split(asset, "_")[[1]][3]) + 1, 2, pad = "0"), NA),
       draft_round = dplyr::case_when(
@@ -92,8 +92,8 @@ if (dim(trade_data_raw)[1] != 0) {
         grepl("DP_", asset) ~ franchise_id,
         TRUE ~ team
       )
-    ) |>
-    dplyr::ungroup() |>
+    ) %>%
+    dplyr::ungroup() %>%
     dplyr::mutate(
       draft_round = ifelse(grepl("DP_", asset), as.numeric(draft_round) + 1, draft_round),
       name = dplyr::case_when(
@@ -109,8 +109,8 @@ if (dim(trade_data_raw)[1] != 0) {
         TRUE ~ name
       ),
       asset_id = ifelse(!is.na(draft_year), paste("DP", draft_round, sep = "_"), asset)
-    ) |>
-    dplyr::select(season, trade_id, timestamp, date, week, franchise_id, franchise, asset_id, asset_name) |>
+    ) %>%
+    dplyr::select(season, trade_id, timestamp, date, week, franchise_id, franchise, asset_id, asset_name) %>%
     dplyr::rename(trade_side = franchise)
 
   cli::cli_alert_info("Write Data")
@@ -122,7 +122,7 @@ if (dim(trade_data_raw)[1] != 0) {
   cli::cli_alert_info("No new Trades")
 }
 
-timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X", tz = "Europe/Berlin")) |>
+timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X", tz = "Europe/Berlin")) %>%
   jsonlite::toJSON(auto_unbox = TRUE)
 
 write(timestamp, "timestamp.json")
