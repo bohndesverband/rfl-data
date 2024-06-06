@@ -13,6 +13,9 @@ runs:
       with:
         r-version: ${{ matrix.config.r }}
         use-public-rspm: true
+    - name: Cache R packages
+      shell: bash
+      run: ls -l ~/
     - name: Install dependencies
       shell: bash
       run: Rscript -e "install.packages(c('nflreadr', 'piggyback', 'tidyverse'))"
