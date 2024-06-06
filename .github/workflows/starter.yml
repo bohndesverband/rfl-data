@@ -20,6 +20,6 @@ jobs:
       GITHUB_PAT: ${{ secrets.GH_TOKEN }}
     steps:
       - name: Setup
-        uses: actions/setup-r@v1
+        uses: ./.github/actions/setup-r
       - name: Data handling
         run: Rscript -e "source('R/starter/rfl-weekly-starter-since-2020.R', echo = TRUE)"
