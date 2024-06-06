@@ -1,4 +1,4 @@
-name: "Create and Upload Starter Data"
+name: "Create and Upload Standing Data"
 
 on:
   schedule:
