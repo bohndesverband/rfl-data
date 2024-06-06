@@ -9,27 +9,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  handle_draft_data:
-    runs-on: ubuntu-latest
-    container:
-      image: rocker/tidyverse:latest
+  setup_environment:
+    uses: ./.github/workflows/setup-r.yml
+  handle_starter_data:
     env:
       GITHUB_PAT: ${{ secrets.GH_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v2
-      - name: Install dependencies
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          cache-version: 1
-          extra-packages: |
-            nflverse/nflreadr
-            tidyverse/dplyr
-            tidyverse/tidyr
-            jeroen/jsonlite
-            tidyverse/readr
-            ropensci/piggyback
       - name: Data handling
         run: Rscript -e "source('R/starter/rfl-weekly-starter-since-2020.R', echo = TRUE)"
