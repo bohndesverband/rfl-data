@@ -50,7 +50,7 @@ current_week <- nflreadr::get_current_week() - 1
     dplyr::mutate(franchisescore = round(as.numeric(franchisescore), 2)) %>%
     dplyr::distinct()
 
-  schedule <- readr::read_csv("https://raw.githubusercontent.com/jak3sch/rfl/main/data/rfl-schedules.csv", col_types=c("franchise_id" = "character", "opponent_id" = "character")) %>%
+  schedule <- readr::read_csv("https://raw.githubusercontent.com/bohndesverband/rfl-data/main/data/rfl-schedules.csv", col_types=c("franchise_id" = "character", "opponent_id" = "character")) %>%
     dplyr::filter(season == current_season) %>%
     dplyr::mutate(week = as.integer(stringr::str_remove(week, "^0+"))) %>%
 
