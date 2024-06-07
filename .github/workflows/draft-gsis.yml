@@ -1,8 +1,9 @@
-name: "Create and Upload Player Scores Data"
+name: "Add gsis id to draft data"
 
 on:
   schedule:
-    # every thursday at 17 pm from september to december
+    # every thursday at 17 pm from september to february
+    - cron: "0 17 * 1-2 4"
     - cron: "0 17 * 9-12 4"
   workflow_dispatch:
 
@@ -22,4 +23,4 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup-r
       - name: Data handling
-        run: Rscript -e "source('R/playerscores/rfl-scrape-playerscores.R', echo = TRUE)"
+        run: Rscript -e "source('R/draft/rfl-add-gsis-to-draft.R.R', echo = TRUE)"
