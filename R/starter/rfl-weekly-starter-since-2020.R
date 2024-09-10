@@ -42,10 +42,10 @@ starter <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", curr
   dplyr::select(season, week, franchise_id, starter_status, player_id, player_name, pos, team, player_score, should_start)
 
 cli::cli_alert_info("Write Data")
-readr::write_csv(starter, paste0("rfl_starter_", var_season, ".csv"))
+readr::write_csv(starter, paste0("rfl_starter_", current_season, ".csv"))
 
 cli::cli_alert_info("Upload Data")
-piggyback::pb_upload(paste0("rfl_starter_", var_season, ".csv"), "bohndesverband/rfl-data", "starter_data", overwrite = TRUE)
+piggyback::pb_upload(paste0("rfl_starter_", current_season, ".csv"), "bohndesverband/rfl-data", "starter_data", overwrite = TRUE)
 
 timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X", tz = "Europe/Berlin")) |>
   jsonlite::toJSON(auto_unbox = TRUE)
