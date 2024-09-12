@@ -7,19 +7,16 @@ current_season = nflreadr::get_current_season()
 current_week = nflreadr::get_current_week() - 1
 
 if (current_week <= 13) {
-  schedule <- readr::read_csv("https://raw.githubusercontent.com/bohndesverband/rfl-data/main/data/rfl-schedules.csv", col_types = "iccc") %>%
-    dplyr::filter(season == current_season) %>%
-    dplyr::select(-season) %>%
-    dplyr::mutate(
-      game_id = paste0(week, franchise_id, opponent_id)
-    )
+  schedule <- readr::read_csv("https://raw.githubusercontent.com/bohndesverband/rfl-data/main/data/rfl-schedules.csv", col_types = "iicc") %>%
+    dplyr::filter(season == current_season & week <= current_week) %>%
+    dplyr::select(-season)
 
   points <- purrr::map_df(seq(1, current_week), function(x) {
     jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", current_season, "/export?TYPE=weeklyResults&L=63018&W=", x, "&JSON=1"))$weeklyResults$matchup %>%
       dplyr::tibble() %>%
       tidyr::unnest_wider(1) %>%
       dplyr::mutate(
-        week = as.character(stringr::str_pad(x, 2, pad = "0")),
+        week = x
       ) %>%
       tidyr::unnest(franchise) %>%
       tidyr::unnest_wider(franchise) %>%
@@ -37,26 +34,18 @@ if (current_week <= 13) {
       coach = round(-1 * (pp - pf), 2)
     )
 
-  results <- points %>%
+  results <- schedule %>%
     dplyr::left_join(
-      schedule %>%
-        tidyr::gather(key, franchise_id, c(franchise_id, opponent_id)) %>%
-        dplyr::select(week, franchise_id, game_id),
+      points,
       by = c("franchise_id", "week"),
       multiple = "all"
     ) %>%
-    dplyr::left_join(
-      schedule %>%
-        dplyr::rename(away_id = franchise_id, home_id= opponent_id) %>%
-        dplyr::select(-week),
-      by = "game_id",
-      multiple = "all"
-    ) %>%
-    dplyr::mutate(opponent_id = ifelse(franchise_id == away_id, home_id, away_id)) %>%
+    # add opponent id
     dplyr::left_join(
       points %>%
-        dplyr::select(week, franchise_id, pf_opponent = pf),
-      by = c("week", "opponent_id" = "franchise_id"),
+        dplyr::select(franchise_id, pf) %>%
+        dplyr::rename(pf_opponent = pf),
+      by = c("opponent_id" = "franchise_id"),
       multiple = "all"
     ) %>%
     dplyr::mutate(
@@ -75,7 +64,7 @@ if (current_week <= 13) {
       by = c("week", "franchise_id"),
       multiple = "all"
     ) %>%
-    dplyr::select(-home_id, -away_id, -game_id, -opponent_id, -pf_opponent)
+    dplyr::select(-opponent_id, -pf_opponent)
 
   true_standing <- results %>%
     dplyr::group_by(week, franchise_id) %>%
