@@ -56,17 +56,16 @@ current_week <- nflreadr::get_current_week() - 1
 
     # für jedes spiel zwei zeilen erstellen mit jedem team als franchise und opponent
     dplyr::mutate(
-      game_id = paste0(season, week, franchise_id, opponent_id),
+      game_id = paste0(season, week, franchise_id, opponent_id), # TODO: kann weg
       away_opponent = opponent_id,
       home_opponent = franchise_id
     ) %>%
-    tidyr::gather(key, value, dplyr::ends_with("_opponent")) %>%
-    dplyr::mutate(
-      opponent_id = ifelse(opponent_id == value, franchise_id, opponent_id),
-      franchise_id = ifelse(franchise_id == opponent_id, value, franchise_id),
-    ) %>%
+    #tidyr::gather(key, value, dplyr::ends_with("opponent"))
+    #dplyr::mutate(
+    #  opponent_id = ifelse(opponent_id == value, franchise_id, opponent_id),
+    #  franchise_id = ifelse(franchise_id == opponent_id, value, franchise_id),
+    #)
     dplyr::select(game_id, season:opponent_id) %>%
-    dplyr::distinct() %>%
 
     # punkte
     dplyr::left_join(scores %>% dplyr::rename(franchise_score = franchisescore), by = c("franchise_id" = "franchiseid")) %>%
