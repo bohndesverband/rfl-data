@@ -3,8 +3,8 @@ name: "Add gsis id to draft data"
 on:
   schedule:
     # every thursday at 17 pm from september to february
-    - cron: "0 17 * 1-2 4"
-    - cron: "0 17 * 9-12 4"
+    - cron: "0 15 * 1-2 4"
+    - cron: "0 15 * 9-12 4"
   workflow_dispatch:
 
 jobs:

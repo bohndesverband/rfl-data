@@ -3,9 +3,9 @@ name: "Create and Upload Starter Data"
 on:
   schedule:
     # every tuesday at 8 am from september to december
-    - cron: '0 8 * 9-12 2'
+    - cron: '0 6 * 9-12 2'
     # every thursday ar 16 pm from september to december
-    - cron: '0 16 * 9-12 4'
+    - cron: '0 14 * 9-12 4'
   workflow_dispatch:
 
 jobs:

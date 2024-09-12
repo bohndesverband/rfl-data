@@ -3,9 +3,9 @@ name: "Create and Upload Standing Data"
 on:
   schedule:
     # every tuesday at 9 am from september to december
-    - cron: '0 9 * 9-12 2'
+    - cron: '0 7 * 9-12 2'
     # every thursday ar 17 pm from september to december
-    - cron: '0 17 * 9-12 4'
+    - cron: '0 15 * 9-12 4'
   workflow_dispatch:
 
 jobs:

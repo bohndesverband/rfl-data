@@ -3,9 +3,9 @@ name: "Create and Upload Trade Data"
 on:
   schedule:
     # At 00:00 every day in may
-    - cron: "0 0 * 5 *"
+    - cron: "0 22 * 5 *"
     # Once every week on tuesday 18 MEZ
-    - cron: "0 18 * * 2"
+    - cron: "0 16 * * 2"
   workflow_dispatch:
 
 jobs:

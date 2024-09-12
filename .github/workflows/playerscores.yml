@@ -3,7 +3,7 @@ name: "Create and Upload Player Scores Data"
 on:
   schedule:
     # every thursday at 17 pm from september to december
-    - cron: "0 17 * 9-12 4"
+    - cron: "0 15 * 9-12 4"
   workflow_dispatch:
 
 jobs:
