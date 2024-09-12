@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  handle_trade_data:
+  handle_data:
     runs-on: ${{ matrix.config.os }}
     strategy:
       fail-fast: false
