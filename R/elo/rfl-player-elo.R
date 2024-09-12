@@ -50,7 +50,7 @@ nfl_schedule <- nflreadr::load_schedules(current_season) %>%
   # wenn WK 2 2016
   #elo_past <- readr::read_csv("data/elo/rfl-player-elo-init.csv", col_types = c("mfl_id" = "character"))
 
-  elo_past <- readr::read_csv(paste0("https://raw.githubusercontent.com/jak3sch/rfl/main/data/elo/rfl-player-elo-", read_season, ".csv"), col_types = c("mfl_id" = "character"))
+  elo_past <- readr::read_csv(paste0("https://github.com/bohndesverband/rfl-data/releases/download/elo_data/rfl_player-elo_", read_season, ".csv"), col_types = c("mfl_id" = "character"))
   #elo_past <- readr::read_csv(paste0("data/elo/rfl-player-elo-", read_season, ".csv"), col_types = c("mfl_id" = "character"))
 
   if (current_week == 1) {
