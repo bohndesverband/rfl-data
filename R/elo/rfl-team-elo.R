@@ -22,7 +22,7 @@ current_week <- nflreadr::get_current_week() - 1
   #elo_past <- readr::read_csv(paste0("https://raw.githubusercontent.com/jak3sch/rfl/main/data/elo/rfl-elo-", read_season, ".csv"), col_types = c("franchise_id" = "character", "franchise_elo_postgame" = "integer")) %>%
   #  dplyr::filter(season == read_season)
 
-  elo_past <- readr::read_csv(paste0("data/elo/rfl-elo-", read_season, ".csv"), col_types = c("franchise_id" = "character", "franchise_elo_postgame" = "integer")) %>%
+  elo_past <- readr::read_csv(paste0("https://github.com/bohndesverband/rfl-data/releases/download/elo_data/rfl_team-elo_", read_season, ".csv"), col_types = c("franchise_id" = "character", "franchise_elo_postgame" = "integer")) %>%
     dplyr::filter(season == read_season)
 
   if (current_week == 1) {
