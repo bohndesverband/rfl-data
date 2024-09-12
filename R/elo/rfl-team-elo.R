@@ -8,6 +8,9 @@ cli::cli_alert_info("Create Data")
 current_season <- nflreadr::most_recent_season()
 current_week <- nflreadr::get_current_week() - 1
 
+current_season <- 2023
+current_week <- 2
+
 #for (current_week in 1:13) {
   if(current_week == 1) {
     # in WK 1 die letzte ELO der vorsaison lesen
@@ -17,13 +20,12 @@ current_week <- nflreadr::get_current_week() - 1
   }
 
   # wenn WK 2 2016
-  #elo_past <- readr::read_csv("data/elo/rfl-elo-init.csv")
+  #elo_past <- readr::read_csv("data/elo/rfl-elo-init.csv", col_types = "ciiccnnniiii") %>%
+  #  dplyr::select(-game_id)
 
-  #elo_past <- readr::read_csv(paste0("https://raw.githubusercontent.com/jak3sch/rfl/main/data/elo/rfl-elo-", read_season, ".csv"), col_types = c("franchise_id" = "character", "franchise_elo_postgame" = "integer")) %>%
-  #  dplyr::filter(season == read_season)
+  #elo_past <- readr::read_csv(paste0("rfl_team-elo_", read_season, ".csv"), col_types = "iiccddddiiii")
 
-  elo_past <- readr::read_csv(paste0("https://github.com/bohndesverband/rfl-data/releases/download/elo_data/rfl_team-elo_", read_season, ".csv"), col_types = c("franchise_id" = "character", "franchise_elo_postgame" = "integer")) %>%
-    dplyr::filter(season == read_season)
+  elo_past <- readr::read_csv(paste0("https://github.com/bohndesverband/rfl-data/releases/download/elo_data/rfl_team-elo_", read_season, ".csv"), col_types = "iiccddddiii")
 
   if (current_week == 1) {
     elo_past <- elo_past %>%
@@ -50,27 +52,12 @@ current_week <- nflreadr::get_current_week() - 1
     dplyr::mutate(franchisescore = round(as.numeric(franchisescore), 2)) %>%
     dplyr::distinct()
 
-  schedule <- readr::read_csv("https://raw.githubusercontent.com/bohndesverband/rfl-data/main/data/rfl-schedules.csv", col_types=c("franchise_id" = "character", "opponent_id" = "character")) %>%
-    dplyr::filter(season == current_season) %>%
-    dplyr::mutate(week = as.integer(stringr::str_remove(week, "^0+"))) %>%
-
-    # für jedes spiel zwei zeilen erstellen mit jedem team als franchise und opponent
-    dplyr::mutate(
-      game_id = paste0(season, week, franchise_id, opponent_id), # TODO: kann weg
-      away_opponent = opponent_id,
-      home_opponent = franchise_id
-    ) %>%
-    #tidyr::gather(key, value, dplyr::ends_with("opponent"))
-    #dplyr::mutate(
-    #  opponent_id = ifelse(opponent_id == value, franchise_id, opponent_id),
-    #  franchise_id = ifelse(franchise_id == opponent_id, value, franchise_id),
-    #)
-    dplyr::select(game_id, season:opponent_id) %>%
+  schedule <- readr::read_csv("https://raw.githubusercontent.com/bohndesverband/rfl-data/main/data/rfl-schedules.csv", col_types = "iicc") %>%
+    dplyr::filter(season == current_season & week == current_week) %>%
 
     # punkte
     dplyr::left_join(scores %>% dplyr::rename(franchise_score = franchisescore), by = c("franchise_id" = "franchiseid")) %>%
     dplyr::left_join(scores %>% dplyr::rename(opponent_score = franchisescore), by = c("opponent_id" = "franchiseid"))
-
 
   elo <- schedule %>%
     dplyr::filter(season == current_season, week == current_week) %>%
