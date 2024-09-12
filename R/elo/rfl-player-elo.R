@@ -205,7 +205,7 @@ nfl_schedule <- nflreadr::load_schedules(current_season) %>%
 
   if (current_week == 1) {
       cli::cli_alert_info("Write Data")
-      readr::write_csv(elo, paste0("rfl_team-elo_", current_season, ".csv"))
+      readr::write_csv(elo, paste0("rfl_player-elo_", current_season, ".csv"))
       #readr::write_csv(elo, paste0("data/elo/rfl-player-elo-", current_season, ".csv"))
   } else {
       cli::cli_alert_info("Write Data")
