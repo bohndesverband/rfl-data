@@ -43,9 +43,9 @@ if (current_week <= 13) {
     # add opponent id
     dplyr::left_join(
       points %>%
-        dplyr::select(franchise_id, pf) %>%
+        dplyr::select(week, franchise_id, pf) %>%
         dplyr::rename(pf_opponent = pf),
-      by = c("opponent_id" = "franchise_id"),
+      by = c("opponent_id" = "franchise_id", "week"),
       multiple = "all"
     ) %>%
     dplyr::mutate(
