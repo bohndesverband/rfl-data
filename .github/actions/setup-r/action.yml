@@ -16,7 +16,7 @@ runs:
     - name: Install dependencies
       shell: bash
       run: |
+        options(repos = c(CRAN = 'https://packagemanager.rstudio.com/all/latest'))
         Rscript -e "install.packages('nflreadr')"
         Rscript -e "install.packages('piggyback')"
         Rscript -e "install.packages('tidyverse')"
-        Rscript -e "install.packages('curl')"
