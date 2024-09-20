@@ -29,7 +29,7 @@ if (current_week <= 13) {
     cli::cli_alert_info("Write Data")
     readr::write_csv(scores, paste0("rfl_playerscores_", current_season, ".csv"))
   } else {
-    loadData <- readr::read_csv(paste0("https://github.com/bohndesverband/rfl-data/releases/download/playerscore_data/rfl_playerscores_", current_season, ".csv"), col_types = "ddccccd") %>%
+    loadData <- readr::read_csv(paste0("https://github.com/bohndesverband/rfl-data/releases/download/playerscores_data/rfl_playerscores_", current_season, ".csv"), col_types = "ddccccd") %>%
       dplyr::filter(as.numeric(week) < current_week)
 
     cli::cli_alert_info("Write Data")
