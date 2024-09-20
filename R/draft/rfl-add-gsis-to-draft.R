@@ -30,11 +30,11 @@ for (loop_season in 2017:current_season) {
   readr::write_csv(
     new_data %>%
       dplyr::filter(season == loop_season),
-    glue::glue("data/drafts/rfl_draft_{loop_season}.csv")
+    glue::glue("rfl_draft_{loop_season}.csv")
   )
 
   cli::cli_alert_info("Upload Data")
-  piggyback::pb_upload(paste0("rfl_draft_", current_season, ".csv"), "bohndesverband/rfl-data", "draft_data", overwrite = TRUE)
+  piggyback::pb_upload(paste0("rfl_draft_", loop_season, ".csv"), "bohndesverband/rfl-data", "draft_data", overwrite = TRUE)
 }
 
 timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X", tz = "Europe/Berlin")) %>%
