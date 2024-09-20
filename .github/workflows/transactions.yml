@@ -1,0 +1,27 @@
+name: "Create and Upload Trade Data"
+
+on:
+  schedule:
+    # Once every week wednesday 8 o clock MEZ
+    - cron: "0 6 * * 3"
+    # Once every week on sunday 19 o clock MEZ
+    - cron: "0 17 * * 0"
+  workflow_dispatch:
+
+jobs:
+  handle_data:
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - { os: ubuntu-22.04, r: "4.4" }
+    env:
+      GITHUB_PAT: ${{ secrets.GH_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup
+        uses: ./.github/actions/setup-r
+      - name: Data handling
+        run: Rscript -e "source('R/trades/rfl-scrape-transactions.R', echo = TRUE)"
