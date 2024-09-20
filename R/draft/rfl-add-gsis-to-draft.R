@@ -30,7 +30,7 @@ for (loop_season in 2017:current_season) {
   readr::write_csv(
     new_data %>%
       dplyr::filter(season == loop_season),
-    glue::glue("data/drafts/rfl_draft_{season}.csv")
+    glue::glue("data/drafts/rfl_draft_{loop_season}.csv")
   )
 
   cli::cli_alert_info("Upload Data")
