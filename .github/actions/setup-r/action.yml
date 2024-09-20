@@ -13,10 +13,12 @@ runs:
       with:
         r-version: ${{ matrix.config.r }}
         use-public-rspm: true
+    - name: Install system dependencies for curl
+      shell: bash
+      run: sudo apt-get install -y libcurl4-openssl-dev
     - name: Install dependencies
       shell: bash
       run: |
-        options(repos = c(CRAN = 'https://packagemanager.rstudio.com/all/latest'))
         Rscript -e "install.packages('nflreadr')"
         Rscript -e "install.packages('piggyback')"
         Rscript -e "install.packages('tidyverse')"
