@@ -1604,7 +1604,6 @@ timestamp,type,type_desc,franchise_id,franchise_name,mfl_id,player_name,pos,team
 2016-07-14T07:24:31Z,DRAFT,drafted,0025,Hannover Eagles,9690,Arian Foster,RB,FA,9690-0025
 2016-07-14T07:24:31Z,DRAFT,drafted,0004,Cleve Crusader,11689,Bruce Ellington,WR,SF,11689-0004
 2016-07-14T07:24:31Z,DRAFT,drafted,0021,Vienna Broncos,8117,Nate Washington,WR,FA,8117-0021
-2016-07-14T13:36:19Z,DRAFT,drafted,0019,Dresden Jaguars,----,NA,NA,NA,-----0019
 2016-07-14T13:48:37Z,TRADE,traded_away,0028,German Cats,9436,"Maclin, Jeremy",WR,KCC,9436-0028
 2016-07-14T13:48:37Z,TRADE,traded_away,0018,Hintertupfingen Griffins,11680,"Landry, Jarvis",WR,MIA,11680-0018
 2016-07-14T13:48:37Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,11673,"Benjamin, Kelvin",WR,CAR,11673-0029
