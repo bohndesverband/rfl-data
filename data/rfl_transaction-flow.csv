@@ -1,0 +1,604 @@
+timestamp,type,type_desc,franchise_id,franchise_name,player_id,player_name,pos,team,trade_partner
+2017-02-18T12:57:59Z,TRADE,traded_away,0025,Hannover Eagles,11152,"Glennon, Mike",QB,TBB,0011
+2017-02-18T12:57:59Z,TRADE,traded_away,0025,Hannover Eagles,FP_0025_2018_3,NA,NA,NA,0011
+2017-02-18T12:57:59Z,TRADE,traded_for,0025,Hannover Eagles,12610,"Wentz, Carson",QB,PHI,0011
+2017-02-18T12:57:59Z,TRADE,traded_away,0004,Cleve Crusader,12205,"Funchess, Devin",WR,CAR,0018
+2017-02-18T12:57:59Z,TRADE,traded_for,0004,Cleve Crusader,12657,"Sharpe, Tajae",WR,TEN,0018
+2017-02-18T12:57:59Z,TRADE,traded_away,0011,Hannover Bengals,12610,"Wentz, Carson",QB,PHI,0025
+2017-02-18T12:57:59Z,TRADE,traded_for,0011,Hannover Bengals,11152,"Glennon, Mike",QB,TBB,0025
+2017-02-18T12:57:59Z,TRADE,traded_for,0011,Hannover Bengals,FP_0025_2018_3,NA,NA,NA,0025
+2017-02-18T12:57:59Z,TRADE,traded_away,0018,Hintertupfingen Griffins,12657,"Sharpe, Tajae",WR,TEN,0004
+2017-02-18T12:57:59Z,TRADE,traded_for,0018,Hintertupfingen Griffins,12205,"Funchess, Devin",WR,CAR,0004
+2017-02-09T16:16:20Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,12710,"Brothers, Kentrell",LB,MIN,0001
+2017-02-09T16:16:20Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,FP_0022_2017_1,NA,NA,NA,0001
+2017-02-09T16:16:20Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,FP_0010_2017_1,NA,NA,NA,0001
+2017-02-09T16:16:20Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,FP_0009_2017_2,NA,NA,NA,0001
+2017-02-09T16:16:20Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,FP_0030_2017_2,NA,NA,NA,0001
+2017-02-09T16:16:20Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,11671,"Evans, Mike",WR,TBB,0001
+2017-02-09T16:16:20Z,TRADE,traded_away,0001,Galway Buccaneers,11671,"Evans, Mike",WR,TBB,0016
+2017-02-09T16:16:20Z,TRADE,traded_for,0001,Galway Buccaneers,12710,"Brothers, Kentrell",LB,MIN,0016
+2017-02-09T16:16:20Z,TRADE,traded_for,0001,Galway Buccaneers,FP_0022_2017_1,NA,NA,NA,0016
+2017-02-09T16:16:20Z,TRADE,traded_for,0001,Galway Buccaneers,FP_0010_2017_1,NA,NA,NA,0016
+2017-02-09T16:16:20Z,TRADE,traded_for,0001,Galway Buccaneers,FP_0009_2017_2,NA,NA,NA,0016
+2017-02-09T16:16:20Z,TRADE,traded_for,0001,Galway Buccaneers,FP_0030_2017_2,NA,NA,NA,0016
+2017-02-09T15:28:23Z,TRADE,traded_away,0007,Jena Dragons,FP_0016_2017_1,NA,NA,NA,0023
+2017-02-09T15:28:23Z,TRADE,traded_for,0007,Jena Dragons,9099,"Ryan, Matt",QB,ATL,0023
+2017-02-09T15:28:23Z,TRADE,traded_for,0007,Jena Dragons,FP_0023_2017_3,NA,NA,NA,0023
+2017-02-09T15:28:23Z,TRADE,traded_away,0023,Berlin Bears,9099,"Ryan, Matt",QB,ATL,0007
+2017-02-09T15:28:23Z,TRADE,traded_away,0023,Berlin Bears,FP_0023_2017_3,NA,NA,NA,0007
+2017-02-09T15:28:23Z,TRADE,traded_for,0023,Berlin Bears,FP_0016_2017_1,NA,NA,NA,0007
+2017-02-09T13:25:55Z,TRADE,traded_away,0012,Wüterich Packers,9853,"Hughes, Jerry",LB,BUF,0005
+2017-02-09T13:25:55Z,TRADE,traded_for,0012,Wüterich Packers,12278,"Golden, Markus",LB,ARI,0005
+2017-02-09T13:25:55Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,11706,"Clowney, Jadeveon",LB,HOU,0023
+2017-02-09T13:25:55Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,FP_0029_2018_4,NA,NA,NA,0023
+2017-02-09T13:25:55Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,7942,"Sproles, Darren",RB,PHI,0023
+2017-02-09T13:25:55Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,9041,"Avril, Cliff",DE,SEA,0023
+2017-02-09T13:25:55Z,TRADE,traded_away,0033,Dresden Giants,11975,"Gabriel, Taylor",WR,ATL,0005
+2017-02-09T13:25:55Z,TRADE,traded_for,0033,Dresden Giants,10983,"Hogan, Chris",WR,NEP,0005
+2017-02-09T13:25:55Z,TRADE,traded_for,0033,Dresden Giants,FP_0014_2017_6,NA,NA,NA,0005
+2017-02-09T13:25:55Z,TRADE,traded_away,0005,G-Town Pandas,12278,"Golden, Markus",LB,ARI,0012
+2017-02-09T13:25:55Z,TRADE,traded_for,0005,G-Town Pandas,9853,"Hughes, Jerry",LB,BUF,0012
+2017-02-09T13:25:55Z,TRADE,traded_away,0023,Berlin Bears,7942,"Sproles, Darren",RB,PHI,0029
+2017-02-09T13:25:55Z,TRADE,traded_away,0023,Berlin Bears,9041,"Avril, Cliff",DE,SEA,0029
+2017-02-09T13:25:55Z,TRADE,traded_for,0023,Berlin Bears,11706,"Clowney, Jadeveon",LB,HOU,0029
+2017-02-09T13:25:55Z,TRADE,traded_for,0023,Berlin Bears,FP_0029_2018_4,NA,NA,NA,0029
+2017-02-09T13:25:55Z,TRADE,traded_away,0005,G-Town Pandas,10983,"Hogan, Chris",WR,NEP,0033
+2017-02-09T13:25:55Z,TRADE,traded_away,0005,G-Town Pandas,FP_0014_2017_6,NA,NA,NA,0033
+2017-02-09T13:25:55Z,TRADE,traded_for,0005,G-Town Pandas,11975,"Gabriel, Taylor",WR,ATL,0033
+2017-02-08T23:02:40Z,TRADE,traded_away,0008,Dortmund Packers,12648,"Doctson, Josh",WR,WAS,0005
+2017-02-08T23:02:40Z,TRADE,traded_for,0008,Dortmund Packers,9122,"Forte, Matt",RB,NYJ,0005
+2017-02-08T23:02:40Z,TRADE,traded_for,0008,Dortmund Packers,12731,"Rogers, Eli",WR,PIT,0005
+2017-02-08T23:02:40Z,TRADE,traded_away,0005,G-Town Pandas,9122,"Forte, Matt",RB,NYJ,0008
+2017-02-08T23:02:40Z,TRADE,traded_away,0005,G-Town Pandas,12731,"Rogers, Eli",WR,PIT,0008
+2017-02-08T23:02:40Z,TRADE,traded_for,0005,G-Town Pandas,12648,"Doctson, Josh",WR,WAS,0008
+2017-02-08T22:57:39Z,TRADE,traded_away,0014,Deevillage Moonwalkers,11975,"Gabriel, Taylor",WR,ATL,0001
+2017-02-08T22:57:39Z,TRADE,traded_for,0014,Deevillage Moonwalkers,FP_0001_2017_5,NA,NA,NA,0001
+2017-02-08T22:57:39Z,TRADE,traded_for,0014,Deevillage Moonwalkers,FP_0001_2017_6,NA,NA,NA,0001
+2017-02-08T22:57:39Z,TRADE,traded_away,0001,Galway Buccaneers,FP_0001_2017_5,NA,NA,NA,0014
+2017-02-08T22:57:39Z,TRADE,traded_away,0001,Galway Buccaneers,FP_0001_2017_6,NA,NA,NA,0014
+2017-02-08T22:57:39Z,TRADE,traded_for,0001,Galway Buccaneers,11975,"Gabriel, Taylor",WR,ATL,0014
+2017-02-07T19:28:06Z,TRADE,traded_away,0030,Essen Outlaws,FP_0030_2017_2,NA,NA,NA,0016
+2017-02-07T19:28:06Z,TRADE,traded_away,0030,Essen Outlaws,FP_0030_2018_1,NA,NA,NA,0016
+2017-02-07T19:28:06Z,TRADE,traded_for,0030,Essen Outlaws,9099,"Ryan, Matt",QB,ATL,0016
+2017-02-07T19:28:06Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,9099,"Ryan, Matt",QB,ATL,0030
+2017-02-07T19:28:06Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,FP_0030_2017_2,NA,NA,NA,0030
+2017-02-07T19:28:06Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,FP_0030_2018_1,NA,NA,NA,0030
+2017-02-05T21:01:00Z,TRADE,traded_away,0008,Dortmund Packers,12655,"Carroo, Leonte",WR,MIA,0005
+2017-02-05T21:01:00Z,TRADE,traded_for,0008,Dortmund Packers,12708,"Perry, Joshua",LB,SDC,0005
+2017-02-05T21:01:00Z,TRADE,traded_away,0017,Kiel Baltic Seagulls,FP_0017_2017_6,NA,NA,NA,0005
+2017-02-05T21:01:00Z,TRADE,traded_for,0017,Kiel Baltic Seagulls,11746,"West, Terrance",RB,BAL,0005
+2017-02-05T21:01:00Z,TRADE,traded_away,0005,G-Town Pandas,12708,"Perry, Joshua",LB,SDC,0008
+2017-02-05T21:01:00Z,TRADE,traded_for,0005,G-Town Pandas,12655,"Carroo, Leonte",WR,MIA,0008
+2017-02-05T21:01:00Z,TRADE,traded_away,0005,G-Town Pandas,11746,"West, Terrance",RB,BAL,0017
+2017-02-05T21:01:00Z,TRADE,traded_for,0005,G-Town Pandas,FP_0017_2017_6,NA,NA,NA,0017
+2017-02-01T04:10:02Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,10300,"Rodgers, Jacquizz",RB,TBB,0023
+2017-02-01T04:10:02Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,9693,"Woodhead, Danny",RB,SDC,0023
+2017-02-01T04:10:02Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,FP_0023_2017_7,NA,NA,NA,0023
+2017-02-01T04:10:02Z,TRADE,traded_away,0008,Dortmund Packers,12627,"Prosise, C.J.",RB,SEA,0029
+2017-02-01T04:10:02Z,TRADE,traded_away,0008,Dortmund Packers,12676,"Henry, Hunter",TE,SDC,0029
+2017-02-01T04:10:02Z,TRADE,traded_for,0008,Dortmund Packers,10752,"Branch, Andre",DE,MIA,0029
+2017-02-01T04:10:02Z,TRADE,traded_for,0008,Dortmund Packers,11720,"Barr, Anthony",LB,MIN,0029
+2017-02-01T04:10:02Z,TRADE,traded_away,0023,Berlin Bears,9693,"Woodhead, Danny",RB,SDC,0029
+2017-02-01T04:10:02Z,TRADE,traded_away,0023,Berlin Bears,FP_0023_2017_7,NA,NA,NA,0029
+2017-02-01T04:10:02Z,TRADE,traded_for,0023,Berlin Bears,10300,"Rodgers, Jacquizz",RB,TBB,0029
+2017-02-01T04:10:02Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,10752,"Branch, Andre",DE,MIA,0008
+2017-02-01T04:10:02Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,11720,"Barr, Anthony",LB,MIN,0008
+2017-02-01T04:10:02Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,12627,"Prosise, C.J.",RB,SEA,0008
+2017-02-01T04:10:02Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,12676,"Henry, Hunter",TE,SDC,0008
+2017-01-28T13:56:05Z,TRADE,traded_away,0033,Dresden Giants,12087,"Davis, Todd",LB,DEN,0014
+2017-01-28T13:56:05Z,TRADE,traded_for,0033,Dresden Giants,11695,"Ebron, Eric",TE,DET,0014
+2017-01-28T13:56:05Z,TRADE,traded_away,0014,Deevillage Moonwalkers,11695,"Ebron, Eric",TE,DET,0033
+2017-01-28T13:56:05Z,TRADE,traded_for,0014,Deevillage Moonwalkers,12087,"Davis, Todd",LB,DEN,0033
+2017-01-24T20:12:16Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,11670,"Watkins, Sammy",WR,BUF,0028
+2017-01-24T20:12:16Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,11232,"Hopkins, DeAndre",WR,HOU,0028
+2017-01-24T20:12:16Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,FP_0029_2017_3,NA,NA,NA,0028
+2017-01-24T20:12:16Z,TRADE,traded_away,0028,German Cats,11232,"Hopkins, DeAndre",WR,HOU,0016
+2017-01-24T20:12:16Z,TRADE,traded_away,0028,German Cats,FP_0029_2017_3,NA,NA,NA,0016
+2017-01-24T20:12:16Z,TRADE,traded_for,0028,German Cats,11670,"Watkins, Sammy",WR,BUF,0016
+2017-01-15T13:02:26Z,TRADE,traded_away,0008,Dortmund Packers,12631,"Perkins, Paul",RB,NYG,0029
+2017-01-15T13:02:26Z,TRADE,traded_for,0008,Dortmund Packers,11746,"West, Terrance",RB,BAL,0029
+2017-01-15T13:02:26Z,TRADE,traded_for,0008,Dortmund Packers,FP_0029_2017_7,NA,NA,NA,0029
+2017-01-15T13:02:26Z,TRADE,traded_away,0018,Hintertupfingen Griffins,11324,"Vaccaro, Kenny",S,NOS,0023
+2017-01-15T13:02:26Z,TRADE,traded_for,0018,Hintertupfingen Griffins,11152,"Glennon, Mike",QB,TBB,0023
+2017-01-15T13:02:26Z,TRADE,traded_for,0018,Hintertupfingen Griffins,FP_0023_2019_7,NA,NA,NA,0023
+2017-01-15T13:02:26Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,11746,"West, Terrance",RB,BAL,0008
+2017-01-15T13:02:26Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,FP_0029_2017_7,NA,NA,NA,0008
+2017-01-15T13:02:26Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,12631,"Perkins, Paul",RB,NYG,0008
+2017-01-15T13:02:26Z,TRADE,traded_away,0023,Berlin Bears,11152,"Glennon, Mike",QB,TBB,0018
+2017-01-15T13:02:26Z,TRADE,traded_away,0023,Berlin Bears,FP_0023_2019_7,NA,NA,NA,0018
+2017-01-15T13:02:26Z,TRADE,traded_for,0023,Berlin Bears,11324,"Vaccaro, Kenny",S,NOS,0018
+2017-01-06T14:10:25Z,TRADE,traded_away,0014,Deevillage Moonwalkers,12162,"Jones, Matt",RB,WAS,0018
+2017-01-06T14:10:25Z,TRADE,traded_for,0014,Deevillage Moonwalkers,10696,"Griffin III, Robert",QB,CLE,0018
+2017-01-06T14:10:25Z,TRADE,traded_away,0002,K-Town Rocketeers,9101,"Stewart, Jonathan",RB,CAR,0034
+2017-01-06T14:10:25Z,TRADE,traded_for,0002,K-Town Rocketeers,11283,"Richardson, Sheldon",DE,NYJ,0034
+2017-01-06T14:10:25Z,TRADE,traded_for,0002,K-Town Rocketeers,FP_0034_2017_3,NA,NA,NA,0034
+2017-01-06T14:10:25Z,TRADE,traded_away,0018,Hintertupfingen Griffins,10696,"Griffin III, Robert",QB,CLE,0014
+2017-01-06T14:10:25Z,TRADE,traded_for,0018,Hintertupfingen Griffins,12162,"Jones, Matt",RB,WAS,0014
+2017-01-06T14:10:25Z,TRADE,traded_away,0034,Eiterfeld Jets,11283,"Richardson, Sheldon",DE,NYJ,0002
+2017-01-06T14:10:25Z,TRADE,traded_away,0034,Eiterfeld Jets,FP_0034_2017_3,NA,NA,NA,0002
+2017-01-06T14:10:25Z,TRADE,traded_for,0034,Eiterfeld Jets,9101,"Stewart, Jonathan",RB,CAR,0002
+2017-01-04T23:25:42Z,TRADE,traded_away,0023,Berlin Bears,FP_0011_2017_1,NA,NA,NA,0001
+2017-01-04T23:25:42Z,TRADE,traded_away,0023,Berlin Bears,FP_0023_2017_2,NA,NA,NA,0001
+2017-01-04T23:25:42Z,TRADE,traded_for,0023,Berlin Bears,FP_0033_2017_1,NA,NA,NA,0001
+2017-01-04T23:25:42Z,TRADE,traded_away,0001,Galway Buccaneers,FP_0033_2017_1,NA,NA,NA,0023
+2017-01-04T23:25:42Z,TRADE,traded_for,0001,Galway Buccaneers,FP_0011_2017_1,NA,NA,NA,0023
+2017-01-04T23:25:42Z,TRADE,traded_for,0001,Galway Buccaneers,FP_0023_2017_2,NA,NA,NA,0023
+2016-12-30T23:10:22Z,TRADE,traded_away,0033,Dresden Giants,9044,"Bennett, Martellus",TE,NEP,0023
+2016-12-30T23:10:22Z,TRADE,traded_for,0033,Dresden Giants,10738,"Jones, Marvin",WR,DET,0023
+2016-12-30T23:10:22Z,TRADE,traded_away,0023,Berlin Bears,10738,"Jones, Marvin",WR,DET,0033
+2016-12-30T23:10:22Z,TRADE,traded_for,0023,Berlin Bears,9044,"Bennett, Martellus",TE,NEP,0033
+2016-11-20T12:16:49Z,TRADE,traded_away,0001,Galway Buccaneers,FP_0001_2017_7,NA,NA,NA,0029
+2016-11-20T12:16:49Z,TRADE,traded_for,0001,Galway Buccaneers,8144,"Novak, Nick",PK,HOU,0029
+2016-11-20T12:16:49Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,8144,"Novak, Nick",PK,HOU,0001
+2016-11-20T12:16:49Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,FP_0001_2017_7,NA,NA,NA,0001
+2016-11-19T23:35:55Z,TRADE,traded_away,0023,Berlin Bears,FP_0023_2017_6,NA,NA,NA,0001
+2016-11-19T23:35:55Z,TRADE,traded_for,0023,Berlin Bears,11258,"Rivera, Mychal",TE,OAK,0001
+2016-11-19T23:35:55Z,TRADE,traded_away,0001,Galway Buccaneers,11258,"Rivera, Mychal",TE,OAK,0023
+2016-11-19T23:35:55Z,TRADE,traded_for,0001,Galway Buccaneers,FP_0023_2017_6,NA,NA,NA,0023
+2016-11-19T23:33:26Z,TRADE,traded_away,0023,Berlin Bears,12677,"Hooper, Austin",TE,ATL,0018
+2016-11-19T23:33:26Z,TRADE,traded_for,0023,Berlin Bears,11717,"Jernigan, Timmy",DE,BAL,0018
+2016-11-19T23:33:26Z,TRADE,traded_for,0023,Berlin Bears,11720,"Barr, Anthony",LB,MIN,0018
+2016-11-19T23:33:26Z,TRADE,traded_away,0018,Hintertupfingen Griffins,11717,"Jernigan, Timmy",DE,BAL,0023
+2016-11-19T23:33:26Z,TRADE,traded_away,0018,Hintertupfingen Griffins,11720,"Barr, Anthony",LB,MIN,0023
+2016-11-19T23:33:26Z,TRADE,traded_for,0018,Hintertupfingen Griffins,12677,"Hooper, Austin",TE,ATL,0023
+2016-11-19T15:07:34Z,TRADE,traded_away,0023,Berlin Bears,12626,"Henry, Derrick",RB,TEN,0016
+2016-11-19T15:07:34Z,TRADE,traded_for,0023,Berlin Bears,12784,"Morrison, Antonio",LB,IND,0016
+2016-11-19T15:07:34Z,TRADE,traded_for,0023,Berlin Bears,FP_0011_2017_1,NA,NA,NA,0016
+2016-11-19T15:07:34Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,12784,"Morrison, Antonio",LB,IND,0023
+2016-11-19T15:07:34Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,FP_0011_2017_1,NA,NA,NA,0023
+2016-11-19T15:07:34Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,12626,"Henry, Derrick",RB,TEN,0023
+2016-11-19T14:55:09Z,TRADE,traded_away,0001,Galway Buccaneers,12141,"Mariota, Marcus",QB,TEN,0016
+2016-11-19T14:55:09Z,TRADE,traded_for,0001,Galway Buccaneers,12141,"Mariota, Marcus",QB,TEN,0016
+2016-11-19T14:55:09Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,12141,"Mariota, Marcus",QB,TEN,0001
+2016-11-19T14:55:09Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,12141,"Mariota, Marcus",QB,TEN,0001
+2016-11-19T14:10:53Z,TRADE,traded_away,0023,Berlin Bears,12632,"Dixon, Kenneth",RB,BAL,0001
+2016-11-19T14:10:53Z,TRADE,traded_for,0023,Berlin Bears,12164,"Davis, Mike",RB,SFO,0001
+2016-11-19T14:10:53Z,TRADE,traded_for,0023,Berlin Bears,10514,"Bellore, Nick",LB,SFO,0001
+2016-11-19T14:10:53Z,TRADE,traded_for,0023,Berlin Bears,9465,"Chung, Patrick",S,NEP,0001
+2016-11-19T14:10:53Z,TRADE,traded_for,0023,Berlin Bears,FP_0001_2017_2,NA,NA,NA,0001
+2016-11-19T14:10:53Z,TRADE,traded_away,0001,Galway Buccaneers,12164,"Davis, Mike",RB,SFO,0023
+2016-11-19T14:10:53Z,TRADE,traded_away,0001,Galway Buccaneers,10514,"Bellore, Nick",LB,SFO,0023
+2016-11-19T14:10:53Z,TRADE,traded_away,0001,Galway Buccaneers,9465,"Chung, Patrick",S,NEP,0023
+2016-11-19T14:10:53Z,TRADE,traded_away,0001,Galway Buccaneers,FP_0001_2017_2,NA,NA,NA,0023
+2016-11-19T14:10:53Z,TRADE,traded_for,0001,Galway Buccaneers,12632,"Dixon, Kenneth",RB,BAL,0023
+2016-11-16T12:42:11Z,TRADE,traded_away,0008,Dortmund Packers,12632,"Dixon, Kenneth",RB,BAL,0028
+2016-11-16T12:42:11Z,TRADE,traded_for,0008,Dortmund Packers,12627,"Prosise, C.J.",RB,SEA,0028
+2016-11-16T12:42:11Z,TRADE,traded_for,0008,Dortmund Packers,9250,"Garcon, Pierre",WR,WAS,0028
+2016-11-16T12:42:11Z,TRADE,traded_away,0028,German Cats,12627,"Prosise, C.J.",RB,SEA,0008
+2016-11-16T12:42:11Z,TRADE,traded_away,0028,German Cats,9250,"Garcon, Pierre",WR,WAS,0008
+2016-11-16T12:42:11Z,TRADE,traded_for,0028,German Cats,12632,"Dixon, Kenneth",RB,BAL,0008
+2016-11-15T18:51:34Z,TRADE,traded_away,0033,Dresden Giants,FP_0033_2017_3,NA,NA,NA,0020
+2016-11-15T18:51:34Z,TRADE,traded_for,0033,Dresden Giants,12912,"Richard, Jalen",RB,OAK,0020
+2016-11-15T18:51:34Z,TRADE,traded_away,0020,Nipawomsett Monsters,12912,"Richard, Jalen",RB,OAK,0033
+2016-11-15T18:51:34Z,TRADE,traded_for,0020,Nipawomsett Monsters,FP_0033_2017_3,NA,NA,NA,0033
+2016-11-11T11:08:46Z,TRADE,traded_away,0010,County Hoya Brawlers,FP_0010_2017_1,NA,NA,NA,0016
+2016-11-11T11:08:46Z,TRADE,traded_for,0010,County Hoya Brawlers,10312,"Rudolph, Kyle",TE,MIN,0016
+2016-11-11T11:08:46Z,TRADE,traded_for,0010,County Hoya Brawlers,FP_0016_2017_4,NA,NA,NA,0016
+2016-11-11T11:08:46Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,10312,"Rudolph, Kyle",TE,MIN,0010
+2016-11-11T11:08:46Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,FP_0016_2017_4,NA,NA,NA,0010
+2016-11-11T11:08:46Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,FP_0010_2017_1,NA,NA,NA,0010
+2016-11-06T16:55:18Z,TRADE,traded_away,0014,Deevillage Moonwalkers,10592,"Harris, Chris",CB,DEN,0016
+2016-11-06T16:55:18Z,TRADE,traded_for,0014,Deevillage Moonwalkers,11672,"Lee, Marqise",WR,JAC,0016
+2016-11-06T16:55:18Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,11672,"Lee, Marqise",WR,JAC,0014
+2016-11-06T16:55:18Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,10592,"Harris, Chris",CB,DEN,0014
+2016-11-06T15:32:20Z,FREE_AGENT,dropped,0020,Nipawomsett Monsters,9439,"Laurinaitis, James",LB,FA,NA
+2016-11-04T19:33:06Z,TRADE,traded_away,0022,Oberaeder Woelfe,10506,"Bailey, Dan",PK,DAL,0016
+2016-11-04T19:33:06Z,TRADE,traded_for,0022,Oberaeder Woelfe,7859,"Nugent, Mike",PK,FA,0016
+2016-11-04T19:33:06Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,7859,"Nugent, Mike",PK,FA,0022
+2016-11-04T19:33:06Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,10506,"Bailey, Dan",PK,DAL,0022
+2016-11-01T13:17:41Z,TRADE,traded_away,0033,Dresden Giants,8673,"Ginn Jr., Ted",WR,CAR,0030
+2016-11-01T13:17:41Z,TRADE,traded_for,0033,Dresden Giants,FP_0029_2017_2,NA,NA,NA,0030
+2016-11-01T13:17:41Z,TRADE,traded_for,0033,Dresden Giants,FP_0035_2017_3,NA,NA,NA,0030
+2016-11-01T13:17:41Z,TRADE,traded_away,0014,Deevillage Moonwalkers,10762,"Cox, Fletcher",DT,PHI,0024
+2016-11-01T13:17:41Z,TRADE,traded_for,0014,Deevillage Moonwalkers,FP_0024_2017_4,NA,NA,NA,0024
+2016-11-01T13:17:41Z,TRADE,traded_for,0014,Deevillage Moonwalkers,FP_0024_2017_7,NA,NA,NA,0024
+2016-11-01T13:17:41Z,TRADE,traded_away,0030,Essen Outlaws,FP_0029_2017_2,NA,NA,NA,0033
+2016-11-01T13:17:41Z,TRADE,traded_away,0030,Essen Outlaws,FP_0035_2017_3,NA,NA,NA,0033
+2016-11-01T13:17:41Z,TRADE,traded_for,0030,Essen Outlaws,8673,"Ginn Jr., Ted",WR,CAR,0033
+2016-11-01T13:17:41Z,TRADE,traded_away,0024,Lordran Sunseekers,FP_0024_2017_4,NA,NA,NA,0014
+2016-11-01T13:17:41Z,TRADE,traded_away,0024,Lordran Sunseekers,FP_0024_2017_7,NA,NA,NA,0014
+2016-11-01T13:17:41Z,TRADE,traded_for,0024,Lordran Sunseekers,10762,"Cox, Fletcher",DT,PHI,0014
+2016-10-23T18:01:30Z,TRADE,traded_away,0028,German Cats,11722,"Shazier, Ryan",LB,PIT,0005
+2016-10-23T18:01:30Z,TRADE,traded_for,0028,German Cats,12272,"McKinney, Benardrick",LB,HOU,0005
+2016-10-23T18:01:30Z,TRADE,traded_for,0028,German Cats,FP_0005_2017_3,NA,NA,NA,0005
+2016-10-23T18:01:30Z,TRADE,traded_away,0005,G-Town Pandas,12272,"McKinney, Benardrick",LB,HOU,0028
+2016-10-23T18:01:30Z,TRADE,traded_away,0005,G-Town Pandas,FP_0005_2017_3,NA,NA,NA,0028
+2016-10-23T18:01:30Z,TRADE,traded_for,0005,G-Town Pandas,11722,"Shazier, Ryan",LB,PIT,0028
+2016-10-21T20:18:52Z,TRADE,traded_away,0024,Lordran Sunseekers,12620,"Prescott, Dak",QB,DAL,0020
+2016-10-21T20:18:52Z,TRADE,traded_for,0024,Lordran Sunseekers,FP_0014_2017_1,NA,NA,NA,0020
+2016-10-21T20:18:52Z,TRADE,traded_for,0024,Lordran Sunseekers,FP_0020_2017_2,NA,NA,NA,0020
+2016-10-21T20:18:52Z,TRADE,traded_away,0020,Nipawomsett Monsters,FP_0014_2017_1,NA,NA,NA,0024
+2016-10-21T20:18:52Z,TRADE,traded_away,0020,Nipawomsett Monsters,FP_0020_2017_2,NA,NA,NA,0024
+2016-10-21T20:18:52Z,TRADE,traded_for,0020,Nipawomsett Monsters,12620,"Prescott, Dak",QB,DAL,0024
+2016-10-19T14:53:56Z,TRADE,traded_away,0017,Kiel Baltic Seagulls,12205,"Funchess, Devin",WR,CAR,0025
+2016-10-19T14:53:56Z,TRADE,traded_for,0017,Kiel Baltic Seagulls,11211,"Williams, Terrance",WR,DAL,0025
+2016-10-19T14:53:56Z,TRADE,traded_away,0025,Hannover Eagles,11211,"Williams, Terrance",WR,DAL,0017
+2016-10-19T14:53:56Z,TRADE,traded_for,0025,Hannover Eagles,12205,"Funchess, Devin",WR,CAR,0017
+2016-10-12T17:09:35Z,TRADE,traded_away,0030,Essen Outlaws,11674,"Cooks, Brandin",WR,NOS,0001
+2016-10-12T17:09:35Z,TRADE,traded_away,0030,Essen Outlaws,FP_0033_2017_1,NA,NA,NA,0001
+2016-10-12T17:09:35Z,TRADE,traded_away,0030,Essen Outlaws,FP_0030_2017_3,NA,NA,NA,0001
+2016-10-12T17:09:35Z,TRADE,traded_for,0030,Essen Outlaws,12151,"Gordon, Melvin",RB,SDC,0001
+2016-10-12T17:09:35Z,TRADE,traded_away,0001,Galway Buccaneers,12151,"Gordon, Melvin",RB,SDC,0030
+2016-10-12T17:09:35Z,TRADE,traded_for,0001,Galway Buccaneers,11674,"Cooks, Brandin",WR,NOS,0030
+2016-10-12T17:09:35Z,TRADE,traded_for,0001,Galway Buccaneers,FP_0033_2017_1,NA,NA,NA,0030
+2016-10-12T17:09:35Z,TRADE,traded_for,0001,Galway Buccaneers,FP_0030_2017_3,NA,NA,NA,0030
+2016-10-11T19:43:24Z,TRADE,traded_away,0020,Nipawomsett Monsters,11188,"Riddick, Theo",RB,DET,0030
+2016-10-11T19:43:24Z,TRADE,traded_for,0020,Nipawomsett Monsters,FP_0014_2017_1,NA,NA,NA,0030
+2016-10-11T19:43:24Z,TRADE,traded_for,0020,Nipawomsett Monsters,FP_0018_2017_2,NA,NA,NA,0030
+2016-10-11T19:43:24Z,TRADE,traded_for,0020,Nipawomsett Monsters,FP_0018_2017_3,NA,NA,NA,0030
+2016-10-11T19:43:24Z,TRADE,traded_for,0020,Nipawomsett Monsters,FP_0020_2017_3,NA,NA,NA,0030
+2016-10-11T19:43:24Z,TRADE,traded_away,0030,Essen Outlaws,FP_0014_2017_1,NA,NA,NA,0020
+2016-10-11T19:43:24Z,TRADE,traded_away,0030,Essen Outlaws,FP_0018_2017_2,NA,NA,NA,0020
+2016-10-11T19:43:24Z,TRADE,traded_away,0030,Essen Outlaws,FP_0018_2017_3,NA,NA,NA,0020
+2016-10-11T19:43:24Z,TRADE,traded_away,0030,Essen Outlaws,FP_0020_2017_3,NA,NA,NA,0020
+2016-10-11T19:43:24Z,TRADE,traded_for,0030,Essen Outlaws,11188,"Riddick, Theo",RB,DET,0020
+2016-10-09T16:45:53Z,TRADE,traded_away,0002,K-Town Rocketeers,12173,"Brown, Malcom",DT,NEP,0005
+2016-10-09T16:45:53Z,TRADE,traded_for,0002,K-Town Rocketeers,11269,"Taylor, Devin",DE,DET,0005
+2016-10-09T16:45:53Z,TRADE,traded_away,0036,Team Rocket,10308,"Cobb, Randall",WR,GBP,0025
+2016-10-09T16:45:53Z,TRADE,traded_for,0036,Team Rocket,11951,"Snead, Willie",WR,NOS,0025
+2016-10-09T16:45:53Z,TRADE,traded_away,0005,G-Town Pandas,11269,"Taylor, Devin",DE,DET,0002
+2016-10-09T16:45:53Z,TRADE,traded_for,0005,G-Town Pandas,12173,"Brown, Malcom",DT,NEP,0002
+2016-10-09T16:45:53Z,TRADE,traded_away,0025,Hannover Eagles,11951,"Snead, Willie",WR,NOS,0036
+2016-10-09T16:45:53Z,TRADE,traded_for,0025,Hannover Eagles,10308,"Cobb, Randall",WR,GBP,0036
+2016-10-09T15:41:59Z,TRADE,traded_away,0005,G-Town Pandas,12173,"Brown, Malcom",DT,NEP,0002
+2016-10-09T15:41:59Z,TRADE,traded_for,0005,G-Town Pandas,FP_0002_2017_2,NA,NA,NA,0002
+2016-10-09T15:41:59Z,TRADE,traded_away,0002,K-Town Rocketeers,FP_0002_2017_2,NA,NA,NA,0005
+2016-10-09T15:41:59Z,TRADE,traded_for,0002,K-Town Rocketeers,12173,"Brown, Malcom",DT,NEP,0005
+2016-10-09T13:42:13Z,TRADE,traded_away,0005,G-Town Pandas,10815,"Vernon, Olivier",DE,NYG,0015
+2016-10-09T13:42:13Z,TRADE,traded_away,0005,G-Town Pandas,FP_0033_2017_2,NA,NA,NA,0015
+2016-10-09T13:42:13Z,TRADE,traded_for,0005,G-Town Pandas,11267,"Ansah, Ezekiel",DE,DET,0015
+2016-10-09T13:42:13Z,TRADE,traded_away,0015,Las Vegas Saints,11267,"Ansah, Ezekiel",DE,DET,0005
+2016-10-09T13:42:13Z,TRADE,traded_for,0015,Las Vegas Saints,10815,"Vernon, Olivier",DE,NYG,0005
+2016-10-09T13:42:13Z,TRADE,traded_for,0015,Las Vegas Saints,FP_0033_2017_2,NA,NA,NA,0005
+2016-10-07T20:54:40Z,TRADE,traded_away,0009,Syke Steelers,FP_0009_2017_1,NA,NA,NA,0016
+2016-10-07T20:54:40Z,TRADE,traded_away,0009,Syke Steelers,FP_0009_2017_2,NA,NA,NA,0016
+2016-10-07T20:54:40Z,TRADE,traded_for,0009,Syke Steelers,11668,"Crowell, Isaiah",RB,CLE,0016
+2016-10-07T20:54:40Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,11668,"Crowell, Isaiah",RB,CLE,0009
+2016-10-07T20:54:40Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,FP_0009_2017_1,NA,NA,NA,0009
+2016-10-07T20:54:40Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,FP_0009_2017_2,NA,NA,NA,0009
+2016-10-07T09:42:21Z,TRADE,traded_away,0009,Syke Steelers,8268,"Williams, DeAngelo",RB,PIT,0029
+2016-10-07T09:42:21Z,TRADE,traded_for,0009,Syke Steelers,11747,"White, James",RB,NEP,0029
+2016-10-07T09:42:21Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,11747,"White, James",RB,NEP,0009
+2016-10-07T09:42:21Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,8268,"Williams, DeAngelo",RB,PIT,0009
+2016-10-06T12:24:36Z,TRADE,traded_away,0030,Essen Outlaws,12140,"Winston, Jameis",QB,TBB,0029
+2016-10-06T12:24:36Z,TRADE,traded_away,0030,Essen Outlaws,12669,"Mitchell, Malcolm",WR,NEP,0029
+2016-10-06T12:24:36Z,TRADE,traded_for,0030,Essen Outlaws,10413,"Taylor, Tyrod",QB,BUF,0029
+2016-10-06T12:24:36Z,TRADE,traded_for,0030,Essen Outlaws,FP_0014_2017_1,NA,NA,NA,0029
+2016-10-06T12:24:36Z,TRADE,traded_for,0030,Essen Outlaws,FP_0029_2017_2,NA,NA,NA,0029
+2016-10-06T12:24:36Z,TRADE,traded_away,0030,Essen Outlaws,11679,"Beckham, Odell",WR,NYG,0029
+2016-10-06T12:24:36Z,TRADE,traded_for,0030,Essen Outlaws,11674,"Cooks, Brandin",WR,NOS,0029
+2016-10-06T12:24:36Z,TRADE,traded_for,0030,Essen Outlaws,FP_0033_2017_1,NA,NA,NA,0029
+2016-10-06T12:24:36Z,TRADE,traded_for,0030,Essen Outlaws,FP_0018_2017_2,NA,NA,NA,0029
+2016-10-06T12:24:36Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,10413,"Taylor, Tyrod",QB,BUF,0030
+2016-10-06T12:24:36Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,FP_0014_2017_1,NA,NA,NA,0030
+2016-10-06T12:24:36Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,FP_0029_2017_2,NA,NA,NA,0030
+2016-10-06T12:24:36Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,12140,"Winston, Jameis",QB,TBB,0030
+2016-10-06T12:24:36Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,12669,"Mitchell, Malcolm",WR,NEP,0030
+2016-10-06T12:24:36Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,11674,"Cooks, Brandin",WR,NOS,0030
+2016-10-06T12:24:36Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,FP_0033_2017_1,NA,NA,NA,0030
+2016-10-06T12:24:36Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,FP_0018_2017_2,NA,NA,NA,0030
+2016-10-06T12:24:36Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,11679,"Beckham, Odell",WR,NYG,0030
+2016-10-05T14:16:59Z,TRADE,traded_away,0030,Essen Outlaws,FP_0030_2017_1,NA,NA,NA,0018
+2016-10-05T14:16:59Z,TRADE,traded_for,0030,Essen Outlaws,11675,"Adams, Davante",WR,GBP,0018
+2016-10-05T14:16:59Z,TRADE,traded_for,0030,Essen Outlaws,FP_0018_2017_3,NA,NA,NA,0018
+2016-10-05T14:16:59Z,TRADE,traded_for,0030,Essen Outlaws,FP_0035_2017_3,NA,NA,NA,0018
+2016-10-05T14:16:59Z,TRADE,traded_for,0030,Essen Outlaws,FP_0020_2017_3,NA,NA,NA,0018
+2016-10-05T14:16:59Z,TRADE,traded_away,0018,Hintertupfingen Griffins,11675,"Adams, Davante",WR,GBP,0030
+2016-10-05T14:16:59Z,TRADE,traded_away,0018,Hintertupfingen Griffins,FP_0018_2017_3,NA,NA,NA,0030
+2016-10-05T14:16:59Z,TRADE,traded_away,0018,Hintertupfingen Griffins,FP_0035_2017_3,NA,NA,NA,0030
+2016-10-05T14:16:59Z,TRADE,traded_away,0018,Hintertupfingen Griffins,FP_0020_2017_3,NA,NA,NA,0030
+2016-10-05T14:16:59Z,TRADE,traded_for,0018,Hintertupfingen Griffins,FP_0030_2017_1,NA,NA,NA,0030
+2016-10-04T20:34:52Z,TRADE,traded_away,0001,Galway Buccaneers,12157,"Johnson, Duke",RB,CLE,0007
+2016-10-04T20:34:52Z,TRADE,traded_away,0001,Galway Buccaneers,FP_0001_2017_1,NA,NA,NA,0007
+2016-10-04T20:34:52Z,TRADE,traded_away,0001,Galway Buccaneers,FP_0001_2017_3,NA,NA,NA,0007
+2016-10-04T20:34:52Z,TRADE,traded_for,0001,Galway Buccaneers,10768,"David, Lavonte",LB,TBB,0007
+2016-10-04T20:34:52Z,TRADE,traded_for,0001,Galway Buccaneers,FP_0007_2017_5,NA,NA,NA,0007
+2016-10-04T20:34:52Z,TRADE,traded_away,0007,Jena Dragons,10768,"David, Lavonte",LB,TBB,0001
+2016-10-04T20:34:52Z,TRADE,traded_away,0007,Jena Dragons,FP_0007_2017_5,NA,NA,NA,0001
+2016-10-04T20:34:52Z,TRADE,traded_for,0007,Jena Dragons,12157,"Johnson, Duke",RB,CLE,0001
+2016-10-04T20:34:52Z,TRADE,traded_for,0007,Jena Dragons,FP_0001_2017_1,NA,NA,NA,0001
+2016-10-04T20:34:52Z,TRADE,traded_for,0007,Jena Dragons,FP_0001_2017_3,NA,NA,NA,0001
+2016-09-29T10:57:14Z,TRADE,traded_away,0010,County Hoya Brawlers,11678,"Robinson, Allen",WR,JAC,0005
+2016-09-29T10:57:14Z,TRADE,traded_for,0010,County Hoya Brawlers,12162,"Jones, Matt",RB,WAS,0005
+2016-09-29T10:57:14Z,TRADE,traded_for,0010,County Hoya Brawlers,12391,"Williams, Tyrell",WR,SDC,0005
+2016-09-29T10:57:14Z,TRADE,traded_for,0010,County Hoya Brawlers,12231,"Thompson, Shaq",LB,CAR,0005
+2016-09-29T10:57:14Z,TRADE,traded_away,0005,G-Town Pandas,12162,"Jones, Matt",RB,WAS,0010
+2016-09-29T10:57:14Z,TRADE,traded_away,0005,G-Town Pandas,12391,"Williams, Tyrell",WR,SDC,0010
+2016-09-29T10:57:14Z,TRADE,traded_away,0005,G-Town Pandas,12231,"Thompson, Shaq",LB,CAR,0010
+2016-09-29T10:57:14Z,TRADE,traded_for,0005,G-Town Pandas,11678,"Robinson, Allen",WR,JAC,0010
+2016-09-27T09:36:52Z,TRADE,traded_away,0030,Essen Outlaws,11657,"Hyde, Carlos",RB,SFO,0018
+2016-09-27T09:36:52Z,TRADE,traded_for,0030,Essen Outlaws,12156,"Langford, Jeremy",RB,CHI,0018
+2016-09-27T09:36:52Z,TRADE,traded_for,0030,Essen Outlaws,11186,"Thompson, Chris",RB,WAS,0018
+2016-09-27T09:36:52Z,TRADE,traded_for,0030,Essen Outlaws,11199,"Ware, Spencer",RB,KCC,0018
+2016-09-27T09:36:52Z,TRADE,traded_for,0030,Essen Outlaws,FP_0018_2018_1,NA,NA,NA,0018
+2016-09-27T09:36:52Z,TRADE,traded_away,0018,Hintertupfingen Griffins,12156,"Langford, Jeremy",RB,CHI,0030
+2016-09-27T09:36:52Z,TRADE,traded_away,0018,Hintertupfingen Griffins,11186,"Thompson, Chris",RB,WAS,0030
+2016-09-27T09:36:52Z,TRADE,traded_away,0018,Hintertupfingen Griffins,11199,"Ware, Spencer",RB,KCC,0030
+2016-09-27T09:36:52Z,TRADE,traded_away,0018,Hintertupfingen Griffins,FP_0018_2018_1,NA,NA,NA,0030
+2016-09-27T09:36:52Z,TRADE,traded_for,0018,Hintertupfingen Griffins,11657,"Hyde, Carlos",RB,SFO,0030
+2016-09-27T08:55:06Z,TRADE,traded_away,0033,Dresden Giants,12688,"Buckner, DeForest",DE,SFO,0018
+2016-09-27T08:55:06Z,TRADE,traded_for,0033,Dresden Giants,FP_0018_2017_5,NA,NA,NA,0018
+2016-09-27T08:55:06Z,TRADE,traded_for,0033,Dresden Giants,FP_0014_2017_5,NA,NA,NA,0018
+2016-09-27T08:55:06Z,TRADE,traded_for,0033,Dresden Giants,FP_0018_2017_6,NA,NA,NA,0018
+2016-09-27T08:55:06Z,TRADE,traded_for,0033,Dresden Giants,FP_0018_2017_7,NA,NA,NA,0018
+2016-09-27T08:55:06Z,TRADE,traded_away,0018,Hintertupfingen Griffins,FP_0018_2017_5,NA,NA,NA,0033
+2016-09-27T08:55:06Z,TRADE,traded_away,0018,Hintertupfingen Griffins,FP_0014_2017_5,NA,NA,NA,0033
+2016-09-27T08:55:06Z,TRADE,traded_away,0018,Hintertupfingen Griffins,FP_0018_2017_6,NA,NA,NA,0033
+2016-09-27T08:55:06Z,TRADE,traded_away,0018,Hintertupfingen Griffins,FP_0018_2017_7,NA,NA,NA,0033
+2016-09-27T08:55:06Z,TRADE,traded_for,0018,Hintertupfingen Griffins,12688,"Buckner, DeForest",DE,SFO,0033
+2016-09-24T09:57:22Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,12156,"Langford, Jeremy",RB,CHI,0018
+2016-09-24T09:57:22Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,11767,"Bucannon, Deone",LB,ARI,0018
+2016-09-24T09:57:22Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,FP_0018_2017_2,NA,NA,NA,0018
+2016-09-24T09:57:22Z,TRADE,traded_away,0031,German Swans,7877,"Gore, Frank",RB,IND,0035
+2016-09-24T09:57:22Z,TRADE,traded_away,0031,German Swans,11390,"Murray, Latavius",RB,OAK,0035
+2016-09-24T09:57:22Z,TRADE,traded_for,0031,German Swans,FP_0035_2017_1,NA,NA,NA,0035
+2016-09-24T09:57:22Z,TRADE,traded_away,0023,Berlin Bears,FP_0023_2017_1,NA,NA,NA,0018
+2016-09-24T09:57:22Z,TRADE,traded_for,0023,Berlin Bears,11654,"Hill, Jeremy",RB,CIN,0018
+2016-09-24T09:57:22Z,TRADE,traded_away,0020,Nipawomsett Monsters,11186,"Thompson, Chris",RB,WAS,0018
+2016-09-24T09:57:22Z,TRADE,traded_away,0020,Nipawomsett Monsters,FP_0020_2017_3,NA,NA,NA,0018
+2016-09-24T09:57:22Z,TRADE,traded_for,0020,Nipawomsett Monsters,12178,"Coates, Sammie",WR,PIT,0018
+2016-09-24T09:57:22Z,TRADE,traded_away,0018,Hintertupfingen Griffins,11767,"Bucannon, Deone",LB,ARI,0029
+2016-09-24T09:57:22Z,TRADE,traded_away,0018,Hintertupfingen Griffins,FP_0018_2017_2,NA,NA,NA,0029
+2016-09-24T09:57:22Z,TRADE,traded_for,0018,Hintertupfingen Griffins,12156,"Langford, Jeremy",RB,CHI,0029
+2016-09-24T09:57:22Z,TRADE,traded_away,0035,Beatdown Bulldogs,FP_0035_2017_1,NA,NA,NA,0031
+2016-09-24T09:57:22Z,TRADE,traded_for,0035,Beatdown Bulldogs,7877,"Gore, Frank",RB,IND,0031
+2016-09-24T09:57:22Z,TRADE,traded_for,0035,Beatdown Bulldogs,11390,"Murray, Latavius",RB,OAK,0031
+2016-09-24T09:57:22Z,TRADE,traded_away,0018,Hintertupfingen Griffins,11654,"Hill, Jeremy",RB,CIN,0023
+2016-09-24T09:57:22Z,TRADE,traded_for,0018,Hintertupfingen Griffins,FP_0023_2017_1,NA,NA,NA,0023
+2016-09-24T09:57:22Z,TRADE,traded_away,0018,Hintertupfingen Griffins,12178,"Coates, Sammie",WR,PIT,0020
+2016-09-24T09:57:22Z,TRADE,traded_for,0018,Hintertupfingen Griffins,11186,"Thompson, Chris",RB,WAS,0020
+2016-09-24T09:57:22Z,TRADE,traded_for,0018,Hintertupfingen Griffins,FP_0020_2017_3,NA,NA,NA,0020
+2016-09-15T19:46:04Z,TRADE,traded_away,0036,Team Rocket,FP_0036_2017_7,NA,NA,NA,0024
+2016-09-15T19:46:04Z,TRADE,traded_for,0036,Team Rocket,10265,"Dareus, Marcell",DT,BUF,0024
+2016-09-15T19:46:04Z,TRADE,traded_away,0024,Lordran Sunseekers,10265,"Dareus, Marcell",DT,BUF,0036
+2016-09-15T19:46:04Z,TRADE,traded_for,0024,Lordran Sunseekers,FP_0036_2017_7,NA,NA,NA,0036
+2016-09-14T15:17:25Z,TRADE,traded_away,0018,Hintertupfingen Griffins,FP_0022_2017_1,NA,NA,NA,0016
+2016-09-14T15:17:25Z,TRADE,traded_away,0018,Hintertupfingen Griffins,FP_0018_2018_2,NA,NA,NA,0016
+2016-09-14T15:17:25Z,TRADE,traded_for,0018,Hintertupfingen Griffins,12657,"Sharpe, Tajae",WR,TEN,0016
+2016-09-14T15:17:25Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,12657,"Sharpe, Tajae",WR,TEN,0018
+2016-09-14T15:17:25Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,FP_0022_2017_1,NA,NA,NA,0018
+2016-09-14T15:17:25Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,FP_0018_2018_2,NA,NA,NA,0018
+2016-09-13T19:22:39Z,TRADE,traded_away,0022,Oberaeder Woelfe,FP_0022_2017_1,NA,NA,NA,0018
+2016-09-13T19:22:39Z,TRADE,traded_for,0022,Oberaeder Woelfe,10770,"Brown, Zach",LB,BUF,0018
+2016-09-13T19:22:39Z,TRADE,traded_for,0022,Oberaeder Woelfe,11303,"Hodges, Gerald",LB,SFO,0018
+2016-09-13T19:22:39Z,TRADE,traded_for,0022,Oberaeder Woelfe,11498,"Addae, Jahleel",S,SDC,0018
+2016-09-13T19:22:39Z,TRADE,traded_for,0022,Oberaeder Woelfe,12308,"Amos, Adrian",S,CHI,0018
+2016-09-13T19:22:39Z,TRADE,traded_away,0018,Hintertupfingen Griffins,10770,"Brown, Zach",LB,BUF,0022
+2016-09-13T19:22:39Z,TRADE,traded_away,0018,Hintertupfingen Griffins,11303,"Hodges, Gerald",LB,SFO,0022
+2016-09-13T19:22:39Z,TRADE,traded_away,0018,Hintertupfingen Griffins,11498,"Addae, Jahleel",S,SDC,0022
+2016-09-13T19:22:39Z,TRADE,traded_away,0018,Hintertupfingen Griffins,12308,"Amos, Adrian",S,CHI,0022
+2016-09-13T19:22:39Z,TRADE,traded_for,0018,Hintertupfingen Griffins,FP_0022_2017_1,NA,NA,NA,0022
+2016-09-07T21:27:07Z,TRADE,traded_away,0007,Jena Dragons,9902,"Gronkowski, Rob",TE,NEP,0016
+2016-09-07T21:27:07Z,TRADE,traded_for,0007,Jena Dragons,12179,"Strong, Jaelen",WR,HOU,0016
+2016-09-07T21:27:07Z,TRADE,traded_for,0007,Jena Dragons,FP_0016_2017_1,NA,NA,NA,0016
+2016-09-07T21:27:07Z,TRADE,traded_for,0007,Jena Dragons,FP_0016_2017_3,NA,NA,NA,0016
+2016-09-07T21:27:07Z,TRADE,traded_for,0007,Jena Dragons,FP_0016_2018_1,NA,NA,NA,0016
+2016-09-07T21:27:07Z,TRADE,traded_for,0007,Jena Dragons,FP_0016_2018_2,NA,NA,NA,0016
+2016-09-07T21:27:07Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,12179,"Strong, Jaelen",WR,HOU,0007
+2016-09-07T21:27:07Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,FP_0016_2017_1,NA,NA,NA,0007
+2016-09-07T21:27:07Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,FP_0016_2017_3,NA,NA,NA,0007
+2016-09-07T21:27:07Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,FP_0016_2018_1,NA,NA,NA,0007
+2016-09-07T21:27:07Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,FP_0016_2018_2,NA,NA,NA,0007
+2016-09-07T21:27:07Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,9902,"Gronkowski, Rob",TE,NEP,0007
+2016-09-04T22:21:12Z,TRADE,traded_away,0002,K-Town Rocketeers,12239,"Kendricks, Eric",LB,MIN,0025
+2016-09-04T22:21:12Z,TRADE,traded_for,0002,K-Town Rocketeers,10807,"Kendricks, Mychal",LB,PHI,0025
+2016-09-04T22:21:12Z,TRADE,traded_for,0002,K-Town Rocketeers,12245,"Peters, Marcus",CB,KCC,0025
+2016-09-04T22:21:12Z,TRADE,traded_away,0025,Hannover Eagles,10807,"Kendricks, Mychal",LB,PHI,0002
+2016-09-04T22:21:12Z,TRADE,traded_away,0025,Hannover Eagles,12245,"Peters, Marcus",CB,KCC,0002
+2016-09-04T22:21:12Z,TRADE,traded_for,0025,Hannover Eagles,12239,"Kendricks, Eric",LB,MIN,0002
+2016-09-04T17:10:16Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,9308,"Amendola, Danny",WR,NEP,0035
+2016-09-04T17:10:16Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,12177,"White, Kevin",WR,CHI,0035
+2016-09-04T17:10:16Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,FP_0029_2017_1,NA,NA,NA,0035
+2016-09-04T17:10:16Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,11192,"Bell, Le'Veon",RB,PIT,0035
+2016-09-04T17:10:16Z,TRADE,traded_away,0035,Beatdown Bulldogs,11192,"Bell, Le'Veon",RB,PIT,0029
+2016-09-04T17:10:16Z,TRADE,traded_for,0035,Beatdown Bulldogs,9308,"Amendola, Danny",WR,NEP,0029
+2016-09-04T17:10:16Z,TRADE,traded_for,0035,Beatdown Bulldogs,12177,"White, Kevin",WR,CHI,0029
+2016-09-04T17:10:16Z,TRADE,traded_for,0035,Beatdown Bulldogs,FP_0029_2017_1,NA,NA,NA,0029
+2016-09-04T16:41:53Z,TRADE,traded_away,0014,Deevillage Moonwalkers,10262,"Gabbert, Blaine",QB,SFO,0018
+2016-09-04T16:41:53Z,TRADE,traded_away,0014,Deevillage Moonwalkers,12381,"Siemian, Trevor",QB,DEN,0018
+2016-09-04T16:41:53Z,TRADE,traded_away,0014,Deevillage Moonwalkers,FP_0014_2017_5,NA,NA,NA,0018
+2016-09-04T16:41:53Z,TRADE,traded_for,0014,Deevillage Moonwalkers,9817,"Bradford, Sam",QB,MIN,0018
+2016-09-04T16:41:53Z,TRADE,traded_for,0014,Deevillage Moonwalkers,FP_0018_2017_4,NA,NA,NA,0018
+2016-09-04T16:41:53Z,TRADE,traded_away,0018,Hintertupfingen Griffins,9817,"Bradford, Sam",QB,MIN,0014
+2016-09-04T16:41:53Z,TRADE,traded_away,0018,Hintertupfingen Griffins,FP_0018_2017_4,NA,NA,NA,0014
+2016-09-04T16:41:53Z,TRADE,traded_for,0018,Hintertupfingen Griffins,10262,"Gabbert, Blaine",QB,SFO,0014
+2016-09-04T16:41:53Z,TRADE,traded_for,0018,Hintertupfingen Griffins,12381,"Siemian, Trevor",QB,DEN,0014
+2016-09-04T16:41:53Z,TRADE,traded_for,0018,Hintertupfingen Griffins,FP_0014_2017_5,NA,NA,NA,0014
+2016-09-03T21:47:22Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,11688,"Bryant, Martavis",WR,PIT,0009
+2016-09-03T21:47:22Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,FP_0029_2017_5,NA,NA,NA,0009
+2016-09-03T21:47:22Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,11193,"Bernard, Giovani",RB,CIN,0009
+2016-09-03T21:47:22Z,TRADE,traded_away,0008,Dortmund Packers,12612,"Lynch, Paxton",QB,DEN,0005
+2016-09-03T21:47:22Z,TRADE,traded_away,0008,Dortmund Packers,FP_0008_2017_2,NA,NA,NA,0005
+2016-09-03T21:47:22Z,TRADE,traded_for,0008,Dortmund Packers,10697,"Tannehill, Ryan",QB,MIA,0005
+2016-09-03T21:47:22Z,TRADE,traded_away,0009,Syke Steelers,11193,"Bernard, Giovani",RB,CIN,0029
+2016-09-03T21:47:22Z,TRADE,traded_for,0009,Syke Steelers,11688,"Bryant, Martavis",WR,PIT,0029
+2016-09-03T21:47:22Z,TRADE,traded_for,0009,Syke Steelers,FP_0029_2017_5,NA,NA,NA,0029
+2016-09-03T21:47:22Z,TRADE,traded_away,0005,G-Town Pandas,10697,"Tannehill, Ryan",QB,MIA,0008
+2016-09-03T21:47:22Z,TRADE,traded_for,0005,G-Town Pandas,12612,"Lynch, Paxton",QB,DEN,0008
+2016-09-03T21:47:22Z,TRADE,traded_for,0005,G-Town Pandas,FP_0008_2017_2,NA,NA,NA,0008
+2016-09-03T12:16:59Z,TRADE,traded_away,0014,Deevillage Moonwalkers,12272,"McKinney, Benardrick",LB,HOU,0029
+2016-09-03T12:16:59Z,TRADE,traded_away,0014,Deevillage Moonwalkers,FP_0014_2017_1,NA,NA,NA,0029
+2016-09-03T12:16:59Z,TRADE,traded_for,0014,Deevillage Moonwalkers,9662,"Edelman, Julian",WR,NEP,0029
+2016-09-03T12:16:59Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,11671,"Evans, Mike",WR,TBB,0029
+2016-09-03T12:16:59Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,12625,"Elliott, Ezekiel",RB,DAL,0029
+2016-09-03T12:16:59Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,9662,"Edelman, Julian",WR,NEP,0014
+2016-09-03T12:16:59Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,12272,"McKinney, Benardrick",LB,HOU,0014
+2016-09-03T12:16:59Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,FP_0014_2017_1,NA,NA,NA,0014
+2016-09-03T12:16:59Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,12625,"Elliott, Ezekiel",RB,DAL,0016
+2016-09-03T12:16:59Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,11671,"Evans, Mike",WR,TBB,0016
+2016-09-01T19:51:05Z,TRADE,traded_away,0023,Berlin Bears,7836,"Rodgers, Aaron",QB,GBP,0005
+2016-09-01T19:51:05Z,TRADE,traded_for,0023,Berlin Bears,11152,"Glennon, Mike",QB,TBB,0005
+2016-09-01T19:51:05Z,TRADE,traded_for,0023,Berlin Bears,11283,"Richardson, Sheldon",DE,NYJ,0005
+2016-09-01T19:51:05Z,TRADE,traded_for,0023,Berlin Bears,10774,"Hightower, Dont'a",LB,NEP,0005
+2016-09-01T19:51:05Z,TRADE,traded_away,0014,Deevillage Moonwalkers,FP_0014_2017_4,NA,NA,NA,0024
+2016-09-01T19:51:05Z,TRADE,traded_for,0014,Deevillage Moonwalkers,12381,"Siemian, Trevor",QB,DEN,0024
+2016-09-01T19:51:05Z,TRADE,traded_away,0005,G-Town Pandas,11152,"Glennon, Mike",QB,TBB,0023
+2016-09-01T19:51:05Z,TRADE,traded_away,0005,G-Town Pandas,11283,"Richardson, Sheldon",DE,NYJ,0023
+2016-09-01T19:51:05Z,TRADE,traded_away,0005,G-Town Pandas,10774,"Hightower, Dont'a",LB,NEP,0023
+2016-09-01T19:51:05Z,TRADE,traded_for,0005,G-Town Pandas,7836,"Rodgers, Aaron",QB,GBP,0023
+2016-09-01T19:51:05Z,TRADE,traded_away,0024,Lordran Sunseekers,12381,"Siemian, Trevor",QB,DEN,0014
+2016-09-01T19:51:05Z,TRADE,traded_for,0024,Lordran Sunseekers,FP_0014_2017_4,NA,NA,NA,0014
+2016-08-31T13:02:41Z,TRADE,traded_away,0014,Deevillage Moonwalkers,FP_0014_2017_6,NA,NA,NA,0005
+2016-08-31T13:02:41Z,TRADE,traded_for,0014,Deevillage Moonwalkers,7194,"Hill, Shaun",QB,MIN,0005
+2016-08-31T13:02:41Z,TRADE,traded_away,0014,Deevillage Moonwalkers,11199,"Ware, Spencer",RB,KCC,0029
+2016-08-31T13:02:41Z,TRADE,traded_for,0014,Deevillage Moonwalkers,12210,"Walford, Clive",TE,OAK,0029
+2016-08-31T13:02:41Z,TRADE,traded_away,0005,G-Town Pandas,7194,"Hill, Shaun",QB,MIN,0014
+2016-08-31T13:02:41Z,TRADE,traded_for,0005,G-Town Pandas,FP_0014_2017_6,NA,NA,NA,0014
+2016-08-31T13:02:41Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,12210,"Walford, Clive",TE,OAK,0014
+2016-08-31T13:02:41Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,11199,"Ware, Spencer",RB,KCC,0014
+2016-08-30T09:18:48Z,TRADE,traded_away,0035,Beatdown Bulldogs,FP_0035_2017_3,NA,NA,NA,0018
+2016-08-30T09:18:48Z,TRADE,traded_for,0035,Beatdown Bulldogs,12381,"Siemian, Trevor",QB,DEN,0018
+2016-08-30T09:18:48Z,TRADE,traded_away,0018,Hintertupfingen Griffins,12381,"Siemian, Trevor",QB,DEN,0035
+2016-08-30T09:18:48Z,TRADE,traded_for,0018,Hintertupfingen Griffins,FP_0035_2017_3,NA,NA,NA,0035
+2016-08-27T08:28:13Z,TRADE,traded_away,0007,Jena Dragons,10870,"Morris, Alfred",RB,DAL,0029
+2016-08-27T08:28:13Z,TRADE,traded_away,0007,Jena Dragons,9828,"Griffen, Everson",DE,MIN,0029
+2016-08-27T08:28:13Z,TRADE,traded_for,0007,Jena Dragons,12098,"West, Charcandrick",RB,KCC,0029
+2016-08-27T08:28:13Z,TRADE,traded_for,0007,Jena Dragons,8376,"Ninkovich, Rob",DE,NEP,0029
+2016-08-27T08:28:13Z,TRADE,traded_away,0030,Essen Outlaws,10879,"Trevathan, Danny",LB,CHI,0033
+2016-08-27T08:28:13Z,TRADE,traded_away,0030,Essen Outlaws,FP_0025_2017_3,NA,NA,NA,0033
+2016-08-27T08:28:13Z,TRADE,traded_for,0030,Essen Outlaws,8669,"Posluszny, Paul",LB,JAC,0033
+2016-08-27T08:28:13Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,12098,"West, Charcandrick",RB,KCC,0007
+2016-08-27T08:28:13Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,8376,"Ninkovich, Rob",DE,NEP,0007
+2016-08-27T08:28:13Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,10870,"Morris, Alfred",RB,DAL,0007
+2016-08-27T08:28:13Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,9828,"Griffen, Everson",DE,MIN,0007
+2016-08-27T08:28:13Z,TRADE,traded_away,0033,Dresden Giants,8669,"Posluszny, Paul",LB,JAC,0030
+2016-08-27T08:28:13Z,TRADE,traded_for,0033,Dresden Giants,10879,"Trevathan, Danny",LB,CHI,0030
+2016-08-27T08:28:13Z,TRADE,traded_for,0033,Dresden Giants,FP_0025_2017_3,NA,NA,NA,0030
+2016-08-25T20:00:26Z,TRADE,traded_away,0028,German Cats,12635,"Williams, Jonathan",RB,BUF,0029
+2016-08-25T20:00:26Z,TRADE,traded_for,0028,German Cats,12627,"Prosise, C.J.",RB,SEA,0029
+2016-08-25T20:00:26Z,TRADE,traded_for,0028,German Cats,7873,"Jackson, Vincent",WR,TBB,0029
+2016-08-25T20:00:26Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,12627,"Prosise, C.J.",RB,SEA,0028
+2016-08-25T20:00:26Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,7873,"Jackson, Vincent",WR,TBB,0028
+2016-08-25T20:00:26Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,12635,"Williams, Jonathan",RB,BUF,0028
+2016-08-25T19:56:11Z,TRADE,traded_away,0033,Dresden Giants,12173,"Brown, Malcom",DT,NEP,0005
+2016-08-25T19:56:11Z,TRADE,traded_away,0033,Dresden Giants,12231,"Thompson, Shaq",LB,CAR,0005
+2016-08-25T19:56:11Z,TRADE,traded_away,0033,Dresden Giants,FP_0033_2017_2,NA,NA,NA,0005
+2016-08-25T19:56:11Z,TRADE,traded_for,0033,Dresden Giants,6982,"Boldin, Anquan",WR,DET,0005
+2016-08-25T19:56:11Z,TRADE,traded_for,0033,Dresden Giants,12216,"Ray, Shane",LB,DEN,0005
+2016-08-25T19:56:11Z,TRADE,traded_for,0033,Dresden Giants,11292,"Te'o, Manti",LB,SDC,0005
+2016-08-25T19:56:11Z,TRADE,traded_away,0005,G-Town Pandas,6982,"Boldin, Anquan",WR,DET,0033
+2016-08-25T19:56:11Z,TRADE,traded_away,0005,G-Town Pandas,12216,"Ray, Shane",LB,DEN,0033
+2016-08-25T19:56:11Z,TRADE,traded_away,0005,G-Town Pandas,11292,"Te'o, Manti",LB,SDC,0033
+2016-08-25T19:56:11Z,TRADE,traded_for,0005,G-Town Pandas,12173,"Brown, Malcom",DT,NEP,0033
+2016-08-25T19:56:11Z,TRADE,traded_for,0005,G-Town Pandas,12231,"Thompson, Shaq",LB,CAR,0033
+2016-08-25T19:56:11Z,TRADE,traded_for,0005,G-Town Pandas,FP_0033_2017_2,NA,NA,NA,0033
+2016-08-24T18:28:19Z,TRADE,traded_away,0002,K-Town Rocketeers,11349,"Collins, Jamie",LB,CLE,0025
+2016-08-24T18:28:19Z,TRADE,traded_for,0002,K-Town Rocketeers,11213,"Austin, Tavon",WR,RAM,0025
+2016-08-24T18:28:19Z,TRADE,traded_for,0002,K-Town Rocketeers,10782,"Barron, Mark",LB,RAM,0025
+2016-08-24T18:28:19Z,TRADE,traded_away,0025,Hannover Eagles,11213,"Austin, Tavon",WR,RAM,0002
+2016-08-24T18:28:19Z,TRADE,traded_away,0025,Hannover Eagles,10782,"Barron, Mark",LB,RAM,0002
+2016-08-24T18:28:19Z,TRADE,traded_for,0025,Hannover Eagles,11349,"Collins, Jamie",LB,CLE,0002
+2016-08-23T14:23:57Z,TRADE,traded_away,0033,Dresden Giants,FP_0033_2018_1,NA,NA,NA,0016
+2016-08-23T14:23:57Z,TRADE,traded_for,0033,Dresden Giants,11179,"Michael, Christine",RB,GBP,0016
+2016-08-23T14:23:57Z,TRADE,traded_for,0033,Dresden Giants,FP_0016_2017_2,NA,NA,NA,0016
+2016-08-23T14:23:57Z,TRADE,traded_for,0033,Dresden Giants,FP_0016_2018_4,NA,NA,NA,0016
+2016-08-23T14:23:57Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,11179,"Michael, Christine",RB,GBP,0033
+2016-08-23T14:23:57Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,FP_0016_2017_2,NA,NA,NA,0033
+2016-08-23T14:23:57Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,FP_0016_2018_4,NA,NA,NA,0033
+2016-08-23T14:23:57Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,FP_0033_2018_1,NA,NA,NA,0033
+2016-08-22T13:52:40Z,TRADE,traded_away,0030,Essen Outlaws,12717,"Joseph, Karl",S,OAK,0025
+2016-08-22T13:52:40Z,TRADE,traded_for,0030,Essen Outlaws,12711,"Ramsey, Jalen",CB,JAC,0025
+2016-08-22T13:52:40Z,TRADE,traded_for,0030,Essen Outlaws,FP_0025_2017_3,NA,NA,NA,0025
+2016-08-22T13:52:40Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,12630,"Drake, Kenyan",RB,MIA,0014
+2016-08-22T13:52:40Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,FP_0029_2017_6,NA,NA,NA,0014
+2016-08-22T13:52:40Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,11747,"White, James",RB,NEP,0014
+2016-08-22T13:52:40Z,TRADE,traded_away,0025,Hannover Eagles,12711,"Ramsey, Jalen",CB,JAC,0030
+2016-08-22T13:52:40Z,TRADE,traded_away,0025,Hannover Eagles,FP_0025_2017_3,NA,NA,NA,0030
+2016-08-22T13:52:40Z,TRADE,traded_for,0025,Hannover Eagles,12717,"Joseph, Karl",S,OAK,0030
+2016-08-22T13:52:40Z,TRADE,traded_away,0014,Deevillage Moonwalkers,11747,"White, James",RB,NEP,0029
+2016-08-22T13:52:40Z,TRADE,traded_for,0014,Deevillage Moonwalkers,12630,"Drake, Kenyan",RB,MIA,0029
+2016-08-22T13:52:40Z,TRADE,traded_for,0014,Deevillage Moonwalkers,FP_0029_2017_6,NA,NA,NA,0029
+2016-08-21T08:07:21Z,TRADE,traded_away,0007,Jena Dragons,10812,"Hillman, Ronnie",RB,SDC,0019
+2016-08-21T08:07:21Z,TRADE,traded_away,0007,Jena Dragons,9101,"Stewart, Jonathan",RB,CAR,0019
+2016-08-21T08:07:21Z,TRADE,traded_away,0007,Jena Dragons,FP_0007_2017_3,NA,NA,NA,0019
+2016-08-21T08:07:21Z,TRADE,traded_for,0007,Jena Dragons,7393,"Fitzgerald, Larry",WR,ARI,0019
+2016-08-21T08:07:21Z,TRADE,traded_away,0033,Dresden Giants,9662,"Edelman, Julian",WR,NEP,0029
+2016-08-21T08:07:21Z,TRADE,traded_for,0033,Dresden Giants,12620,"Prescott, Dak",QB,DAL,0029
+2016-08-21T08:07:21Z,TRADE,traded_for,0033,Dresden Giants,FP_0029_2018_3,NA,NA,NA,0029
+2016-08-21T08:07:21Z,TRADE,traded_away,0019,Dresden Jaguars,7393,"Fitzgerald, Larry",WR,ARI,0007
+2016-08-21T08:07:21Z,TRADE,traded_for,0019,Dresden Jaguars,10812,"Hillman, Ronnie",RB,SDC,0007
+2016-08-21T08:07:21Z,TRADE,traded_for,0019,Dresden Jaguars,9101,"Stewart, Jonathan",RB,CAR,0007
+2016-08-21T08:07:21Z,TRADE,traded_for,0019,Dresden Jaguars,FP_0007_2017_3,NA,NA,NA,0007
+2016-08-21T08:07:21Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,12620,"Prescott, Dak",QB,DAL,0033
+2016-08-21T08:07:21Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,FP_0029_2018_3,NA,NA,NA,0033
+2016-08-21T08:07:21Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,9662,"Edelman, Julian",WR,NEP,0033
+2016-08-12T18:31:34Z,TRADE,traded_away,0033,Dresden Giants,7236,"Gates, Antonio",TE,SDC,0028
+2016-08-12T18:31:34Z,TRADE,traded_for,0033,Dresden Giants,9044,"Bennett, Martellus",TE,NEP,0028
+2016-08-12T18:31:34Z,TRADE,traded_away,0028,German Cats,9044,"Bennett, Martellus",TE,NEP,0033
+2016-08-12T18:31:34Z,TRADE,traded_for,0028,German Cats,7236,"Gates, Antonio",TE,SDC,0033
+2016-08-02T18:29:53Z,TRADE,traded_away,0025,Hannover Eagles,11747,"White, James",RB,NEP,0004
+2016-08-02T18:29:53Z,TRADE,traded_away,0025,Hannover Eagles,FP_0025_2017_7,NA,NA,NA,0004
+2016-08-02T18:29:53Z,TRADE,traded_for,0025,Hannover Eagles,10870,"Morris, Alfred",RB,DAL,0004
+2016-08-02T18:29:53Z,TRADE,traded_away,0011,Hannover Bengals,FP_0011_2017_1,NA,NA,NA,0016
+2016-08-02T18:29:53Z,TRADE,traded_for,0011,Hannover Bengals,12630,"Drake, Kenyan",RB,MIA,0016
+2016-08-02T18:29:53Z,TRADE,traded_away,0004,Cleve Crusader,10870,"Morris, Alfred",RB,DAL,0025
+2016-08-02T18:29:53Z,TRADE,traded_for,0004,Cleve Crusader,11747,"White, James",RB,NEP,0025
+2016-08-02T18:29:53Z,TRADE,traded_for,0004,Cleve Crusader,FP_0025_2017_7,NA,NA,NA,0025
+2016-08-02T18:29:53Z,TRADE,traded_away,0016,Wichita´s Hall of Fame Squad,12630,"Drake, Kenyan",RB,MIA,0011
+2016-08-02T18:29:53Z,TRADE,traded_for,0016,Wichita´s Hall of Fame Squad,FP_0011_2017_1,NA,NA,NA,0011
+2016-07-25T09:57:13Z,TRADE,traded_away,0022,Oberaeder Woelfe,12171,"Johnson, David",RB,ARI,0025
+2016-07-25T09:57:13Z,TRADE,traded_for,0022,Oberaeder Woelfe,12169,"Rawls, Thomas",RB,SEA,0025
+2016-07-25T09:57:13Z,TRADE,traded_for,0022,Oberaeder Woelfe,FP_0025_2017_1,NA,NA,NA,0025
+2016-07-25T09:57:13Z,TRADE,traded_away,0025,Hannover Eagles,12169,"Rawls, Thomas",RB,SEA,0022
+2016-07-25T09:57:13Z,TRADE,traded_away,0025,Hannover Eagles,FP_0025_2017_1,NA,NA,NA,0022
+2016-07-25T09:57:13Z,TRADE,traded_for,0025,Hannover Eagles,12171,"Johnson, David",RB,ARI,0022
+2016-07-14T13:48:37Z,TRADE,traded_away,0028,German Cats,9436,"Maclin, Jeremy",WR,KCC,0029
+2016-07-14T13:48:37Z,TRADE,traded_for,0028,German Cats,11673,"Benjamin, Kelvin",WR,CAR,0029
+2016-07-14T13:48:37Z,TRADE,traded_for,0028,German Cats,FP_0029_2017_3,NA,NA,NA,0029
+2016-07-14T13:48:37Z,TRADE,traded_away,0018,Hintertupfingen Griffins,11680,"Landry, Jarvis",WR,MIA,0028
+2016-07-14T13:48:37Z,TRADE,traded_for,0018,Hintertupfingen Griffins,11925,"Hurns, Allen",WR,JAC,0028
+2016-07-14T13:48:37Z,TRADE,traded_for,0018,Hintertupfingen Griffins,FP_0028_2017_1,NA,NA,NA,0028
+2016-07-14T13:48:37Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,11673,"Benjamin, Kelvin",WR,CAR,0028
+2016-07-14T13:48:37Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,FP_0029_2017_3,NA,NA,NA,0028
+2016-07-14T13:48:37Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,9436,"Maclin, Jeremy",WR,KCC,0028
+2016-07-14T13:48:37Z,TRADE,traded_away,0028,German Cats,11925,"Hurns, Allen",WR,JAC,0018
+2016-07-14T13:48:37Z,TRADE,traded_away,0028,German Cats,FP_0028_2017_1,NA,NA,NA,0018
+2016-07-14T13:48:37Z,TRADE,traded_for,0028,German Cats,11680,"Landry, Jarvis",WR,MIA,0018
+2016-07-09T19:28:18Z,TRADE,traded_away,0025,Hannover Eagles,10320,"Sheard, Jabaal",DE,NEP,0029
+2016-07-09T19:28:18Z,TRADE,traded_for,0025,Hannover Eagles,11741,"Pryor, Calvin",S,NYJ,0029
+2016-07-09T19:28:18Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,11741,"Pryor, Calvin",S,NYJ,0025
+2016-07-09T19:28:18Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,10320,"Sheard, Jabaal",DE,NEP,0025
+2016-07-09T10:05:38Z,TRADE,traded_away,0025,Hannover Eagles,10261,"Green, A.J.",WR,CIN,0029
+2016-07-09T10:05:38Z,TRADE,traded_for,0025,Hannover Eagles,11677,"Moncrief, Donte",WR,IND,0029
+2016-07-09T10:05:38Z,TRADE,traded_for,0025,Hannover Eagles,12176,"Parker, DeVante",WR,MIA,0029
+2016-07-09T10:05:38Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,11677,"Moncrief, Donte",WR,IND,0025
+2016-07-09T10:05:38Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,12176,"Parker, DeVante",WR,MIA,0025
+2016-07-09T10:05:38Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,10261,"Green, A.J.",WR,CIN,0025
+2016-06-30T20:05:21Z,TRADE,traded_away,0004,Cleve Crusader,10744,"Green, Ladarius",TE,PIT,0009
+2016-06-30T20:05:21Z,TRADE,traded_for,0004,Cleve Crusader,11697,"Seferian-Jenkins, Austin",TE,NYJ,0009
+2016-06-30T20:05:21Z,TRADE,traded_for,0004,Cleve Crusader,FP_0009_2017_3,NA,NA,NA,0009
+2016-06-30T20:05:21Z,TRADE,traded_away,0009,Syke Steelers,11697,"Seferian-Jenkins, Austin",TE,NYJ,0004
+2016-06-30T20:05:21Z,TRADE,traded_away,0009,Syke Steelers,FP_0009_2017_3,NA,NA,NA,0004
+2016-06-30T20:05:21Z,TRADE,traded_for,0009,Syke Steelers,10744,"Green, Ladarius",TE,PIT,0004
+2016-06-30T10:54:53Z,TRADE,traded_away,0014,Deevillage Moonwalkers,11783,"Brown, John",WR,ARI,0025
+2016-06-30T10:54:53Z,TRADE,traded_for,0014,Deevillage Moonwalkers,9851,"Mathews, Ryan",RB,PHI,0025
+2016-06-30T10:54:53Z,TRADE,traded_for,0014,Deevillage Moonwalkers,9075,"Jackson, DeSean",WR,WAS,0025
+2016-06-30T10:54:53Z,TRADE,traded_for,0014,Deevillage Moonwalkers,FP_0025_2017_2,NA,NA,NA,0025
+2016-06-30T10:54:53Z,TRADE,traded_away,0025,Hannover Eagles,9851,"Mathews, Ryan",RB,PHI,0014
+2016-06-30T10:54:53Z,TRADE,traded_away,0025,Hannover Eagles,9075,"Jackson, DeSean",WR,WAS,0014
+2016-06-30T10:54:53Z,TRADE,traded_away,0025,Hannover Eagles,FP_0025_2017_2,NA,NA,NA,0014
+2016-06-30T10:54:53Z,TRADE,traded_for,0025,Hannover Eagles,11783,"Brown, John",WR,ARI,0014
+2016-06-19T11:52:38Z,TRADE,traded_away,0033,Dresden Giants,FP_0033_2017_1,NA,NA,NA,0029
+2016-06-19T11:52:38Z,TRADE,traded_for,0033,Dresden Giants,12652,"Thomas, Michael",WR,NOS,0029
+2016-06-19T11:52:38Z,TRADE,traded_away,0033,Dresden Giants,12098,"West, Charcandrick",RB,KCC,0029
+2016-06-19T11:52:38Z,TRADE,traded_for,0033,Dresden Giants,12636,"Smallwood, Wendell",RB,PHI,0029
+2016-06-19T11:52:38Z,TRADE,traded_for,0033,Dresden Giants,FP_0029_2017_4,NA,NA,NA,0029
+2016-06-19T11:52:38Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,12652,"Thomas, Michael",WR,NOS,0033
+2016-06-19T11:52:38Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,FP_0033_2017_1,NA,NA,NA,0033
+2016-06-19T11:52:38Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,12636,"Smallwood, Wendell",RB,PHI,0033
+2016-06-19T11:52:38Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,FP_0029_2017_4,NA,NA,NA,0033
+2016-06-19T11:52:38Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,12098,"West, Charcandrick",RB,KCC,0033
+2016-06-18T22:33:52Z,TRADE,traded_away,0001,Galway Buccaneers,11677,"Moncrief, Donte",WR,IND,0029
+2016-06-18T22:33:52Z,TRADE,traded_away,0001,Galway Buccaneers,12197,"Perriman, Breshad",WR,BAL,0029
+2016-06-18T22:33:52Z,TRADE,traded_for,0001,Galway Buccaneers,11668,"Crowell, Isaiah",RB,CLE,0029
+2016-06-18T22:33:52Z,TRADE,traded_for,0001,Galway Buccaneers,12153,"Yeldon, T.J.",RB,JAC,0029
+2016-06-18T22:33:52Z,TRADE,traded_for,0001,Galway Buccaneers,10720,"Wright, Kendall",WR,TEN,0029
+2016-06-18T22:33:52Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,11668,"Crowell, Isaiah",RB,CLE,0001
+2016-06-18T22:33:52Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,12153,"Yeldon, T.J.",RB,JAC,0001
+2016-06-18T22:33:52Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,10720,"Wright, Kendall",WR,TEN,0001
+2016-06-18T22:33:52Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,11677,"Moncrief, Donte",WR,IND,0001
+2016-06-18T22:33:52Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,12197,"Perriman, Breshad",WR,BAL,0001
+2016-06-18T17:14:35Z,TRADE,traded_away,0012,Wüterich Packers,11761,"McKinnon, Jerick",RB,MIN,0029
+2016-06-18T17:14:35Z,TRADE,traded_for,0012,Wüterich Packers,12655,"Carroo, Leonte",WR,MIA,0029
+2016-06-18T17:14:35Z,TRADE,traded_away,0029,Cyriaks Weimar Mermaids,12655,"Carroo, Leonte",WR,MIA,0012
+2016-06-18T17:14:35Z,TRADE,traded_for,0029,Cyriaks Weimar Mermaids,11761,"McKinnon, Jerick",RB,MIN,0012
