@@ -20,4 +20,4 @@ timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X", tz = "Europe/
   jsonlite::toJSON(auto_unbox = TRUE)
 
 write(timestamp, "timestamp.json")
-piggyback::pb_upload("timestamp.json", "bohndesverband/rfl-data", "rfl_transactions_", overwrite = TRUE)
+piggyback::pb_upload("timestamp.json", "bohndesverband/rfl-data", "transaction_data", overwrite = TRUE)
