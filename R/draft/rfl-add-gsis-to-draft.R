@@ -1,5 +1,6 @@
 library(nflreadr)
 library(tidyverse)
+library(curl)
 
 current_season <- nflreadr::get_current_season()
 
