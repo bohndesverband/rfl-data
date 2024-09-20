@@ -1,5 +1,6 @@
 library(tidyverse)
 library(nflreadr)
+library(curl)
 
 cli::cli_alert_info("Create Data")
 
