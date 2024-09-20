@@ -17,7 +17,7 @@ jobs:
         config:
           - { os: ubuntu-22.04, r: "4.4" }
     env:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      GITHUB_PAT: ${{ secrets.GH_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
