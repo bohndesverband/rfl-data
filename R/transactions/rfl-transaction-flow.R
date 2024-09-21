@@ -81,7 +81,8 @@ old_data <- readr::read_csv("https://github.com/bohndesverband/rfl-data/releases
 
 drafts_and_transactions <- rbind(
   old_data,
-  drafts_and_transactions
+  drafts_and_transactions %>%
+    dplyr::select(season, timestamp, type, type_desc, franchise_id, mfl_id, player_identifier)
 )
 
 while (any(is.na(drafts_and_transactions$player_identifier))) {
