@@ -24,4 +24,6 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup-r
       - name: Data handling
-        run: Rscript -e "source('R/transactions/rfl-scrape-transactions.R', echo = TRUE)"
+        run: |
+          Rscript -e "source('R/transactions/rfl-scrape-transactions.R', echo = TRUE)"
+          Rscript -e "source('R/transactions/rfl-transaction-flow.R', echo = TRUE)"
