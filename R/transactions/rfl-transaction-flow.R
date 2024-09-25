@@ -72,8 +72,7 @@ drafts_and_transactions <- rbind(
   dplyr::mutate(
     is_first_franchise = ifelse(cumsum(type_desc %in% c("drafted", "added")) < 3, 1, 0), # zähle, wie oft der spieler schon in einem roster war. wenn weniger als 3, ist es das erste team
     is_first_franchise = ifelse(cumsum(!duplicated(franchise_id) & is_first_franchise < 3) <= 3, 1, 0), # zähle die unique franchise_ids, die in den adds vorkommen. wenn <= 3 ist es das erste team
-    player_identifier = ifelse(is_first_franchise == 1 & type_desc %in% c("drafted", "added"), paste(mfl_id, franchise_id, sep = "-"), NA),
-    is_fa = ifelse(type_desc == "dropped", 1, 0),
+    player_identifier = ifelse(is_first_franchise == 1 & type_desc %in% c("drafted", "added"), paste(mfl_id, franchise_id, sep = "-"), NA)
   ) %>%
   dplyr::select(-is_first_franchise)
 
@@ -83,7 +82,8 @@ drafts_and_transactions <- rbind(
   old_data,
   drafts_and_transactions %>%
     dplyr::select(season, timestamp, type, type_desc, franchise_id, mfl_id, player_identifier)
-)
+) %>%
+  dplyr::mutate(is_fa = ifelse(type_desc == "dropped", 1, 0))
 
 while (any(is.na(drafts_and_transactions$player_identifier))) {
   drafts_and_transactions <- drafts_and_transactions %>%
@@ -98,7 +98,6 @@ while (any(is.na(drafts_and_transactions$player_identifier))) {
 }
 
 final_data <- old_data %>%
-  dplyr::select(season, timestamp, type, type_desc, franchise_id, mfl_id, player_identifier) %>%
   dplyr::mutate(
     season = ifelse(
       timestamp >= lubridate::ymd(paste0(lubridate::year(timestamp), "04-01")),
