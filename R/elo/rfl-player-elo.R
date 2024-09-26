@@ -210,7 +210,7 @@ nfl_schedule <- nflreadr::load_schedules(current_season) %>%
   } else {
       cli::cli_alert_info("Write Data")
       elo_old <- elo_past %>% filter(week < current_week)
-      readr::write_csv(rbind(elo_old, elo), paste0("rfl_team-elo_", current_season, ".csv"))
+      readr::write_csv(rbind(elo_old, elo), paste0("rfl_player-elo_", current_season, ".csv"))
       #readr::write_csv(rbind(elo_old, elo), paste0("data/elo/rfl-player-elo-", current_season, ".csv"))
   }
 
