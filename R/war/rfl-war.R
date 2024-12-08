@@ -208,12 +208,12 @@ war <- starter %>%
 
   # add replacement data
   dplyr::left_join(replacement_player_points, by = "pos") %>%
-  dplyr::group_by(player_id, player_name) %>%
 
   # further calculations
+  dplyr::group_by(player_id, player_name) %>%
   dplyr::summarise(
-    points= sum(points),
-    across(c(games_missed, win_probability, avg_team_points, win_probability_replacement, replacement_wins), mean),
+    points = sum(points),
+    across(c(games_played, games_missed, win_probability, avg_team_points, win_probability_replacement, replacement_wins), mean),
     win_probability = ifelse(
       games_missed == 0, win_probability, (win_probability + (win_probability_replacement * games_missed)) / (games_missed + 1)
     ),
@@ -226,7 +226,7 @@ war <- starter %>%
     season = current_season
   ) %>%
   dplyr::left_join(starter %>%  dplyr::select(player_id, pos) %>%  dplyr::distinct(), by = "player_id") %>%
-  dplyr::select(season, player_id, player_name, pos, points, war) %>%
+  dplyr::select(season, player_id, player_name, pos, points, war, games_played, games_missed) %>%
   dplyr::arrange(dplyr::desc(war))
 
 cli::cli_alert_info("Write Data")
