@@ -7,7 +7,7 @@ current_season <- nflreadr::get_current_season()
 rfl_drafts <- purrr::map_df(2017:current_season, function(x) {
   readr::read_csv(
     glue::glue("https://github.com/bohndesverband/rfl-data/releases/download/draft_data/rfl_draft_{x}.csv"),
-    col_types = "iicccccccci"
+    col_types = "dTdddcccccccd"
   )
 })
 
