@@ -10,20 +10,16 @@ current_week <- nflreadr::get_current_week() - 1
 
 k <- 36 # varianz pro spiel
 
-player_info <- nflreadr::load_rosters(current_season) %>%
-  dplyr::select(gsis_id, season, position, depth_chart_position, team) %>%
-  dplyr::mutate(
-    # ab true positions 2022 dann depth_chart_position statt position
-    position = ifelse(depth_chart_position == "OLB", "DL", position)
-  ) %>%
-
+player_info <- nflreadr::load_players() %>%
+  dplyr::select(gsis_id, display_name, position_group) %>%
+  dplyr::rename(position = position_group) %>%
   dplyr::left_join(
     nflreadr::load_ff_playerids() %>%
-      dplyr::select(mfl_id, gsis_id),
-    by = "gsis_id",
-    relationship = "many-to-many"
+      dplyr::select(gsis_id, mfl_id),
+    by = "gsis_id"
   ) %>%
-  dplyr::filter(!is.na(mfl_id))
+  dplyr::filter(!is.na(mfl_id)) %>%
+  dplyr::mutate(position = ifelse(position == "SPEC", "PK", position))
 
 nfl_schedule <- nflreadr::load_schedules(current_season) %>%
   dplyr::select(game_id, season, week, home_team, away_team) %>%
@@ -50,25 +46,23 @@ nfl_schedule <- nflreadr::load_schedules(current_season) %>%
   # wenn WK 2 2016
   #elo_past <- readr::read_csv("data/elo/rfl-player-elo-init.csv", col_types = c("mfl_id" = "character"))
 
-  elo_past <- readr::read_csv(paste0("https://github.com/bohndesverband/rfl-data/releases/download/elo_data/rfl_player-elo_", read_season, ".csv"), col_types = c("mfl_id" = "character"))
-  #elo_past <- readr::read_csv(paste0("data/elo/rfl-player-elo-", read_season, ".csv"), col_types = c("mfl_id" = "character"))
-
-  if (current_week == 1) {
-    elo_past <- elo_past %>%
-      dplyr::filter(week == max(week))
-  } else {
-    elo_past <- elo_past %>%
-      dplyr::filter(week < current_week)
-  }
+  elo_past <- purrr::map_df(2016:read_season, function(x) {
+    readr::read_csv(
+      #glue::glue("rfl_player-elo_{x}.csv"), # local
+      glue::glue("https://github.com/bohndesverband/rfl-data/releases/download/elo_data/rfl_player-elo_{x}.csv"), # remote
+      col_types = "iicccccnniiiii"
+    )
+  }) %>%
+    dplyr::filter(season < current_season | (season == current_season & week < current_week))
 
   last_player_elo <- elo_past %>%
       dplyr::group_by(mfl_id) %>%
-      dplyr::arrange(week) %>%
+      dplyr::arrange(season, week) %>%
       dplyr::summarise(player_elo_post = dplyr::last(player_elo_post), .groups = "drop")
 
   last_opponent_elo <- elo_past %>%
       dplyr::group_by(opponent_id) %>%
-      dplyr::arrange(week) %>%
+      dplyr::arrange(season, week) %>%
       dplyr::summarise(opponent_elo_post = dplyr::last(opponent_elo_post), .groups = "drop")
 
   scores <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", current_season, "/export?TYPE=playerScores&L=63018&W=", current_week, "&YEAR=", current_season, "&JSON=1")) %>%
@@ -98,7 +92,7 @@ nfl_schedule <- nflreadr::load_schedules(current_season) %>%
           ),
           start = dplyr::case_when(
               position %in% c("RB", "WR") & pos_rank <= 24 ~ 1,
-              position %in% c("QB", "TE", "K") & pos_rank <= 12 ~ 1,
+              position %in% c("QB", "TE", "PK") & pos_rank <= 12 ~ 1,
               side == "DEF" & pos_rank <= 24 ~ 1,
               TRUE ~ 0
           )
@@ -117,7 +111,7 @@ nfl_schedule <- nflreadr::load_schedules(current_season) %>%
           )
       )
 
-  elo <- rbind(subset(start, position == "QB" | position == "K" | start == 1), flex) %>%
+  elo <- rbind(subset(start, position == "QB" | position == "PK" | start == 1), flex) %>%
       dplyr::select(-flex_rank, -side) %>%
 
       # calculate position average
@@ -174,7 +168,7 @@ nfl_schedule <- nflreadr::load_schedules(current_season) %>%
           player_elo_pre = ifelse(is.na(player_elo_pre), 1500, player_elo_pre), # if no elo is found, set to base 1500
           opponent_elo_pre = ifelse(is.na(opponent_elo_pre), 1500, opponent_elo_pre), # if no elo is found, set to base 1500
 
-          player_elo_pre = ifelse(week == 1, round((player_elo_pre * (2/3)) + (1500 * (1/3))), player_elo_pre),
+          # player_elo_pre = ifelse(week == 1, round((player_elo_pre * (2/3)) + (1500 * (1/3))), player_elo_pre), # ursprünnglich wurde die elo in WK richtung 1500 korrigiert. bei spielen ist das aber eig nicht nötig
           opponent_elo_pre = ifelse(week == 1, 1500, opponent_elo_pre), # if week 1 of season, reset to default value
 
           # calculate elo
@@ -209,7 +203,7 @@ nfl_schedule <- nflreadr::load_schedules(current_season) %>%
       #readr::write_csv(elo, paste0("data/elo/rfl-player-elo-", current_season, ".csv"))
   } else {
       cli::cli_alert_info("Write Data")
-      elo_old <- elo_past %>% filter(week < current_week)
+      elo_old <- elo_past %>% filter(season == current_season & week < current_week)
       readr::write_csv(rbind(elo_old, elo), paste0("rfl_player-elo_", current_season, ".csv"))
       #readr::write_csv(rbind(elo_old, elo), paste0("data/elo/rfl-player-elo-", current_season, ".csv"))
   }

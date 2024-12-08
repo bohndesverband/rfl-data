@@ -5,15 +5,16 @@ var_season <- 2016
 var_week <- 1
 k <- 36 # varianz pro spiel
 
-player_info <- nflreadr::load_rosters(var_season) %>%
-    dplyr::select(gsis_id, season, position) %>%
-    dplyr::left_join(
-        nflreadr::load_ff_playerids() %>%
-            dplyr::select(mfl_id, gsis_id),
-        by = "gsis_id",
-        relationship = "many-to-many"
-    ) %>%
-    dplyr::filter(!is.na(mfl_id))
+player_info <- nflreadr::load_players() %>%
+  dplyr::select(gsis_id, display_name, position_group) %>%
+  dplyr::rename(position = position_group) %>%
+  dplyr::left_join(
+    nflreadr::load_ff_playerids() %>%
+      dplyr::select(gsis_id, mfl_id),
+    by = "gsis_id"
+  ) %>%
+  dplyr::filter(!is.na(mfl_id)) %>%
+  dplyr::mutate(position = ifelse(position == "SPEC", "PK", position))
 
 nfl_schedule <- nflreadr::load_schedules(var_season) %>%
     dplyr::select(game_id, season, week, home_team, away_team) %>%
@@ -56,7 +57,7 @@ start <- scores %>%
         ),
         start = dplyr::case_when(
             position %in% c("RB", "WR") & pos_rank <= 24 ~ 1,
-            position %in% c("QB", "TE", "K") & pos_rank <= 12 ~ 1,
+            position %in% c("QB", "TE", "PK") & pos_rank <= 12 ~ 1,
             side == "DEF" & pos_rank <= 24 ~ 1,
             TRUE ~ 0
         )

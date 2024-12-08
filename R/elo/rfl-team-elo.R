@@ -8,7 +8,7 @@ cli::cli_alert_info("Create Data")
 current_season <- nflreadr::most_recent_season()
 current_week <- nflreadr::get_current_week() - 1
 
-#for (current_week in 1:13) {
+#for (current_week in 2:13) {
   if(current_week == 1) {
     # in WK 1 die letzte ELO der vorsaison lesen
     read_season <- current_season - 1
