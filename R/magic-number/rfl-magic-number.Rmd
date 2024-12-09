@@ -1,0 +1,93 @@
+---
+title: "Magic Number"
+output: pdf_document
+date: "2024-12-09"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+# Magic Number
+
+In einigen Sportarten wird die "Magic Number" als Indikator genutzt, wie nah ein Team dran ist, einen Division Titel oder Playoffplatz sicher zu haben. Die "Magic Number" ist die Summe an Siegen des führenden Teams und den Niederlagen des Verfolgerteams in den verbleibenden Spielen, die das Verfolgerteam aus dem entsprechendem Platzierungskampf eliminiert.
+
+Angenommen, es gibt diese Tabelle:
+
+```{r data, echo=FALSE}
+data <- data.frame(
+    Teams = c("Team A", "Team B", "Team C"),
+    Wins = c(19, 16, 14),
+    Losses = c(1, 4, 6),
+    Punkte = c(2440, 2330, 2380),
+    "Games Left" = 6,
+    Games = 27
+)
+
+data %>% 
+  dplyr::select(-Games, -Punkte)
+```
+
+Es sind noch 6 Spiele in der verbleibenden Saison zu spielen und es soll ermittelt werden, was Team A benötigt, um die Führung in der Tabelle sicher zu haben.
+
+Die Formel für die Berechnung lautet
+
+$MN = G_{T} - W_{L} - L_{T}$
+
+$G_{T}$ = Gesamtzahl der Saisonspiele + 1
+
+$W_{L}$ = Bisherige Siege des führenden Teams
+
+$L_{T}$ = Bisherige Niederlagen des Verfolgerteams
+
+Berechnen wir nun die "Magical Number" der Teams. Für das führende Team wird der niedrigste Losses Wert der Verfolger genutzt.
+
+```{r MN, echo=FALSE}
+data %>% 
+  dplyr::mutate(
+    MN = ifelse(dplyr::row_number() == 1, Games - Wins - min(Losses[Teams != Teams[1]]), Games - Wins[1] - Losses)
+  ) %>% 
+  dplyr::select(-dplyr::starts_with("Games"))
+```
+
+Das bedeutet:
+  - ist die Summe der Siege von Team A und Niederlagen von Team B in den letzten 6 Spielen mindestens 4, hat Team B keine Chance auf die Tabellenführung
+  - ist die Summe der Siege von Team A und Niederlagen von Team C in den letzten 6 Spielen mindestens 2, hat Team C keine Chance auf die Tabellenführung
+
+## Playoff Spot
+
+Aber was ist, wenn der zweite Platz in der Tabelle für die Playoffs reicht. Hat Team B hier noch eine realistische Chance? Und wie viel Vorsprung hat Team A?
+
+```{r ties, echo=FALSE}
+data %>% 
+  dplyr::mutate(
+    MN = ifelse(dplyr::row_number() == 2, NA, Games - Wins[2] - Losses)
+#    AVG = Punkte / ((Wins + Losses) / 2)
+  ) %>% 
+  dplyr::select(-dplyr::starts_with("Games"))
+```
+  - Team A hat eine MN von 10 bei 6 verbleibenden Spielen. Das heißt, es hat die Playoffs bereits sicher
+  - ist die Summe der Siege von Team B und Niederlagen von Team C in den letzten 6 Spielen mindestens 5, hat Team C keine Chance auf die Playoffs
+  
+Doch hier müsssen wir noch etwas genauer hinschauen. Team C hat nämlich mehr Punkte als Team B. Da dies der erste Tie-Breaker ist, würde Team C die gleiche Anzahl an Siegen reichen, um an Team B vorbeizuziehen.
+
+
+
+
+
+Das heißt, für die Berechnung wird in diesem Fall ein "Bonus" von -1 auf die MN von Team C gerechnet.
+
+## Tie Breaker PF
+
+
+
+Hat Team A mehr Punkte erzielt als Team B braucht Team B entweder die gleiche Anzahl an Siegen und mehr Punkte oder mehr Siege als Team A. Je nach dem, wie viele Punkte unterschied es sind, wird ein Spiel mehr in die Berechnung einbezogen.
+
+In unserem Beispiel gehen wir davon aus, das Team A deutlich mehr Punkte als die anderen Beiden Teams hat, die deshalb ein Spiel mehr aufholen müssen um an Team A vorbei zu ziehen
+
+```{r tot_games, echo=FALSE}
+data %>% 
+  dplyr::select(-Games, -Punkte)
+```
