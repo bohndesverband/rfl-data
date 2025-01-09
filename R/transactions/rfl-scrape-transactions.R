@@ -3,7 +3,7 @@ library(tidyverse)
 library(ffscrapr)
 
 cli::cli_alert_info("Create Data")
-current_season <- lubridate::year(lubridate::now())
+current_season <- nflreadr::get_current_season(TRUE)
 
 mfl <- ffscrapr::mfl_connect(current_season, 63018)
 
