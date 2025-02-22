@@ -1,0 +1,26 @@
+name: "Create and Upload Starter Data"
+
+on:
+  schedule:
+    # every thursday at 6 pm from dezember to januar
+    - cron: '0 16 * 1 4'
+    - cron: '0 16 * 12 4'
+  workflow_dispatch:
+
+jobs:
+  handle_data:
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - { os: ubuntu-22.04, r: "4.4" }
+    env:
+      GITHUB_PAT: ${{ secrets.GH_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup
+        uses: ./.github/actions/setup-r
+      - name: Data handling
+        run: Rscript -e "source('R/schedule/rfl-postseason-results.R', echo = TRUE)"
