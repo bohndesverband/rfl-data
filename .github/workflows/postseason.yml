@@ -1,4 +1,4 @@
-name: "Create and Upload Starter Data"
+name: "Create and Upload Postseason Result Data"
 
 on:
   schedule:
