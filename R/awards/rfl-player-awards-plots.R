@@ -82,12 +82,10 @@ plot_default <- list(
   ggplot2::theme_void(),
   ggplot2::theme(
     text = ggplot2::element_text(color = color_text, family = font, lineheight = 1.2),
-    plot.margin = ggplot2::margin(t = 0, r = 0, b = 30, l = 0),
+    #plot.margin = ggplot2::margin(t = 0, r = 0, b = 30, l = 0),
     plot.background = ggplot2::element_rect(fill = color_bg, color = color_bg),
 
-    plot.title = ggplot2::element_text(size = 24, face = "bold", lineheight = 0.8, margin = ggplot2::margin(t = -40, b = 0, l = 25)),
     plot.title.position = "plot",
-    plot.subtitle = ggplot2::element_text(size = 16, lineheight = 1, margin = ggplot2::margin(t = 10, b = 25, l = 25)),
 
     legend.key.size = ggplot2::unit(12, "pt"),
     legend.text = ggplot2::element_text(size = 12),
@@ -95,16 +93,18 @@ plot_default <- list(
 )
 
 plot_default_bar <- list(
-  geom_text(mapping = ggplot2::aes(label = war), vjust = 1.7, size = 10, color = color_bg),
-  #geom_text(aes(label = paste0("#", award_rank)), vjust = 5, color = color_bg, size = 6, family = "base"),
-  geom_text(aes(label = sapply(display_name, function(x) paste(strwrap(x, width = 5), collapse = "\n"))), vjust = -0.5, hjust = 0.5, size = 7, color = color_grey_light, lineheight = 0.3),
-  geom_hline(yintercept = 0, color = color_grey_light, linewidth = 0.3),
-  #nflplotR::geom_nfl_headshots(aes(player_gsis = gsis_id), y = 0, height = 0.25, vjust = 0),
-  ggplot2::scale_fill_manual(values = colors_position, guide = "none")
+  geom_text(mapping = ggplot2::aes(label = war), vjust = 3, size = 8, color = color_bg),
+  geom_text(aes(label = sapply(display_name, function(x) paste(strwrap(x, width = 5), collapse = "\n"))), vjust = -0.5, hjust = 0.5, size = 6, color = color_grey_mid, lineheight = 1),
+  geom_hline(yintercept = 0, color = color_grey_mid, linewidth = 0.3),
+  nflplotR::geom_nfl_headshots(aes(player_gsis = gsis_id), y = 0, height = 0.23, vjust = 0),
+  ggplot2::scale_fill_manual(values = colors_position, guide = "none"),
+  ggplot2::theme(
+    plot.title = ggplot2::element_text(size = 24, face = "bold", lineheight = 0.8, margin = ggplot2::margin(l = 25)),
+    plot.subtitle = ggplot2::element_text(size = 16, lineheight = 1, margin = ggplot2::margin(l = 25))
+  )
 )
 
 if(current_week == 14) {
-  for (current_season in 2016:2024) {
   # data ----
   ## base data ----
   rfl_awards <- readr::read_csv("https://raw.githubusercontent.com/bohndesverband/rfl-data/refs/heads/main/data/awards/rfl-player-awards.csv", col_types = "icccccddicc") %>%
@@ -161,6 +161,8 @@ if(current_week == 14) {
       by = "gsis_id"
     )
 
+  for (current_season in 2016:2024) {
+
   cli::cli_alert_info("Create Current Awards")
 
   ## current awards ----
@@ -212,6 +214,8 @@ if(current_week == 14) {
       plot_default +
       ggplot2::theme(
         legend.position = "top",
+        plot.title = ggplot2::element_text(size = 24, face = "bold", lineheight = 0.8, margin = ggplot2::margin(t = -40, b = 0, l = 25)),
+        plot.subtitle = ggplot2::element_text(size = 16, lineheight = 1, margin = ggplot2::margin(t = 10, b = 25, l = 25)),
         strip.text = ggplot2::element_blank(),
         panel.border = ggplot2::element_blank(),
         panel.spacing.x = ggplot2::unit(0, "mm"),
@@ -231,14 +235,13 @@ if(current_week == 14) {
     dplyr::select(season, gsis_id, display_name, pos, war) %>%
     dplyr::distinct()
 
-  league_mvps_plot <-
-
-  ggplot2::ggplot(league_mvps, aes(x = season, y = war, fill = pos)) +
+  league_mvps_plot <- ggplot2::ggplot(league_mvps, aes(x = season, y = war, fill = pos)) +
     ggplot2::geom_col() +
 
+    plot_default +
     plot_default_bar +
 
-    ggplot2::scale_x_continuous(breaks = c(2016:2022)) +
+    ggplot2::scale_x_continuous(breaks = c(2016:current_season)) +
     ggplot2::scale_y_continuous(limits = c(0, 6)) +
 
     ggplot2::labs(
@@ -247,15 +250,18 @@ if(current_week == 14) {
       fill = ""
     ) +
 
-    plot_default +
     ggplot2::theme(
+      plot.margin = ggplot2::margin(t = 25, r = 0, b = 25, l = 0),
       legend.position = "top",
       legend.margin = ggplot2::margin(t = 3, unit = "mm"),
       axis.text.x = ggplot2::element_text(color = color_grey_light, size = 20)
     )
 
   cli::cli_alert_info("Write League MVPs")
-  ggplot2::ggsave(paste0("rfl-mvps.jpg"), league_mvps_plot, width = 2700, height = 1400, dpi = 144, units = "px")
+  ggplot2::ggsave("rfl-mvps.jpg", league_mvps_plot, width = 2700, height = 1400, dpi = 144, units = "px")
+
+  cli::cli_alert_info("Upload League MVPs")
+  piggyback::pb_upload("rfl-mvps.jpg", "bohndesverband/rfl-data", "awards_data", overwrite = TRUE)
 
   timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X", tz = "Europe/Berlin")) %>%
     jsonlite::toJSON(auto_unbox = TRUE)
