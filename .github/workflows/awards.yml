@@ -1,0 +1,27 @@
+name: "Create and Upload Awards Data"
+
+on:
+  schedule:
+    # every thursday at 6 pm in december
+    - cron: '0 16 * 12 4'
+  workflow_dispatch:
+
+jobs:
+  handle_data:
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        config:
+          - { os: ubuntu-22.04, r: "4.4" }
+    env:
+      GITHUB_PAT: ${{ secrets.GH_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup
+        uses: ./.github/actions/setup-r
+      - name: Data handling
+        run: Rscript -e "source('R/awards/rfl-player-awards-data.R', echo = TRUE)"
+      - name: Plot Creation
+        run: Rscript -e "source('R/awards/rfl-player-awards-plots.R', echo = TRUE)"

@@ -100,7 +100,10 @@ plot_default_bar <- list(
   ggplot2::scale_fill_manual(values = colors_position, guide = "none"),
   ggplot2::theme(
     plot.title = ggplot2::element_text(size = 24, face = "bold", lineheight = 0.8, margin = ggplot2::margin(l = 25)),
-    plot.subtitle = ggplot2::element_text(size = 16, lineheight = 1, margin = ggplot2::margin(l = 25))
+    plot.subtitle = ggplot2::element_text(size = 16, lineheight = 1, margin = ggplot2::margin(t = 10, l = 25, b = 0)),
+    plot.margin = ggplot2::margin(t = 25, r = 0, b = 25, l = 0),
+    legend.position = "none",
+    axis.text.x = ggplot2::element_text(color = color_grey_mid, size = 20)
   )
 )
 
@@ -223,10 +226,53 @@ if(current_week == 14) {
       )
 
   cli::cli_alert_info("Write Current Awards")
-  ggplot2::ggsave(paste0("rfl-player-awards-plot-", current_season, ".jpg"), player_awards_plot_new, width = 2700, height = 1400, dpi = 144, units = "px")
+  ggplot2::ggsave(paste0("rfl_player-awards_plot-", current_season, ".jpg"), player_awards_plot_new, width = 2700, height = 1400, dpi = 144, units = "px")
 
   cli::cli_alert_info("Upload Current Awards")
-  piggyback::pb_upload(paste0("rfl-player-awards-plot-", current_season, ".jpg"), "bohndesverband/rfl-data", "awards_data", overwrite = TRUE)
+  piggyback::pb_upload(paste0("rfl_player-awards_plot-", current_season, ".jpg"), "bohndesverband/rfl-data", "awards_data", overwrite = TRUE)
+
+  ## best players ----
+  best_players <- readr::read_csv(paste0("https://github.com/bohndesverband/rfl-data/releases/download/war_data/rfl_war_", current_season, ".csv"), col_types = "icccdd") %>%
+    dplyr::group_by(pos) %>%
+    dplyr::arrange(dplyr::desc(war)) %>%
+    dplyr::slice(1:3) %>%
+    dplyr::mutate(
+      rank = dplyr::row_number(),
+      # normalize war to 0.5 - 1
+      col_height = scales::rescale(war, c(0.5, 1)),
+      display_name = nflreadr::clean_player_names(player_name)
+    ) %>%
+    dplyr::ungroup() %>%
+    dplyr::left_join(
+      nflreadr::load_ff_playerids() %>%
+        dplyr::select(mfl_id, gsis_id),
+      by = c("player_id" = "mfl_id")
+    )
+
+  best_players_plot <- ggplot2::ggplot(best_players, aes(x = factor(rank, levels = c(2,1,3)), y = col_height)) +
+    ggplot2::facet_wrap(~factor(pos, c("QB", "RB", "WR", "TE", "PK", "DL", "LB", "DB")), ncol = 4, strip.position = "bottom") +
+    ggplot2::geom_col(aes(fill = pos)) +
+
+    ggplot2::labs(
+      title = paste("Die wertvollsten Spieler in der RFL", current_season),
+      subtitle = "Die Spieler mit den meisten Wins Above Replacement (WAR) in ihrer Positionsgruppe."
+    ) +
+
+    plot_default +
+    plot_default_bar +
+
+    ggplot2::scale_y_continuous(limits = c(0, 1.2)) +
+    ggplot2::theme(
+      axis.text.x = ggplot2::element_blank(),
+      panel.spacing.y = ggplot2::unit(10, "mm"),
+      strip.text = ggplot2::element_text(size = 20, color = color_grey_mid),
+    )
+
+  cli::cli_alert_info("Write Current Awards")
+  ggplot2::ggsave(paste0("rfl_best-players_plot-", current_season, ".jpg"), best_players_plot, width = 2700, height = 1600, dpi = 144, units = "px")
+
+  cli::cli_alert_info("Upload Current Awards")
+  piggyback::pb_upload(paste0("rfl_best-players_plot-", current_season, ".jpg"), "bohndesverband/rfl-data", "awards_data", overwrite = TRUE)
 }
 
   ## all MVPs ----
@@ -242,26 +288,19 @@ if(current_week == 14) {
     plot_default_bar +
 
     ggplot2::scale_x_continuous(breaks = c(2016:current_season)) +
-    ggplot2::scale_y_continuous(limits = c(0, 6)) +
+    ggplot2::scale_y_continuous(limits = c(-0.15, max(league_mvps$war) + 0.6), expand = c(0, 0)) +
 
     ggplot2::labs(
       title = paste0("RFL MVPs 2016-", current_season),
       subtitle = "Die Spieler mit den meisten Wins Above Replacement einer jeden Saison.",
       fill = ""
-    ) +
-
-    ggplot2::theme(
-      plot.margin = ggplot2::margin(t = 25, r = 0, b = 25, l = 0),
-      legend.position = "top",
-      legend.margin = ggplot2::margin(t = 3, unit = "mm"),
-      axis.text.x = ggplot2::element_text(color = color_grey_light, size = 20)
     )
 
   cli::cli_alert_info("Write League MVPs")
-  ggplot2::ggsave("rfl-mvps.jpg", league_mvps_plot, width = 2700, height = 1400, dpi = 144, units = "px")
+  ggplot2::ggsave("rfl_plot-mvps.jpg", league_mvps_plot, width = 2700, height = 1400, dpi = 144, units = "px")
 
   cli::cli_alert_info("Upload League MVPs")
-  piggyback::pb_upload("rfl-mvps.jpg", "bohndesverband/rfl-data", "awards_data", overwrite = TRUE)
+  piggyback::pb_upload("rfl_plot-mvps.jpg", "bohndesverband/rfl-data", "awards_data", overwrite = TRUE)
 
   timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X", tz = "Europe/Berlin")) %>%
     jsonlite::toJSON(auto_unbox = TRUE)

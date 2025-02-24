@@ -23,3 +23,4 @@ runs:
         Rscript -e "install.packages('piggyback')"
         Rscript -e "install.packages('tidyverse')"
         Rscript -e "install.packages('ffscrapr')"
+        Rscript -e "install.packages('nflfastR')"
