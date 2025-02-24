@@ -13,13 +13,7 @@ color_grey_light <- "#d2dae2"
 color_grey_mid <- "#808e9b"
 color_grey_dark <- "#485460"
 color_black <- "#1e272e"
-color_red <- "#f53b57"
-color_blue <- "#3c40c6"
-color_cyan <- "#0fbcf9"
-color_petrol <- "#00d8d6"
-color_green <- "#05c46b"
 color_orange <- "#ffa801"
-color_yellow <- "#ffd32a"
 color_bg <- "white"
 color_text <- color_black
 
@@ -35,9 +29,6 @@ colors_position <- c(
 )
 
 font <- "Poppins"
-
-position_order <- c("QB", "RB", "WR", "TE", "FLX", "PK", "DL", "LB", "DB", "IDP")
-positions <- c("QB", "RB", "WR", "TE", "PK", "DL", "LB", "DB")
 
 # helper ----
 player_annotaions <- function() {
@@ -164,7 +155,7 @@ if(current_week == 14) {
       by = "gsis_id"
     )
 
-  for (current_season in 2016:2024) {
+  #for (current_season in 2016:2024) {
 
   cli::cli_alert_info("Create Current Awards")
 
@@ -268,12 +259,12 @@ if(current_week == 14) {
       strip.text = ggplot2::element_text(size = 20, color = color_grey_mid),
     )
 
-  cli::cli_alert_info("Write Current Awards")
+  cli::cli_alert_info("Write Best Players")
   ggplot2::ggsave(paste0("rfl_best-players_plot-", current_season, ".jpg"), best_players_plot, width = 2700, height = 1600, dpi = 144, units = "px")
 
-  cli::cli_alert_info("Upload Current Awards")
+  cli::cli_alert_info("Upload Best Players")
   piggyback::pb_upload(paste0("rfl_best-players_plot-", current_season, ".jpg"), "bohndesverband/rfl-data", "awards_data", overwrite = TRUE)
-}
+#}
 
   ## all MVPs ----
   league_mvps <- rfl_awards %>%
