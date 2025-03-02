@@ -17,11 +17,10 @@ if(current_week == 14) {
       week = as.integer(week)
     )
 
-
   ## WAR ----
   franchiseWARPlayerRaw <- readr::read_csv(paste0("https://github.com/bohndesverband/rfl-data/releases/download/war_data/rfl_war_", current_season, ".csv"), col_types = "icccdd") %>%
     dplyr::left_join(
-      readr::read_csv(paste0("https://raw.githubusercontent.com/jak3sch/rfl/main/data/war/rfl-war-", current_season - 1, ".csv"), col_types = "icccdd") %>%
+      readr::read_csv(paste0("https://github.com/bohndesverband/rfl-data/releases/download/war_data/rfl_war_", current_season - 1, ".csv"), col_types = "icccdd") %>%
         dplyr::select(player_id, war) %>%
         dplyr::rename(war_last_season = war),
       by = "player_id"
@@ -44,7 +43,7 @@ if(current_week == 14) {
     dplyr::ungroup()
 
   ## Official Stats ----
-  pbp <- nflreadr::load_pbp()
+  pbp <- nflreadr::load_pbp(current_season)
   playerStats <- nflfastR::calculate_stats(current_season, "season", "player", "REG")
 
   # awards ----
