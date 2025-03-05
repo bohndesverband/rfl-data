@@ -64,7 +64,7 @@ if (dim(trade_data_raw)[1] != 0) {
       relationship = "many-to-many"
     ) %>%
     dplyr::left_join(
-      jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", var_season, "/export?TYPE=contestPlayers&L=63018&APIKEY=aRNp3s%2BWvuWrx0WmPlrBYDoeErox&W&JSON=1"))$contest_players$player %>%
+      jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", current_year, "/export?TYPE=contestPlayers&L=63018&APIKEY=aRNp3s%2BWvuWqx02mPlrBYDoeErox&JSON=1"))$contest_players$player %>%
         dplyr::tibble() %>%
         tidyr::unnest_wider(1),
       by = c("asset" = "id")
