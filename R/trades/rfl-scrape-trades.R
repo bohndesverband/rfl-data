@@ -72,7 +72,7 @@ if (dim(trade_data_raw)[1] != 0) {
     dplyr::rowwise() %>%
     dplyr::mutate(
       date = lubridate::as_datetime(as.numeric(timestamp), tz = "GMT"),
-      season = lubridate::year(date),
+      season = var_season,
       week = find_week(as.Date(date))
     ) %>%
 
@@ -114,7 +114,7 @@ if (dim(trade_data_raw)[1] != 0) {
     dplyr::rename(trade_side = franchise)
 
   cli::cli_alert_info("Write Data")
-  readr::write_csv(rbind(past_trades, trade_data), paste0("rfl_trades_", var_season, ".csv"))
+  readr::write_csv(trade_data, paste0("rfl_trades_", var_season, ".csv"))
 
   cli::cli_alert_info("Upload Data")
   piggyback::pb_upload(paste0("rfl_trades_", var_season, ".csv"), "bohndesverband/rfl-data", "trade_data", overwrite = TRUE)
