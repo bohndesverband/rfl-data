@@ -69,6 +69,7 @@ if (dim(trade_data_raw)[1] != 0) {
         tidyr::unnest_wider(1),
       by = c("asset" = "id")
     ) %>%
+
     dplyr::rowwise() %>%
     dplyr::mutate(
       date = lubridate::as_datetime(as.numeric(timestamp), tz = "GMT"),
@@ -108,10 +109,10 @@ if (dim(trade_data_raw)[1] != 0) {
         grepl("DP_", asset) ~ paste0(draft_round, ".", draft_pick, " ", draft_year),
         TRUE ~ name
       ),
-      asset_id = ifelse(!is.na(draft_year), paste("DP", draft_round, sep = "_"), asset)
+      #asset_id = ifelse(!is.na(draft_year), paste("DP", draft_round, sep = "_"), asset)
     ) %>%
-    dplyr::select(season, trade_id, timestamp, date, week, franchise_id, franchise, asset_id, asset_name) %>%
-    dplyr::rename(trade_side = franchise)
+    dplyr::select(season, trade_id, timestamp, date, week, franchise_id, franchise, asset, asset_name) %>%
+    dplyr::rename(trade_side = franchise, asset_id = asset)
 
   cli::cli_alert_info("Write Data")
   readr::write_csv(trade_data, paste0("rfl_trades_", var_season, ".csv"))
