@@ -217,8 +217,8 @@ nfl_schedule <- nflreadr::load_schedules(current_season) %>%
 cli::cli_alert_info("Upload Data")
 piggyback::pb_upload(paste0("rfl_player-elo_", current_season, ".csv"), "bohndesverband/rfl-data", "elo_data", overwrite = TRUE)
 
-timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X", tz = "Europe/Berlin")) %>%
-  jsonlite::toJSON(auto_unbox = TRUE)
+#timestamp <- list(last_updated = format(Sys.time(), "%Y-%m-%d %X", tz = "Europe/Berlin")) %>%
+#  jsonlite::toJSON(auto_unbox = TRUE)
 
-write(timestamp, "timestamp.json")
-piggyback::pb_upload("timestamp.json", "bohndesverband/rfl-data", "elo_data", overwrite = TRUE)
+#write(timestamp, "timestamp.json")
+#piggyback::pb_upload("timestamp.json", "bohndesverband/rfl-data", "elo_data", overwrite = TRUE)
