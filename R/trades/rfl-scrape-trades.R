@@ -36,7 +36,7 @@ trade_data_raw <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/
   dplyr::select(timestamp, franchise, franchise2, franchise1_gave_up, franchise2_gave_up) %>%
   dplyr::arrange(timestamp) %>%
   dplyr::mutate(
-    trade_id = paste0(var_season, sprintf("%003d", row_number()))
+    trade_id = as.numeric(paste0(var_season, sprintf("%003d", row_number())))
   ) %>%
   dplyr::filter(trade_id > last_entry)
 
@@ -56,6 +56,7 @@ if (dim(trade_data_raw)[1] != 0) {
     dplyr::mutate(franchise = "franchise_2")
 
   trade_data <- rbind(franchise1, franchise2) %>%
+    dplyr::mutate(trade_id = as.numeric(trade_id)) %>%
     dplyr::arrange(trade_id) %>%
     dplyr::left_join(
       trade_data_raw %>%
@@ -73,6 +74,7 @@ if (dim(trade_data_raw)[1] != 0) {
     dplyr::rowwise() %>%
     dplyr::mutate(
       date = lubridate::as_datetime(as.numeric(timestamp), tz = "GMT"),
+      timestamp = as.double(timestamp),
       season = var_season,
       week = find_week(as.Date(date))
     ) %>%
@@ -115,7 +117,7 @@ if (dim(trade_data_raw)[1] != 0) {
     dplyr::rename(trade_side = franchise, asset_id = asset)
 
   cli::cli_alert_info("Write Data")
-  readr::write_csv(trade_data, paste0("rfl_trades_", var_season, ".csv"))
+  readr::write_csv(rbind(past_trades, trade_data), paste0("rfl_trades_", var_season, ".csv"))
 
   cli::cli_alert_info("Upload Data")
   piggyback::pb_upload(paste0("rfl_trades_", var_season, ".csv"), "bohndesverband/rfl-data", "trade_data", overwrite = TRUE)
