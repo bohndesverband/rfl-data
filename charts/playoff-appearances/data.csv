@@ -1,0 +1,409 @@
+season,bowl,bracket,week,game_id,franchise_id,franchise_points,match_result,po_finish,title,total_appearances,next_appearance,franchise_name
+2017,PB,Pro Bowl,13,PB-2017-01,0013,199.28,L,5,0,2,2022,Cologne Thunderkittens
+2017,PB,Pro Bowl,13,PB-2017-02,0027,168.73,L,5,0,1,NA,Golden Skulls Göttingen
+2017,PB,Pro Bowl,13,PB-2017-03,0022,183.51,L,5,0,3,2020,M-V Lightning
+2017,PB,Pro Bowl,13,PB-2017-04,0026,253.7,W,NA,0,4,2017,Red Raiders
+2017,PB,Pro Bowl,13,PB-2017-01,0011,244.46,W,NA,0,2,2017,Flens Pirates 
+2017,PB,Pro Bowl,13,PB-2017-02,0012,239.26,W,NA,0,2,2017,Wüterich Packers
+2017,PB,Pro Bowl,13,PB-2017-03,0036,225.64,W,NA,0,3,2017,Baratheon Boars
+2017,PB,Pro Bowl,13,PB-2017-04,0024,213.86,L,5,0,3,2019,Milano Raptors
+2017,SB,Super Bowl RFC,13,SB-2017-01,0025,247.28,W,NA,NA,4,2017,Hannover Eagles
+2017,SB,Super Bowl RFC,13,SB-2017-02,0028,215.11,W,NA,NA,2,2017,German Cats
+2017,SB,Super Bowl BFC,13,SB-2017-03,0001,186.3,L,7,0,3,2018,Dortmund Cardinals
+2017,SB,Super Bowl BFC,13,SB-2017-04,0018,187.68,L,7,0,1,NA,Hintertupfingen Griffins
+2017,SB,Super Bowl RFC,13,SB-2017-01,0007,229.82,L,7,0,1,NA,Jena Dragons
+2017,SB,Super Bowl RFC,13,SB-2017-02,0006,197.54,L,7,0,3,2018,Dexter Wolves
+2017,SB,Super Bowl BFC,13,SB-2017-03,0019,205.79,W,NA,NA,3,2017,Dresden Jaguars
+2017,SB,Super Bowl BFC,13,SB-2017-04,0017,280.5,W,NA,NA,6,2017,Nordic Wolves
+2017,TB,Toilet Bowl,13,TB-2017-01,0023,162.22,L,5,0,1,NA,Berlin Bears
+2017,TB,Toilet Bowl,13,TB-2017-02,0015,179.86,W,NA,0,1,2017,Las Vegas Saints
+2017,TB,Toilet Bowl,13,TB-2017-03,0010,224.94,W,NA,0,4,2017,Güstrow Racoons
+2017,TB,Toilet Bowl,13,TB-2017-04,0009,189.3,L,5,0,4,2020,Syke Steelers
+2017,TB,Toilet Bowl,13,TB-2017-01,0033,230.38,W,NA,0,1,2017,Auwald Woodpecker
+2017,TB,Toilet Bowl,13,TB-2017-02,0035,138.02,L,5,0,6,2018,Güstrow Torros
+2017,TB,Toilet Bowl,13,TB-2017-03,0003,175.06,L,5,0,2,2019,CTU Los Angeles
+2017,TB,Toilet Bowl,13,TB-2017-04,0020,229.04,W,NA,0,4,2017,Wandsbek Hogs
+2017,PB,Pro Bowl,14,PB-2017-05,0011,205.19,W,NA,0,2,2017,Flens Pirates 
+2017,PB,Pro Bowl,14,PB-2017-06,0026,233.74,W,NA,0,4,2017,Red Raiders
+2017,PB,Pro Bowl,14,PB-2017-07,0012,227.41,L,4,0,2,2022,Wüterich Packers
+2017,PB,Pro Bowl,14,PB-2017-08,0036,205.02,L,4,0,3,2020,Baratheon Boars
+2017,PB,Pro Bowl,14,PB-2017-05,0034,190.59,L,4,0,4,2018,Fulda Jets
+2017,PB,Pro Bowl,14,PB-2017-06,0021,124.89,L,4,0,1,NA,Munich Lions
+2017,PB,Pro Bowl,14,PB-2017-07,0014,235.15,W,NA,0,4,2017,Deevillage Moonwalkers
+2017,PB,Pro Bowl,14,PB-2017-08,0002,240.64,W,NA,0,2,2017,Wolftown Rocketeers
+2017,SB,Super Bowl RFC,14,SB-2017-05,0025,197.44,L,6,0,4,2018,Hannover Eagles
+2017,SB,Super Bowl RFC,14,SB-2017-06,0028,215.81,L,6,0,2,2019,German Cats
+2017,SB,Super Bowl BFC,14,SB-2017-07,0019,228.54,W,NA,NA,3,2017,Dresden Jaguars
+2017,SB,Super Bowl BFC,14,SB-2017-08,0017,254.16,L,6,0,6,2018,Nordic Wolves
+2017,SB,Super Bowl RFC,14,SB-2017-05,0004,229.44,W,NA,NA,6,2017,Cleve Crusader
+2017,SB,Super Bowl RFC,14,SB-2017-06,0016,260.31,W,NA,NA,5,2017,Wichita´s Hall of Fame Squad
+2017,SB,Super Bowl BFC,14,SB-2017-07,0029,221.75,L,6,0,2,2018,D-Block Busters
+2017,SB,Super Bowl BFC,14,SB-2017-08,0005,271.64,W,NA,NA,5,2017,G-Town Pandas
+2017,TB,Toilet Bowl,14,TB-2017-05,0033,247.08,W,NA,0,1,2017,Auwald Woodpecker
+2017,TB,Toilet Bowl,14,TB-2017-06,0020,225.8,W,NA,0,4,2017,Wandsbek Hogs
+2017,TB,Toilet Bowl,14,TB-2017-07,0015,230.68,L,4,0,1,NA,Las Vegas Saints
+2017,TB,Toilet Bowl,14,TB-2017-08,0010,208.42,W,NA,0,4,2017,Güstrow Racoons
+2017,TB,Toilet Bowl,14,TB-2017-05,0031,184.2,L,4,0,5,2018,German Swans
+2017,TB,Toilet Bowl,14,TB-2017-06,0032,211.72,L,4,0,5,2019,Newtown Patriots
+2017,TB,Toilet Bowl,14,TB-2017-07,0008,238.94,W,NA,0,4,2017,Dortmund Packers
+2017,TB,Toilet Bowl,14,TB-2017-08,0030,178.64,L,4,0,3,2018,Higglystadt Patriots
+2017,PB,Pro Bowl,15,PB-2017-09,0011,235.57,W,NA,0,2,2017,Flens Pirates 
+2017,PB,Pro Bowl,15,PB-2017-10,0014,227.77,W,NA,0,4,2017,Deevillage Moonwalkers
+2017,PB,Pro Bowl,15,PB-2017-09,0026,205.44,L,3,0,4,2018,Red Raiders
+2017,PB,Pro Bowl,15,PB-2017-10,0002,178.08,L,3,0,2,2022,Wolftown Rocketeers
+2017,SB,Super Bowl RFC,15,SB-2017-09,0004,231.28,L,5,0,6,2017,Cleve Crusader
+2017,SB,Super Bowl BFC,15,SB-2017-10,0019,217.47,L,5,0,3,2017,Dresden Jaguars
+2017,SB,Super Bowl RFC,15,SB-2017-09,0016,264.77,W,NA,NA,5,2017,Wichita´s Hall of Fame Squad
+2017,SB,Super Bowl BFC,15,SB-2017-10,0005,265.5,W,NA,NA,5,2017,G-Town Pandas
+2017,TB,Toilet Bowl,15,TB-2017-09,0033,196.93,L,3,0,1,NA,Auwald Woodpecker
+2017,TB,Toilet Bowl,15,TB-2017-10,0008,179.2,W,NA,0,4,2017,Dortmund Packers
+2017,TB,Toilet Bowl,15,TB-2017-09,0020,203.33,W,NA,0,4,2017,Wandsbek Hogs
+2017,TB,Toilet Bowl,15,TB-2017-10,0010,168.78,L,3,0,4,2019,Güstrow Racoons
+2017,PB,Pro Bowl,16,PB-2017-11,0011,245.37,W,1,0,2,2018,Flens Pirates 
+2017,PB,Pro Bowl,16,PB-2017-11,0014,201.2,L,2,0,4,2018,Deevillage Moonwalkers
+2017,SB,Superbowl,16,SB-2017-11,0005,269.42,W,1,1,5,2018,G-Town Pandas
+2017,SB,Spiel um Platz drei,16,SB-2017-12,0019,222.65,L,4,0,3,2020,Dresden Jaguars
+2017,SB,Superbowl,16,SB-2017-11,0016,268.64,L,2,0,5,2018,Wichita´s Hall of Fame Squad
+2017,SB,Spiel um Platz drei,16,SB-2017-12,0004,233.42,W,3,0,6,2018,Cleve Crusader
+2017,TB,Toilet Bowl,16,TB-2017-11,0020,171.49,L,2,0,4,2018,Wandsbek Hogs
+2017,TB,Toilet Bowl,16,TB-2017-11,0008,191.54,W,1,0,4,2018,Dortmund Packers
+2018,PB,Pro Bowl,13,PB-2018-01,0032,168.28,L,5,0,1,NA,Newtown Patriots
+2018,PB,Pro Bowl,13,PB-2018-02,0033,228.4,W,NA,0,4,2018,Auwald Woodpecker
+2018,PB,Pro Bowl,13,PB-2018-03,0010,194.21,L,5,0,2,2022,Güstrow Racoons
+2018,PB,Pro Bowl,13,PB-2018-04,0003,165.33,L,5,0,3,2020,CTU Los Angeles
+2018,PB,Pro Bowl,13,PB-2018-01,0018,269.3,W,NA,0,3,2018,Hintertupfingen Griffins
+2018,PB,Pro Bowl,13,PB-2018-02,0019,184.88,L,5,0,3,2019,Dresden Jaguars
+2018,PB,Pro Bowl,13,PB-2018-03,0034,203.66,W,NA,0,4,2018,Fulda Jets
+2018,PB,Pro Bowl,13,PB-2018-04,0028,218.96,W,NA,0,2,2018,German Cats
+2018,SB,Super Bowl RFC,13,SB-2018-01,0024,250.96,W,NA,NA,2,2018,Milano Raptors
+2018,SB,Super Bowl RFC,13,SB-2018-02,0029,199.1,L,7,0,2,NA,D-Block Busters
+2018,SB,Super Bowl BFC,13,SB-2018-03,0006,316.05,W,NA,NA,3,2018,Dexter Wolves
+2018,SB,Super Bowl BFC,13,SB-2018-04,0001,254.9,L,7,0,3,2019,Dortmund Cardinals
+2018,SB,Super Bowl RFC,13,SB-2018-01,0009,217.59,L,7,0,1,NA,Syke Steelers
+2018,SB,Super Bowl RFC,13,SB-2018-02,0012,363.16,W,NA,NA,4,2018,Wüterich Packers
+2018,SB,Super Bowl BFC,13,SB-2018-03,0016,269.36,L,7,0,5,2019,Wichita´s Hall of Fame Squad
+2018,SB,Super Bowl BFC,13,SB-2018-04,0025,276.04,W,NA,NA,4,2018,Hannover Eagles
+2018,TB,Toilet Bowl,13,TB-2018-01,0013,170.39,W,NA,0,2,2018,Cologne Thunderkittens
+2018,TB,Toilet Bowl,13,TB-2018-02,0036,171.72,L,5,0,1,NA,Baratheon Boars
+2018,TB,Toilet Bowl,13,TB-2018-03,0022,207.73,W,NA,0,2,2018,M-V Lightning
+2018,TB,Toilet Bowl,13,TB-2018-04,0035,110.14,L,5,0,6,2019,Güstrow Torros
+2018,TB,Toilet Bowl,13,TB-2018-01,0030,147.24,L,5,0,3,2020,Higglystadt Patriots
+2018,TB,Toilet Bowl,13,TB-2018-02,0020,183.7,W,NA,0,4,2018,Wandsbek Hogs
+2018,TB,Toilet Bowl,13,TB-2018-03,0031,181.33,L,5,0,5,2019,German Swans
+2018,TB,Toilet Bowl,13,TB-2018-04,0007,187.54,W,NA,0,1,2018,Jena Dragons
+2018,PB,Pro Bowl,14,PB-2018-05,0018,148.38,L,4,0,3,2019,Hintertupfingen Griffins
+2018,PB,Pro Bowl,14,PB-2018-06,0028,275.74,W,NA,0,2,2018,German Cats
+2018,PB,Pro Bowl,14,PB-2018-07,0033,216.98,L,4,0,4,2019,Auwald Woodpecker
+2018,PB,Pro Bowl,14,PB-2018-08,0034,238.52,W,NA,0,4,2018,Fulda Jets
+2018,PB,Pro Bowl,14,PB-2018-05,0026,234.18,W,NA,0,4,2018,Red Raiders
+2018,PB,Pro Bowl,14,PB-2018-06,0014,203.59,L,4,0,4,2019,Deevillage Moonwalkers
+2018,PB,Pro Bowl,14,PB-2018-07,0015,257.38,W,NA,0,3,2018,Las Vegas Saints
+2018,PB,Pro Bowl,14,PB-2018-08,0011,229.95,L,4,0,2,NA,Flens Pirates 
+2018,SB,Super Bowl RFC,14,SB-2018-05,0024,240.6,L,6,0,2,2022,Milano Raptors
+2018,SB,Super Bowl RFC,14,SB-2018-06,0012,226.6,L,6,0,4,2019,Wüterich Packers
+2018,SB,Super Bowl BFC,14,SB-2018-07,0006,250.56,L,6,0,3,2020,Dexter Wolves
+2018,SB,Super Bowl BFC,14,SB-2018-08,0025,304.42,W,NA,NA,4,2018,Hannover Eagles
+2018,SB,Super Bowl RFC,14,SB-2018-05,0017,270.65,W,NA,NA,6,2018,Nordic Wolves
+2018,SB,Super Bowl RFC,14,SB-2018-06,0023,264.7,W,NA,NA,5,2018,Berlin Bears
+2018,SB,Super Bowl BFC,14,SB-2018-07,0005,263.69,W,NA,NA,5,2018,G-Town Pandas
+2018,SB,Super Bowl BFC,14,SB-2018-08,0004,227.63,L,6,0,6,2019,Cleve Crusader
+2018,TB,Toilet Bowl,14,TB-2018-05,0013,193.55,L,4,0,2,2019,Cologne Thunderkittens
+2018,TB,Toilet Bowl,14,TB-2018-06,0007,191.78,W,NA,0,1,2018,Jena Dragons
+2018,TB,Toilet Bowl,14,TB-2018-07,0020,182.25,W,NA,0,4,2018,Wandsbek Hogs
+2018,TB,Toilet Bowl,14,TB-2018-08,0022,193.2,L,4,0,2,2019,M-V Lightning
+2018,TB,Toilet Bowl,14,TB-2018-05,0027,248.68,W,NA,0,4,2018,Golden Skulls Göttingen
+2018,TB,Toilet Bowl,14,TB-2018-06,0021,175.92,L,4,0,3,2019,Munich Lions
+2018,TB,Toilet Bowl,14,TB-2018-07,0002,156.63,L,4,0,4,2019,Wolftown Rocketeers
+2018,TB,Toilet Bowl,14,TB-2018-08,0008,246.04,W,NA,0,4,2018,Dortmund Packers
+2018,PB,Pro Bowl,15,PB-2018-09,0026,215.3,L,3,0,4,2020,Red Raiders
+2018,PB,Pro Bowl,15,PB-2018-10,0015,232.36,W,NA,0,3,2018,Las Vegas Saints
+2018,PB,Pro Bowl,15,PB-2018-09,0028,243.38,W,NA,0,2,2018,German Cats
+2018,PB,Pro Bowl,15,PB-2018-10,0034,189.86,L,3,0,4,2020,Fulda Jets
+2018,SB,Super Bowl RFC,15,SB-2018-09,0017,222.22,L,5,0,6,2018,Nordic Wolves
+2018,SB,Super Bowl BFC,15,SB-2018-10,0005,228.98,L,5,0,5,2018,G-Town Pandas
+2018,SB,Super Bowl RFC,15,SB-2018-09,0023,238.44,W,NA,NA,5,2018,Berlin Bears
+2018,SB,Super Bowl BFC,15,SB-2018-10,0025,240.3,W,NA,NA,4,2018,Hannover Eagles
+2018,TB,Toilet Bowl,15,TB-2018-09,0027,233.22,W,NA,0,4,2018,Golden Skulls Göttingen
+2018,TB,Toilet Bowl,15,TB-2018-10,0020,206.39,W,NA,0,4,2018,Wandsbek Hogs
+2018,TB,Toilet Bowl,15,TB-2018-09,0007,211.7,L,3,0,1,NA,Jena Dragons
+2018,TB,Toilet Bowl,15,TB-2018-10,0008,179.46,L,3,0,4,2020,Dortmund Packers
+2018,PB,Pro Bowl,16,PB-2018-11,0028,211.56,L,2,0,2,2022,German Cats
+2018,PB,Pro Bowl,16,PB-2018-11,0015,242.26,W,1,0,3,2019,Las Vegas Saints
+2018,SB,Superbowl,16,SB-2018-11,0025,245.49,L,2,0,4,2019,Hannover Eagles
+2018,SB,Spiel um Platz drei,16,SB-2018-12,0005,250.04,L,4,0,5,2019,G-Town Pandas
+2018,SB,Superbowl,16,SB-2018-11,0023,273.74,W,1,1,5,2019,Berlin Bears
+2018,SB,Spiel um Platz drei,16,SB-2018-12,0017,262.86,W,3,0,6,2019,Nordic Wolves
+2018,TB,Toilet Bowl,16,TB-2018-11,0027,197.24,W,1,0,4,2020,Golden Skulls Göttingen
+2018,TB,Toilet Bowl,16,TB-2018-11,0020,153.84,L,2,0,4,2019,Wandsbek Hogs
+2019,PB,Pro Bowl,13,PB-2019-01,0018,235.8,W,NA,0,3,2019,Hintertupfingen Griffins
+2019,PB,Pro Bowl,13,PB-2019-02,0008,217.92,W,NA,0,2,2019,Dortmund Packers
+2019,PB,Pro Bowl,13,PB-2019-03,0030,213.68,L,5,0,2,2021,Higglystadt Patriots
+2019,PB,Pro Bowl,13,PB-2019-04,0007,213.88,L,5,0,4,2020,Jena Dragons
+2019,PB,Pro Bowl,13,PB-2019-01,0029,159.94,L,5,0,3,2020,D-Block Busters
+2019,PB,Pro Bowl,13,PB-2019-02,0019,180.84,L,5,0,3,2021,Dresden Jaguars
+2019,PB,Pro Bowl,13,PB-2019-03,0009,225.5,W,NA,0,1,2019,Syke Steelers
+2019,PB,Pro Bowl,13,PB-2019-04,0014,255.42,W,NA,0,4,2019,Deevillage Moonwalkers
+2019,SB,Super Bowl RFC,13,SB-2019-01,0028,192.1,L,7,0,2,NA,German Cats
+2019,SB,Super Bowl RFC,13,SB-2019-02,0036,186.06,L,7,0,2,2022,Baratheon Boars
+2019,SB,Super Bowl BFC,13,SB-2019-03,0011,211.52,L,7,0,3,2020,Flens Pirates 
+2019,SB,Super Bowl BFC,13,SB-2019-04,0027,177.9,L,7,0,1,NA,Golden Skulls Göttingen
+2019,SB,Super Bowl RFC,13,SB-2019-01,0016,238.44,W,NA,NA,5,2019,Wichita´s Hall of Fame Squad
+2019,SB,Super Bowl RFC,13,SB-2019-02,0004,189.5,W,NA,NA,6,2019,Cleve Crusader
+2019,SB,Super Bowl BFC,13,SB-2019-03,0012,212.28,W,NA,NA,4,2019,Wüterich Packers
+2019,SB,Super Bowl BFC,13,SB-2019-04,0001,211.5,W,NA,NA,3,2019,Dortmund Cardinals
+2019,TB,Toilet Bowl,13,TB-2019-01,0010,179.11,L,5,0,4,2020,Güstrow Racoons
+2019,TB,Toilet Bowl,13,TB-2019-02,0035,171.36,L,5,0,6,2020,Güstrow Torros
+2019,TB,Toilet Bowl,13,TB-2019-03,0003,212.76,W,NA,0,2,2019,CTU Los Angeles
+2019,TB,Toilet Bowl,13,TB-2019-04,0031,178.84,W,NA,0,5,2019,German Swans
+2019,TB,Toilet Bowl,13,TB-2019-01,0026,208.39,W,NA,0,1,2019,Red Raiders
+2019,TB,Toilet Bowl,13,TB-2019-02,0032,209.86,W,NA,0,5,2019,Newtown Patriots
+2019,TB,Toilet Bowl,13,TB-2019-03,0002,159.1,L,5,0,4,2020,Wolftown Rocketeers
+2019,TB,Toilet Bowl,13,TB-2019-04,0022,145.4,L,5,0,2,NA,M-V Lightning
+2019,PB,Pro Bowl,14,PB-2019-05,0018,234.3,L,4,0,3,2020,Hintertupfingen Griffins
+2019,PB,Pro Bowl,14,PB-2019-06,0014,260.6,W,NA,0,4,2019,Deevillage Moonwalkers
+2019,PB,Pro Bowl,14,PB-2019-07,0008,243.1,W,NA,0,2,2019,Dortmund Packers
+2019,PB,Pro Bowl,14,PB-2019-08,0009,265.59,W,NA,0,1,2019,Syke Steelers
+2019,PB,Pro Bowl,14,PB-2019-05,0015,258.78,W,NA,0,3,2019,Las Vegas Saints
+2019,PB,Pro Bowl,14,PB-2019-06,0006,211.52,L,4,0,3,2021,Dexter Wolves
+2019,PB,Pro Bowl,14,PB-2019-07,0033,240.56,L,4,0,4,2020,Auwald Woodpecker
+2019,PB,Pro Bowl,14,PB-2019-08,0024,256.88,L,4,0,3,2020,Milano Raptors
+2019,SB,Super Bowl RFC,14,SB-2019-05,0016,251.9,L,6,0,5,2020,Wichita´s Hall of Fame Squad
+2019,SB,Super Bowl RFC,14,SB-2019-06,0004,301.11,W,NA,NA,6,2019,Cleve Crusader
+2019,SB,Super Bowl BFC,14,SB-2019-07,0012,247.74,L,6,0,4,2020,Wüterich Packers
+2019,SB,Super Bowl BFC,14,SB-2019-08,0001,201.8,L,6,0,3,NA,Dortmund Cardinals
+2019,SB,Super Bowl RFC,14,SB-2019-05,0023,303.34,W,NA,NA,5,2019,Berlin Bears
+2019,SB,Super Bowl RFC,14,SB-2019-06,0025,253.7,L,6,0,4,2020,Hannover Eagles
+2019,SB,Super Bowl BFC,14,SB-2019-07,0005,302.6,W,NA,NA,5,2019,G-Town Pandas
+2019,SB,Super Bowl BFC,14,SB-2019-08,0017,220.18,W,NA,NA,6,2019,Nordic Wolves
+2019,TB,Toilet Bowl,14,TB-2019-05,0026,228.44,L,4,0,1,NA,Red Raiders
+2019,TB,Toilet Bowl,14,TB-2019-06,0031,177.38,W,NA,0,5,2019,German Swans
+2019,TB,Toilet Bowl,14,TB-2019-07,0032,215.06,L,4,0,5,2020,Newtown Patriots
+2019,TB,Toilet Bowl,14,TB-2019-08,0003,197.34,W,NA,0,2,2019,CTU Los Angeles
+2019,TB,Toilet Bowl,14,TB-2019-05,0013,246.54,W,NA,0,2,2019,Cologne Thunderkittens
+2019,TB,Toilet Bowl,14,TB-2019-06,0020,141.12,L,4,0,4,2022,Wandsbek Hogs
+2019,TB,Toilet Bowl,14,TB-2019-07,0034,224.78,W,NA,0,2,2019,Fulda Jets
+2019,TB,Toilet Bowl,14,TB-2019-08,0021,182.18,L,4,0,3,2020,Munich Lions
+2019,PB,Pro Bowl,15,PB-2019-09,0015,227.12,L,3,0,3,2020,Las Vegas Saints
+2019,PB,Pro Bowl,15,PB-2019-10,0008,222.94,W,NA,0,2,2019,Dortmund Packers
+2019,PB,Pro Bowl,15,PB-2019-09,0014,227.26,W,NA,0,4,2019,Deevillage Moonwalkers
+2019,PB,Pro Bowl,15,PB-2019-10,0009,192.36,L,3,0,1,NA,Syke Steelers
+2019,SB,Super Bowl RFC,15,SB-2019-09,0023,266.56,L,5,0,5,2019,Berlin Bears
+2019,SB,Super Bowl BFC,15,SB-2019-10,0005,306.48,W,NA,NA,5,2019,G-Town Pandas
+2019,SB,Super Bowl RFC,15,SB-2019-09,0004,284.52,W,NA,NA,6,2019,Cleve Crusader
+2019,SB,Super Bowl BFC,15,SB-2019-10,0017,274.63,L,5,0,6,2019,Nordic Wolves
+2019,TB,Toilet Bowl,15,TB-2019-09,0013,237.12,W,NA,0,2,2019,Cologne Thunderkittens
+2019,TB,Toilet Bowl,15,TB-2019-10,0034,225.02,W,NA,0,2,2019,Fulda Jets
+2019,TB,Toilet Bowl,15,TB-2019-09,0031,176.28,L,3,0,5,2020,German Swans
+2019,TB,Toilet Bowl,15,TB-2019-10,0003,173.78,L,3,0,2,NA,CTU Los Angeles
+2019,PB,Pro Bowl,16,PB-2019-11,0014,344.06,W,1,0,4,2022,Deevillage Moonwalkers
+2019,PB,Pro Bowl,16,PB-2019-11,0008,237.96,L,2,0,2,2021,Dortmund Packers
+2019,SB,Superbowl,16,SB-2019-11,0004,205.5,L,2,0,6,2020,Cleve Crusader
+2019,SB,Spiel um Platz drei,16,SB-2019-12,0023,261.78,W,3,0,5,2020,Berlin Bears
+2019,SB,Superbowl,16,SB-2019-11,0005,234.92,W,1,1,5,2020,G-Town Pandas
+2019,SB,Spiel um Platz drei,16,SB-2019-12,0017,247.42,L,4,0,6,2020,Nordic Wolves
+2019,TB,Toilet Bowl,16,TB-2019-11,0013,209.7,L,2,0,2,NA,Cologne Thunderkittens
+2019,TB,Toilet Bowl,16,TB-2019-11,0034,218.66,W,1,0,2,2021,Fulda Jets
+2020,PB,Pro Bowl,13,PB-2020-01,0022,273.28,W,NA,0,3,2020,M-V Lightning
+2020,PB,Pro Bowl,13,PB-2020-02,0024,258.1,W,NA,0,3,2020,Milano Raptors
+2020,PB,Pro Bowl,13,PB-2020-03,0029,268.26,W,NA,0,3,2020,D-Block Busters
+2020,PB,Pro Bowl,13,PB-2020-04,0034,293.83,W,NA,0,4,2020,Fulda Jets
+2020,PB,Pro Bowl,13,PB-2020-01,0015,234.64,L,5,0,3,NA,Las Vegas Saints
+2020,PB,Pro Bowl,13,PB-2020-02,0026,253.15,L,5,0,4,2021,Red Raiders
+2020,PB,Pro Bowl,13,PB-2020-03,0036,196.15,L,5,0,3,2021,Baratheon Boars
+2020,PB,Pro Bowl,13,PB-2020-04,0007,197.06,L,5,0,4,2021,Jena Dragons
+2020,SB,Super Bowl RFC,13,SB-2020-01,0004,238.24,L,7,0,6,2021,Cleve Crusader
+2020,SB,Super Bowl RFC,13,SB-2020-02,0013,197.84,W,NA,NA,2,2020,Cologne Thunderkittens
+2020,SB,Super Bowl BFC,13,SB-2020-03,0014,216.66,L,7,0,2,2021,Deevillage Moonwalkers
+2020,SB,Super Bowl BFC,13,SB-2020-04,0012,281.01,W,NA,NA,4,2020,Wüterich Packers
+2020,SB,Super Bowl RFC,13,SB-2020-01,0025,242.36,W,NA,NA,4,2020,Hannover Eagles
+2020,SB,Super Bowl RFC,13,SB-2020-02,0019,193.6,L,7,0,3,2022,Dresden Jaguars
+2020,SB,Super Bowl BFC,13,SB-2020-03,0016,273.12,W,NA,NA,5,2020,Wichita´s Hall of Fame Squad
+2020,SB,Super Bowl BFC,13,SB-2020-04,0006,226.2,L,7,0,3,NA,Dexter Wolves
+2020,TB,Toilet Bowl,13,TB-2020-01,0027,190.15,L,5,0,4,2021,Golden Skulls Göttingen
+2020,TB,Toilet Bowl,13,TB-2020-02,0008,201.05,L,5,0,4,2022,Dortmund Packers
+2020,TB,Toilet Bowl,13,TB-2020-03,0001,205,W,NA,0,3,2020,Dortmund Cardinals
+2020,TB,Toilet Bowl,13,TB-2020-04,0035,194.19,W,NA,0,6,2020,Güstrow Torros
+2020,TB,Toilet Bowl,13,TB-2020-01,0031,223.96,W,NA,0,5,2020,German Swans
+2020,TB,Toilet Bowl,13,TB-2020-02,0028,205.94,W,NA,0,2,2020,German Cats
+2020,TB,Toilet Bowl,13,TB-2020-03,0030,193.34,L,5,0,3,NA,Higglystadt Patriots
+2020,TB,Toilet Bowl,13,TB-2020-04,0009,150.85,L,5,0,4,2021,Syke Steelers
+2020,PB,Pro Bowl,14,PB-2020-05,0022,249.94,W,NA,0,3,2020,M-V Lightning
+2020,PB,Pro Bowl,14,PB-2020-06,0034,223.02,W,NA,0,4,2020,Fulda Jets
+2020,PB,Pro Bowl,14,PB-2020-07,0024,176.16,L,4,0,3,NA,Milano Raptors
+2020,PB,Pro Bowl,14,PB-2020-08,0029,253.06,W,NA,0,3,2020,D-Block Busters
+2020,PB,Pro Bowl,14,PB-2020-05,0018,198.65,L,4,0,3,NA,Hintertupfingen Griffins
+2020,PB,Pro Bowl,14,PB-2020-06,0003,180.02,L,4,0,3,2022,CTU Los Angeles
+2020,PB,Pro Bowl,14,PB-2020-07,0033,188.22,W,NA,0,4,2020,Auwald Woodpecker
+2020,PB,Pro Bowl,14,PB-2020-08,0020,197.78,L,4,0,2,2021,Wandsbek Hogs
+2020,SB,Super Bowl RFC,14,SB-2020-05,0025,224.78,L,6,0,4,NA,Hannover Eagles
+2020,SB,Super Bowl RFC,14,SB-2020-06,0013,205.04,L,6,0,2,2021,Cologne Thunderkittens
+2020,SB,Super Bowl BFC,14,SB-2020-07,0016,300.9,W,NA,NA,5,2020,Wichita´s Hall of Fame Squad
+2020,SB,Super Bowl BFC,14,SB-2020-08,0012,235.33,L,6,0,4,2021,Wüterich Packers
+2020,SB,Super Bowl RFC,14,SB-2020-05,0005,285.34,W,NA,NA,5,2020,G-Town Pandas
+2020,SB,Super Bowl RFC,14,SB-2020-06,0023,296.22,W,NA,NA,5,2020,Berlin Bears
+2020,SB,Super Bowl BFC,14,SB-2020-07,0011,278.4,L,6,0,3,2022,Flens Pirates 
+2020,SB,Super Bowl BFC,14,SB-2020-08,0017,281.16,W,NA,NA,6,2020,Nordic Wolves
+2020,TB,Toilet Bowl,14,TB-2020-05,0031,231.47,W,NA,0,5,2020,German Swans
+2020,TB,Toilet Bowl,14,TB-2020-06,0035,182.15,L,4,0,6,2021,Güstrow Torros
+2020,TB,Toilet Bowl,14,TB-2020-07,0028,201.13,L,4,0,2,2021,German Cats
+2020,TB,Toilet Bowl,14,TB-2020-08,0001,168.77,L,4,0,3,2021,Dortmund Cardinals
+2020,TB,Toilet Bowl,14,TB-2020-05,0002,226.42,L,4,0,4,2021,Wolftown Rocketeers
+2020,TB,Toilet Bowl,14,TB-2020-06,0021,192.55,W,NA,0,3,2020,Munich Lions
+2020,TB,Toilet Bowl,14,TB-2020-07,0032,238.12,W,NA,0,5,2020,Newtown Patriots
+2020,TB,Toilet Bowl,14,TB-2020-08,0010,184.94,W,NA,0,4,2020,Güstrow Racoons
+2020,PB,Pro Bowl,15,PB-2020-09,0022,232.56,W,NA,0,3,2020,M-V Lightning
+2020,PB,Pro Bowl,15,PB-2020-10,0033,269.22,W,NA,0,4,2020,Auwald Woodpecker
+2020,PB,Pro Bowl,15,PB-2020-09,0034,225.76,L,3,0,4,2022,Fulda Jets
+2020,PB,Pro Bowl,15,PB-2020-10,0029,260.36,L,3,0,3,2021,D-Block Busters
+2020,SB,Super Bowl RFC,15,SB-2020-09,0005,213.52,L,5,0,5,2020,G-Town Pandas
+2020,SB,Super Bowl BFC,15,SB-2020-10,0016,294.42,W,NA,NA,5,2020,Wichita´s Hall of Fame Squad
+2020,SB,Super Bowl RFC,15,SB-2020-09,0023,279.86,W,NA,NA,5,2020,Berlin Bears
+2020,SB,Super Bowl BFC,15,SB-2020-10,0017,284.96,L,5,0,6,2020,Nordic Wolves
+2020,TB,Toilet Bowl,15,TB-2020-09,0031,222.83,L,3,0,5,2022,German Swans
+2020,TB,Toilet Bowl,15,TB-2020-10,0032,136.76,L,3,0,5,2021,Newtown Patriots
+2020,TB,Toilet Bowl,15,TB-2020-09,0021,235.82,W,NA,0,3,2020,Munich Lions
+2020,TB,Toilet Bowl,15,TB-2020-10,0010,190.96,W,NA,0,4,2020,Güstrow Racoons
+2020,PB,Pro Bowl,16,PB-2020-11,0022,258.57,L,2,0,3,2022,M-V Lightning
+2020,PB,Pro Bowl,16,PB-2020-11,0033,259.18,W,1,0,4,2022,Auwald Woodpecker
+2020,SB,Superbowl,16,SB-2020-11,0023,245.12,L,2,0,5,2021,Berlin Bears
+2020,SB,Spiel um Platz drei,16,SB-2020-12,0005,250.32,L,4,0,5,2022,G-Town Pandas
+2020,SB,Superbowl,16,SB-2020-11,0016,291.02,W,1,1,5,2021,Wichita´s Hall of Fame Squad
+2020,SB,Spiel um Platz drei,16,SB-2020-12,0017,278.1,W,3,0,6,2021,Nordic Wolves
+2020,TB,Toilet Bowl,16,TB-2020-11,0021,216.88,W,1,0,3,NA,Munich Lions
+2020,TB,Toilet Bowl,16,TB-2020-11,0010,185.8,L,2,0,4,2021,Güstrow Racoons
+2021,PB,Pro Bowl,14,PB-2021-01,0031,195.1,L,5,0,1,NA,German Swans
+2021,PB,Pro Bowl,14,PB-2021-02,0025,317.83,W,NA,0,1,2021,Hannover Eagles
+2021,PB,Pro Bowl,14,PB-2021-03,0008,214.04,W,NA,0,2,2021,Dortmund Packers
+2021,PB,Pro Bowl,14,PB-2021-04,0029,172.32,L,5,0,3,NA,D-Block Busters
+2021,PB,Pro Bowl,14,PB-2021-01,0020,195.34,W,NA,0,2,2021,Wandsbek Hogs
+2021,PB,Pro Bowl,14,PB-2021-02,0036,225.84,L,5,0,3,NA,Baratheon Boars
+2021,PB,Pro Bowl,14,PB-2021-03,0006,158.02,L,5,0,3,2022,Dexter Wolves
+2021,PB,Pro Bowl,14,PB-2021-04,0005,175.08,W,NA,0,1,2021,G-Town Pandas
+2021,SB,Super Bowl RFC,14,SB-2021-01,0021,225.04,L,7,0,2,2022,Munich Lions
+2021,SB,Super Bowl RFC,14,SB-2021-02,0004,219.48,L,7,0,6,2022,Cleve Crusader
+2021,SB,Super Bowl BFC,14,SB-2021-03,0003,278.37,W,NA,NA,1,2021,CTU Los Angeles
+2021,SB,Super Bowl BFC,14,SB-2021-04,0014,226.7,L,7,0,2,NA,Deevillage Moonwalkers
+2021,SB,Super Bowl RFC,14,SB-2021-01,0033,250.04,W,NA,NA,1,2021,Auwald Woodpecker
+2021,SB,Super Bowl RFC,14,SB-2021-02,0015,226.34,W,NA,NA,2,2021,Las Vegas Saints
+2021,SB,Super Bowl BFC,14,SB-2021-03,0012,197.72,L,7,0,4,NA,Wüterich Packers
+2021,SB,Super Bowl BFC,14,SB-2021-04,0023,250.92,W,NA,NA,5,2021,Berlin Bears
+2021,TB,Toilet Bowl,14,TB-2021-01,0018,141.86,L,5,0,2,2022,Hintertupfingen Griffins
+2021,TB,Toilet Bowl,14,TB-2021-02,0035,197.62,L,5,0,6,2022,Güstrow Torros
+2021,TB,Toilet Bowl,14,TB-2021-03,0010,178.42,L,5,0,4,NA,Güstrow Racoons
+2021,TB,Toilet Bowl,14,TB-2021-04,0028,167.38,L,5,0,2,NA,German Cats
+2021,TB,Toilet Bowl,14,TB-2021-01,0011,205.42,W,NA,0,1,2021,Flens Pirates 
+2021,TB,Toilet Bowl,14,TB-2021-02,0024,210.2,W,NA,0,1,2021,Milano Raptors
+2021,TB,Toilet Bowl,14,TB-2021-03,0009,190.72,W,NA,0,4,2021,Syke Steelers
+2021,TB,Toilet Bowl,14,TB-2021-04,0002,169.52,W,NA,0,4,2021,Wolftown Rocketeers
+2021,PB,Pro Bowl,15,PB-2021-05,0020,172.03,L,4,0,2,NA,Wandsbek Hogs
+2021,PB,Pro Bowl,15,PB-2021-06,0005,206.84,L,4,0,1,NA,G-Town Pandas
+2021,PB,Pro Bowl,15,PB-2021-07,0025,208.83,W,NA,0,1,2021,Hannover Eagles
+2021,PB,Pro Bowl,15,PB-2021-08,0008,153.42,L,4,0,2,NA,Dortmund Packers
+2021,PB,Pro Bowl,15,PB-2021-05,0026,228.94,W,NA,0,4,2021,Red Raiders
+2021,PB,Pro Bowl,15,PB-2021-06,0030,224.44,W,NA,0,2,2021,Higglystadt Patriots
+2021,PB,Pro Bowl,15,PB-2021-07,0007,184.06,L,4,0,4,2022,Jena Dragons
+2021,PB,Pro Bowl,15,PB-2021-08,0019,167.98,W,NA,0,3,2021,Dresden Jaguars
+2021,SB,Super Bowl RFC,15,SB-2021-05,0033,206.65,W,NA,NA,1,2021,Auwald Woodpecker
+2021,SB,Super Bowl RFC,15,SB-2021-06,0015,230.35,W,NA,NA,2,2021,Las Vegas Saints
+2021,SB,Super Bowl BFC,15,SB-2021-07,0003,183.95,W,NA,NA,1,2021,CTU Los Angeles
+2021,SB,Super Bowl BFC,15,SB-2021-08,0023,199.9,L,6,0,5,2022,Berlin Bears
+2021,SB,Super Bowl RFC,15,SB-2021-05,0013,201.14,L,6,0,2,NA,Cologne Thunderkittens
+2021,SB,Super Bowl RFC,15,SB-2021-06,0016,228.7,L,6,0,5,NA,Wichita´s Hall of Fame Squad
+2021,SB,Super Bowl BFC,15,SB-2021-07,0022,178.21,L,6,0,1,NA,M-V Lightning
+2021,SB,Super Bowl BFC,15,SB-2021-08,0017,304.26,W,NA,NA,6,2021,Nordic Wolves
+2021,TB,Toilet Bowl,15,TB-2021-05,0011,210.43,W,NA,0,1,2021,Flens Pirates 
+2021,TB,Toilet Bowl,15,TB-2021-06,0002,174.03,L,4,0,4,NA,Wolftown Rocketeers
+2021,TB,Toilet Bowl,15,TB-2021-07,0024,188.4,L,4,0,1,NA,Milano Raptors
+2021,TB,Toilet Bowl,15,TB-2021-08,0009,123.62,L,4,0,4,2022,Syke Steelers
+2021,TB,Toilet Bowl,15,TB-2021-05,0027,195.41,L,4,0,4,2022,Golden Skulls Göttingen
+2021,TB,Toilet Bowl,15,TB-2021-06,0001,201.32,W,NA,0,3,2021,Dortmund Cardinals
+2021,TB,Toilet Bowl,15,TB-2021-07,0034,242.84,W,NA,0,2,2021,Fulda Jets
+2021,TB,Toilet Bowl,15,TB-2021-08,0032,171.06,W,NA,0,5,2021,Newtown Patriots
+2021,PB,Pro Bowl,16,PB-2021-09,0026,265.06,W,NA,0,4,2021,Red Raiders
+2021,PB,Pro Bowl,16,PB-2021-10,0025,200.48,W,NA,0,1,2021,Hannover Eagles
+2021,PB,Pro Bowl,16,PB-2021-09,0030,150.6,L,3,0,2,NA,Higglystadt Patriots
+2021,PB,Pro Bowl,16,PB-2021-10,0019,165.47,L,3,0,3,NA,Dresden Jaguars
+2021,SB,Super Bowl RFC,16,SB-2021-09,0033,260.1,W,NA,NA,1,2021,Auwald Woodpecker
+2021,SB,Super Bowl BFC,16,SB-2021-10,0003,200.16,L,5,0,1,2021,CTU Los Angeles
+2021,SB,Super Bowl RFC,16,SB-2021-09,0015,240.7,L,5,0,2,2021,Las Vegas Saints
+2021,SB,Super Bowl BFC,16,SB-2021-10,0017,224.08,W,NA,NA,6,2021,Nordic Wolves
+2021,TB,Toilet Bowl,16,TB-2021-09,0011,187.9,L,3,0,1,NA,Flens Pirates 
+2021,TB,Toilet Bowl,16,TB-2021-10,0034,157.79,L,3,0,2,NA,Fulda Jets
+2021,TB,Toilet Bowl,16,TB-2021-09,0001,211.42,W,NA,0,3,2021,Dortmund Cardinals
+2021,TB,Toilet Bowl,16,TB-2021-10,0032,176.48,W,NA,0,5,2021,Newtown Patriots
+2021,PB,Pro Bowl,17,PB-2021-11,0026,176.85,L,2,0,4,NA,Red Raiders
+2021,PB,Pro Bowl,17,PB-2021-11,0025,285.76,W,1,0,1,NA,Hannover Eagles
+2021,SB,Superbowl,17,SB-2021-11,0033,263.04,W,1,1,1,NA,Auwald Woodpecker
+2021,SB,Spiel um Platz drei,17,SB-2021-12,0015,221.29,W,3,0,2,2022,Las Vegas Saints
+2021,SB,Superbowl,17,SB-2021-11,0017,198.11,L,2,0,6,2022,Nordic Wolves
+2021,SB,Spiel um Platz drei,17,SB-2021-12,0003,201.8,L,4,0,1,NA,CTU Los Angeles
+2021,TB,Toilet Bowl,17,TB-2021-11,0001,218.58,L,2,0,3,2022,Dortmund Cardinals
+2021,TB,Toilet Bowl,17,TB-2021-11,0032,224,W,1,0,5,2022,Newtown Patriots
+2022,PB,Pro Bowl,14,PB-2022-01,0002,167.66,L,5,0,2,NA,Wolftown Rocketeers
+2022,PB,Pro Bowl,14,PB-2022-02,0013,268.26,W,NA,0,2,2022,Cologne Thunderkittens
+2022,PB,Pro Bowl,14,PB-2022-03,0003,176.43,W,NA,0,3,2022,CTU Los Angeles
+2022,PB,Pro Bowl,14,PB-2022-04,0028,244.39,L,5,0,2,NA,German Cats
+2022,PB,Pro Bowl,14,PB-2022-01,0034,247.28,W,NA,0,4,2022,Fulda Jets
+2022,PB,Pro Bowl,14,PB-2022-02,0010,196.66,L,5,0,2,NA,Güstrow Racoons
+2022,PB,Pro Bowl,14,PB-2022-03,0033,176.26,L,5,0,4,NA,Auwald Woodpecker
+2022,PB,Pro Bowl,14,PB-2022-04,0014,246.78,W,NA,0,4,2022,Deevillage Moonwalkers
+2022,SB,Super Bowl RFC,14,SB-2022-01,0004,213.4,L,7,0,6,NA,Cleve Crusader
+2022,SB,Super Bowl RFC,14,SB-2022-02,0026,194.68,L,7,0,1,NA,Red Raiders
+2022,SB,Super Bowl BFC,14,SB-2022-03,0030,260.32,W,NA,NA,1,2022,Higglystadt Patriots
+2022,SB,Super Bowl BFC,14,SB-2022-04,0019,245.1,W,NA,NA,3,2022,Dresden Jaguars
+2022,SB,Super Bowl RFC,14,SB-2022-01,0005,289.78,W,NA,NA,5,2022,G-Town Pandas
+2022,SB,Super Bowl RFC,14,SB-2022-02,0036,241.86,W,NA,NA,2,2022,Baratheon Boars
+2022,SB,Super Bowl BFC,14,SB-2022-03,0024,206.46,L,7,0,2,NA,Milano Raptors
+2022,SB,Super Bowl BFC,14,SB-2022-04,0023,235.58,L,7,0,5,NA,Berlin Bears
+2022,TB,Toilet Bowl,14,TB-2022-01,0035,151.8,L,5,0,6,NA,Güstrow Torros
+2022,TB,Toilet Bowl,14,TB-2022-02,0025,214.86,W,NA,0,1,2022,Hannover Eagles
+2022,TB,Toilet Bowl,14,TB-2022-03,0020,224.06,W,NA,0,4,2022,Wandsbek Hogs
+2022,TB,Toilet Bowl,14,TB-2022-04,0031,234.7,W,NA,0,5,2022,German Swans
+2022,TB,Toilet Bowl,14,TB-2022-01,0001,213.14,W,NA,0,3,2022,Dortmund Cardinals
+2022,TB,Toilet Bowl,14,TB-2022-02,0018,166.3,L,5,0,2,NA,Hintertupfingen Griffins
+2022,TB,Toilet Bowl,14,TB-2022-03,0009,185.46,L,5,0,4,NA,Syke Steelers
+2022,TB,Toilet Bowl,14,TB-2022-04,0008,153.5,L,5,0,4,NA,Dortmund Packers
+2022,PB,Pro Bowl,15,PB-2022-05,0034,245.37,L,4,0,4,NA,Fulda Jets
+2022,PB,Pro Bowl,15,PB-2022-06,0014,243.07,W,NA,0,4,2022,Deevillage Moonwalkers
+2022,PB,Pro Bowl,15,PB-2022-07,0013,222.71,L,4,0,2,NA,Cologne Thunderkittens
+2022,PB,Pro Bowl,15,PB-2022-08,0003,231.66,L,4,0,3,NA,CTU Los Angeles
+2022,PB,Pro Bowl,15,PB-2022-05,0007,249.07,W,NA,0,4,2022,Jena Dragons
+2022,PB,Pro Bowl,15,PB-2022-06,0012,236.24,L,4,0,2,NA,Wüterich Packers
+2022,PB,Pro Bowl,15,PB-2022-07,0022,261.34,W,NA,0,3,2022,M-V Lightning
+2022,PB,Pro Bowl,15,PB-2022-08,0006,253.04,W,NA,0,3,2022,Dexter Wolves
+2022,SB,Super Bowl RFC,15,SB-2022-05,0005,235.63,W,NA,NA,5,2022,G-Town Pandas
+2022,SB,Super Bowl RFC,15,SB-2022-06,0036,234.01,L,6,0,2,NA,Baratheon Boars
+2022,SB,Super Bowl BFC,15,SB-2022-07,0030,276.12,W,NA,NA,1,2022,Higglystadt Patriots
+2022,SB,Super Bowl BFC,15,SB-2022-08,0019,268,W,NA,NA,3,2022,Dresden Jaguars
+2022,SB,Super Bowl RFC,15,SB-2022-05,0021,233.8,L,6,0,2,NA,Munich Lions
+2022,SB,Super Bowl RFC,15,SB-2022-06,0015,293.14,W,NA,NA,2,2022,Las Vegas Saints
+2022,SB,Super Bowl BFC,15,SB-2022-07,0011,260.7,L,6,0,3,NA,Flens Pirates 
+2022,SB,Super Bowl BFC,15,SB-2022-08,0017,224.28,L,6,0,6,NA,Nordic Wolves
+2022,TB,Toilet Bowl,15,TB-2022-05,0001,237.46,W,NA,0,3,2022,Dortmund Cardinals
+2022,TB,Toilet Bowl,15,TB-2022-06,0031,209.5,W,NA,0,5,2022,German Swans
+2022,TB,Toilet Bowl,15,TB-2022-07,0025,187.84,L,4,0,1,NA,Hannover Eagles
+2022,TB,Toilet Bowl,15,TB-2022-08,0020,166.6,L,4,0,4,NA,Wandsbek Hogs
+2022,TB,Toilet Bowl,15,TB-2022-05,0029,214,L,4,0,1,NA,D-Block Busters
+2022,TB,Toilet Bowl,15,TB-2022-06,0016,191.08,L,4,0,1,NA,Wichita´s Hall of Fame Squad
+2022,TB,Toilet Bowl,15,TB-2022-07,0032,193.21,W,NA,0,5,2022,Newtown Patriots
+2022,TB,Toilet Bowl,15,TB-2022-08,0027,236.46,W,NA,0,4,2022,Golden Skulls Göttingen
+2022,PB,Pro Bowl,16,PB-2022-09,0007,230.51,L,3,0,4,NA,Jena Dragons
+2022,PB,Pro Bowl,16,PB-2022-10,0022,202.56,L,3,0,3,NA,M-V Lightning
+2022,PB,Pro Bowl,16,PB-2022-09,0014,255.7,W,NA,0,4,2022,Deevillage Moonwalkers
+2022,PB,Pro Bowl,16,PB-2022-10,0006,271.26,W,NA,0,3,2022,Dexter Wolves
+2022,SB,Super Bowl RFC,16,SB-2022-09,0005,244.76,L,5,0,5,2022,G-Town Pandas
+2022,SB,Super Bowl BFC,16,SB-2022-10,0030,206.66,L,5,0,1,2022,Higglystadt Patriots
+2022,SB,Super Bowl RFC,16,SB-2022-09,0015,263.48,W,NA,NA,2,2022,Las Vegas Saints
+2022,SB,Super Bowl BFC,16,SB-2022-10,0019,208.26,W,NA,NA,3,2022,Dresden Jaguars
+2022,TB,Toilet Bowl,16,TB-2022-09,0001,224.37,W,NA,0,3,2022,Dortmund Cardinals
+2022,TB,Toilet Bowl,16,TB-2022-10,0032,184.68,L,3,0,5,NA,Newtown Patriots
+2022,TB,Toilet Bowl,16,TB-2022-09,0031,166.65,L,3,0,5,NA,German Swans
+2022,TB,Toilet Bowl,16,TB-2022-10,0027,202.52,W,NA,0,4,2022,Golden Skulls Göttingen
+2022,PB,Pro Bowl,17,PB-2022-11,0014,251.28,W,1,0,4,NA,Deevillage Moonwalkers
+2022,PB,Pro Bowl,17,PB-2022-11,0006,219.27,L,2,0,3,NA,Dexter Wolves
+2022,SB,Superbowl,17,SB-2022-11,0015,178.13,W,1,1,2,NA,Las Vegas Saints
+2022,SB,Spiel um Platz drei,17,SB-2022-12,0005,207.65,L,4,0,5,NA,G-Town Pandas
+2022,SB,Superbowl,17,SB-2022-11,0019,173.8,L,2,0,3,NA,Dresden Jaguars
+2022,SB,Spiel um Platz drei,17,SB-2022-12,0030,274.58,W,3,0,1,NA,Higglystadt Patriots
+2022,TB,Toilet Bowl,17,TB-2022-11,0001,172.17,L,2,0,3,NA,Dortmund Cardinals
+2022,TB,Toilet Bowl,17,TB-2022-11,0027,206.15,W,1,0,4,NA,Golden Skulls Göttingen
