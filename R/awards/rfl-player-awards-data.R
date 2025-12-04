@@ -78,7 +78,7 @@ if(current_week == 14) {
     ) %>%
     dplyr::ungroup() %>%
     dplyr::left_join(
-      nflreadr::load_players() %>% dplyr::select(display_name, last_name, gsis_id, rookie_year),
+      nflreadr::load_players() %>% dplyr::select(display_name, last_name, gsis_id, rookie_season),
       by = "gsis_id",
       multiple = "first"
     )
@@ -154,7 +154,7 @@ if(current_week == 14) {
 
   ## Rookies ----
   player_rookies <- player_awards %>%
-    dplyr::filter(rookie_year == current_season)
+    dplyr::filter(rookie_season == current_season)
 
   ### OROY ----
   player_oroy <- player_rookies %>%
