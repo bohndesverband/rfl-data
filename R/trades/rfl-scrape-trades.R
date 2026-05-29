@@ -40,6 +40,15 @@ trade_data_raw <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/
   ) %>%
   dplyr::filter(trade_id > last_entry)
 
+franchise_infos <- jsonlite::read_json(paste0(paste0("https://www45.myfantasyleague.com/", var_season), "/export?TYPE=league&L=63018&APIKEY=&JSON=1")) %>%
+  purrr::pluck("league", "franchises", "franchise") %>%
+  dplyr::tibble() %>%
+  tidyr::unnest_wider(1) %>%
+  dplyr::rename(
+    franchise_name = name,
+    franchise_id = id
+  )
+
 if (dim(trade_data_raw)[1] != 0) {
   franchise1 <- trade_data_raw %>%
     dplyr::select(trade_id, franchise, franchise1_gave_up) %>%
@@ -65,7 +74,7 @@ if (dim(trade_data_raw)[1] != 0) {
       relationship = "many-to-many"
     ) %>%
     dplyr::left_join(
-      jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", current_year, "/export?TYPE=contestPlayers&L=63018&APIKEY=aRNp3s%2BWvuWqx02mPlrBYDoeErox&JSON=1"))$contest_players$player %>%
+      jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", current_year, "/export?TYPE=contestPlayers&L=63018&APIKEY=aRNp3s%2BWvuWpx1OmPlrBYDoeErox&W=&F=&JSON=1"))$contest_players$player %>%
         dplyr::tibble() %>%
         tidyr::unnest_wider(1),
       by = c("asset" = "id")
@@ -121,6 +130,122 @@ if (dim(trade_data_raw)[1] != 0) {
 
   cli::cli_alert_info("Upload Data")
   piggyback::pb_upload(paste0("rfl_trades_", var_season, ".csv"), "bohndesverband/rfl-data", "trade_data", overwrite = TRUE)
+
+  ## draftclass trades ----
+  cli::cli_alert_info("Draftclass Trade Data")
+
+  draft_class_trades <- purrr::map_df(2016:var_season, function(x) {
+    vroom::vroom(
+      glue::glue("https://github.com/bohndesverband/rfl-data/releases/download/trade_data/rfl_trades_{x}.csv"),
+      col_types = "dddTdcccc"
+      )
+    }) %>%
+    dplyr::group_by(trade_id) %>%
+    dplyr::arrange(trade_side) %>%
+    dplyr::mutate(
+      trade_partner = ifelse(trade_side == "franchise_2", first(franchise_id), last(franchise_id)),
+      franchise_ids = paste(unique(franchise_id), collapse = ","),
+    ) %>%
+    dplyr::ungroup() %>%
+    dplyr::mutate(
+      prefix = dplyr::case_when(
+        grepl("DP", asset_id) ~ "DP",
+        grepl("FP", asset_id) ~ "FP",
+        TRUE ~ NA
+      ),
+      pick_owner = ifelse(prefix == "FP", stringr::word(asset_id, 2, sep = "_"), trade_partner),
+      pick_year = ifelse(prefix == "FP", stringr::word(asset_id, 3, sep = "_"), season),
+      pick_round = dplyr::case_when(
+        prefix == "FP" ~ as.numeric(stringr::word(asset_id, 4, sep = "_")),
+        prefix == "DP" ~ as.numeric(stringr::word(asset_id, 2, sep = "_")) + 1,
+        TRUE ~ NA
+      )
+    ) %>%
+
+    # add draft order um exakten pick für getradete future picks zu erhalten
+    dplyr::left_join(
+      purrr::map_df(2017:var_season, function(x) {
+        vroom::vroom(
+          glue::glue("https://github.com/bohndesverband/rfl-data/releases/download/draft_data/rfl_draft-order_{x}.csv"),
+          col_types = "ccic"
+        )
+      }),
+      by = c("pick_year" = "season", "pick_owner" = "franchise_id")
+    ) %>%
+
+    # add franchise name to picks where no future draft order is available
+    dplyr::left_join(
+      franchise_infos %>%
+        dplyr::select(franchise_id, trade_parter_name = franchise_name),
+      by = c("pick_owner" = "franchise_id")
+    ) %>%
+
+    dplyr::mutate(
+      asset_id_new = dplyr::case_when(
+        # alle ehemaligen future picks, die jetzt in der gegenwart sind, erhalten eine ID für den aktuellen draft
+        prefix == "FP" & pick_year <= var_season & !is.na(pick) ~ paste("DP", pick_round, pick, pick_year, sep = "_"),
+        prefix == "DP" ~ paste("DP", as.numeric(stringr::word(asset_id, 3, sep = "_")) + 1, as.numeric(stringr::word(asset_id, 2, sep = "_")) + 1, season, sep = "_"),
+        TRUE ~ asset_id
+      ),
+      pick = dplyr::case_when(
+        prefix == "DP" ~ as.integer(stringr::word(asset_id, 3, sep = "_")) + 1,
+        TRUE ~ as.integer(pick)
+      )
+    ) %>%
+
+    # füge getätigte draftpicks an
+    dplyr::left_join(
+      purrr::map_df(2017:var_season - 1, function(x) {
+        vroom::vroom(
+          glue::glue("https://github.com/bohndesverband/rfl-data/releases/download/draft_data/rfl_draft_{x}.csv"),
+          col_types = "iTiiiccccccci"
+        )
+      }) %>%
+        dplyr::mutate(
+          round = as.integer(round),
+          pick_year = as.character(season),
+          pos_grouped = dplyr::case_when(
+            pos %in% c("DT", "DE") ~ "DL",
+            pos %in% c("CB", "S") ~ "DB",
+            TRUE ~ pos
+          ),
+          drafted_player = paste(player_name, paste0("(", pos_grouped, ", ", team, ")"))
+        ) %>%
+        dplyr::select(pick_year, round, pick, pick_team_id = franchise_id, drafted_player),
+      by = c("pick_year", "pick_round" = "round", "pick")
+    ) %>%
+
+    #filter(trade_id == "2025021") %>%
+    # neue asset names erzeugen
+    dplyr::mutate(
+      asset_name_new = dplyr::case_when(
+        !is.na(drafted_player) ~ paste(pick_year, paste0(pick_round, ".", stringr::str_pad(pick, 2, "left", 0)), drafted_player),
+        prefix == "FP" ~ paste(asset_name, trade_parter_name),
+        TRUE ~ asset_name
+      )
+    ) %>%
+
+    # trades zusammenfassen
+    dplyr::group_by(trade_id) %>%
+    dplyr::arrange(trade_side) %>%
+    dplyr::mutate(
+      asset_ids = paste(unique(asset_id_new), collapse = ","),
+      asset_names = paste(unique(asset_name_new), collapse = ","),
+    ) %>%
+    dplyr::group_by(trade_id, trade_side) %>%
+    dplyr::arrange(asset_name_new) %>%
+    dplyr::summarise(
+      dplyr::across(c(season, date, franchise_id, franchise_ids, asset_ids, asset_names, trade_partner, pick_team_id), first),
+      trade_side_assets = paste(unique(asset_name_new), collapse = "\n"),
+      .groups = "drop"
+    ) %>%
+    dplyr::select(-trade_side)
+
+    cli::cli_alert_info("Write Data")
+    readr::write_csv(draft_class_trades, "rfl_draftclass-trades.csv")
+
+    cli::cli_alert_info("Upload Data")
+    piggyback::pb_upload("rfl_draftclass-trades.csv", "bohndesverband/rfl-data", "trade_data", overwrite = TRUE)
 } else {
   cli::cli_alert_info("No new Trades")
 }
