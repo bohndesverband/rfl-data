@@ -1,7 +1,7 @@
 library(tidyverse)
 library(ffscrapr)
 
-next_season <- 2025
+next_season <- 2026
 conn <- ffscrapr::mfl_connect(next_season, 63018)
 conn_last_season <- ffscrapr::mfl_connect(next_season - 1, 63018)
 

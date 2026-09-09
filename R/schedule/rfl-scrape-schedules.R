@@ -1728,7 +1728,9 @@ schedules <- rbind(s2016, s2017, s2018, s2019, s2020, s2021, s2022, s2023)
 write.table(schedules, "fantasy/rfl/data/rfl-schedules.csv", row.names = F, col.names = T, sep = ",")
 rm(s2016, s2017, s2018, s2019, s2020, s2021, s2022, s2023, schedules)
 
-rfl_schedule <- jsonlite::read_json("https://www45.myfantasyleague.com/2025/export?TYPE=schedule&L=63018&JSON=1")$schedule$weeklySchedule %>%
+var_season <- 2026
+
+rfl_schedule <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", var_season, "/export?TYPE=schedule&L=63018&JSON=1"))$schedule$weeklySchedule %>%
   dplyr::tibble() %>%
   tidyr::unnest_wider(1) %>%
   dplyr::filter(as.numeric(week) <= 13) %>%
@@ -1737,7 +1739,7 @@ rfl_schedule <- jsonlite::read_json("https://www45.myfantasyleague.com/2025/expo
   tidyr::unnest_wider(franchise, names_sep = "_") %>%
   tidyr::unnest_wider(franchise_1, names_sep = "_") %>%
   tidyr::unnest_wider(franchise_2, names_sep = "_") %>%
-  dplyr::mutate(season = nflreadr::get_current_season()) %>%
+  dplyr::mutate(season = var_season) %>%
   dplyr::select(season, week, franchise_id = franchise_1_id, opponent_id = franchise_2_id) %>%
 
   # duplicate each row and switch franchise and opponent
@@ -1753,6 +1755,6 @@ rfl_schedule <- jsonlite::read_json("https://www45.myfantasyleague.com/2025/expo
   dplyr::arrange(week)
 
 old_schedule <- readr::read_csv("data/rfl-schedules.csv") %>%
-  dplyr::filter(season < nflreadr::get_current_season())
+  dplyr::filter(season < var_season)
 
 readr::write_csv(rbind(old_schedule, rfl_schedule), "data/rfl-schedules.csv", append = T)
