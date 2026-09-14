@@ -3,7 +3,7 @@ name: "Create and Upload Awards Data"
 on:
   schedule:
     # every thursday at 6 pm in december
-    - cron: '0 16 * 12 4'
+    - cron: "0 16 * 12 4"
   workflow_dispatch:
 
 jobs:
@@ -13,7 +13,7 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - { os: ubuntu-22.04, r: "4.4" }
+          - { os: ubuntu-24.04, r: "4.4" }
     env:
       GITHUB_PAT: ${{ secrets.GH_TOKEN }}
     steps:
