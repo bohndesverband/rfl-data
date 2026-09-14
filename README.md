@@ -18,3 +18,9 @@ This repository contains all code for automatic data creation for the RFL. All d
 | [Postseason Results](https://github.com/bohndesverband/rfl-data/releases/tag/postseason_data) |                    | wöchentlich Do 18 Uhr (Dez. - Jan.)                                             | ![postseason results workflow](https://github.com/bohndesverband/rfl-data/actions/workflows/postseason.yml/badge.svg) | ![last postseason result update](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fbohndesverband%2Frfl-data%2Freleases%2Fdownload%2Fpostseason_data%2Ftimestamp.json&query=last_updated&label=%20) |
 | [Drafts](https://github.com/bohndesverband/rfl-data/releases/tag/draft_data)                  |                    | Mai (Draft): täglich 0 Uhr                                                      | ![draft workflow](https://github.com/bohndesverband/rfl-data/actions/workflows/drafts.yml/badge.svg)                  | ![last draft update](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fbohndesverband%2Frfl-data%2Freleases%2Fdownload%2Fdraft_data%2Ftimestamp.json&query=last_updated&label=%20)                  |
 | [gsis IDs to Draft Data](https://github.com/bohndesverband/rfl-data/releases/tag/draft_data)  |                    | wöchentlich Do 17 Uhr                                                           | ![draft gsis workflow](https://github.com/bohndesverband/rfl-data/actions/workflows/draft-gsis.yml/badge.svg)         | ![last draft update](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fbohndesverband%2Frfl-data%2Freleases%2Fdownload%2Fdraft_data%2Ftimestamp.json&query=last_updated&label=%20)                  |
+
+## Tokens
+
+[Token erstellen/neu generieren](https://github.com/settings/tokens/5467276400)
+
+[Token als Variable setzen](https://github.com/organizations/bohndesverband/settings/secrets/actions)
