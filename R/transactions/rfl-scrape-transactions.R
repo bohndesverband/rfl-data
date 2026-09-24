@@ -4,6 +4,20 @@ library(tidyverse)
 cli::cli_alert_info("Create Data")
 current_season <- nflreadr::get_current_season(TRUE)
 
+find_week <- function(use_date) {
+  week1_sep <- as.POSIXlt(paste0(lubridate::year(use_date), "-09-0", 1:7), tz = "GMT")
+  monday1_sep <- week1_sep[week1_sep$wday == 1]
+  first_game <- monday1_sep
+  first_game$mday <- first_game$mday + 1 # ab Dienstag neue Woche
+  current_week <- as.numeric(as.Date(use_date) - as.Date(first_game))%/%7 + 1
+
+  if (current_week < 1 | current_week > 22) {
+    current_week <- 22
+  }
+
+  return(current_week)
+}
+
 transactions <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", current_season, "/export?TYPE=transactions&L=63018&TRANS_TYPE=WAIVER,FREE_AGENT&JSON=1"))$transactions$transaction %>%
   dplyr::tibble() %>%
   tidyr::unnest_wider(1) %>%
@@ -22,7 +36,14 @@ transactions <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/",
   # split player_ids on , and unnest longer
   tidyr::separate_rows(player_ids, sep = ",") %>%
   dplyr::filter(player_ids != "") %>%
-  dplyr::rename(franchise_id = franchise, player_id = player_ids)
+  dplyr::rename(franchise_id = franchise, player_id = player_ids) %>%
+  dplyr::rowwise() %>%
+  dplyr::mutate(
+    date = lubridate::as_datetime(as.numeric(timestamp), tz = "GMT"),
+    timestamp = as.double(timestamp),
+    week = find_week(as.Date(date))
+  ) %>%
+  dplyr::select(season, timestamp, date, week, type, type_desc, franchise_id, player_id)
 
 cli::cli_alert_info("Write Data")
 readr::write_csv(transactions, paste0("rfl_transactions_", current_season, ".csv"))
