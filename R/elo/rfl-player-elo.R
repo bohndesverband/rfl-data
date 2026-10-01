@@ -12,15 +12,20 @@ current_week <- nflreadr::get_current_week() - 1
 k <- 36 # varianz pro spiel
 
 player_info <- nflreadr::load_players() %>%
-  dplyr::select(gsis_id, display_name, position_group) %>%
-  dplyr::rename(position = position_group) %>%
+  dplyr::select(gsis_id, display_name, position = position_group, pff_position) %>%
   dplyr::left_join(
     nflreadr::load_ff_playerids() %>%
       dplyr::select(gsis_id, mfl_id),
     by = "gsis_id"
   ) %>%
   dplyr::filter(!is.na(mfl_id)) %>%
-  dplyr::mutate(position = ifelse(position == "SPEC", "PK", position))
+  dplyr::mutate(
+    position = dplyr::case_when(
+      position == "SPEC" ~ "PK",
+      pff_position %in% c("ED", "DI") ~ "DL",
+      TRUE ~ position
+    )
+  )
 
 nfl_schedule <- nflreadr::load_schedules(current_season) %>%
   dplyr::select(game_id, season, week, home_team, away_team) %>%
