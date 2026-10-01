@@ -5,6 +5,7 @@ library(magrittr)
 dataList <- list()
 playerList <- list()
 starterList <- list()
+
 for (year in 2016:2019) {
   jsonPlayer <- jsonlite::fromJSON(paste("https://www45.myfantasyleague.com/", year, "/export?TYPE=players&L=63018&APIKEY=&DETAILS=&SINCE=&PLAYERS=&JSON=1", sep = ""))
   player <- jsonPlayer$players$player %>%
@@ -63,8 +64,12 @@ dataClean <- data %>%
   ) %>%
   dplyr::select(season, week, franchise_id, starter_status, player_id, player_name, pos, team, player_score, should_start)
 
-for (year in 2016:2019) {
-  utils::write.csv(dataClean %>% filter(season == year), paste0("data/starter/rfl-starter-", year, ".csv"), row.names = F)
-}
+#for (year in 2016:2019) {
+  cli::cli_alert_info("Write Data")
+  readr::write_csv(dataClean %>% filter(season == year), paste0("rfl_starter_", year, ".csv"))
+
+  cli::cli_alert_info("Upload Data")
+  piggyback::pb_upload(paste0("rfl_starter_", year, ".csv"), "bohndesverband/rfl-data", "starter_data", overwrite = TRUE)
+#}
 
 rm(dataList, starterList, playerList, jsonPlayer, jsonData, player, data, data2, data3, week, year, dataClean)
