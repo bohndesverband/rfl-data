@@ -11,7 +11,10 @@ find_week <- function(use_date) {
   first_game$mday <- first_game$mday + 1 # ab Dienstag neue Woche
   current_week <- as.numeric(as.Date(use_date) - as.Date(first_game))%/%7 + 1
 
-  if (current_week < 1 | current_week > 22) {
+  if (current_week < 0 ) {
+    current_week <- 0
+  }
+  else if (current_week > 17) {
     current_week <- 22
   }
 
@@ -25,7 +28,7 @@ transactions <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/",
   dplyr::mutate(
     # split transaction on | and get first element
     added = ifelse(type == "FREE_AGENT", stringr::str_split(transaction, "\\|")[[1]][1], added),
-    dropped = ifelse(type == "FREE_AGENT", stringr::str_split(transaction, "\\|")[[1]][2], added),
+    dropped = ifelse(type == "FREE_AGENT", stringr::str_split(transaction, "\\|")[[1]][2], dropped),
     season = current_season,
     #timestamp = lubridate::as_datetime(as.numeric(timestamp), tz = "GMT"),
   ) %>%
@@ -41,9 +44,15 @@ transactions <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/",
   dplyr::mutate(
     date = lubridate::as_datetime(as.numeric(timestamp), tz = "GMT"),
     timestamp = as.double(timestamp),
-    week = find_week(as.Date(date))
+    week = find_week(as.Date(date)),
+    week = dplyr::case_when(
+      date < as.POSIXct( paste0(season, "-04-01"), format = "%Y-%m-%d") | date > as.POSIXct( paste0(season + 1, "-01-01"), format = "%Y-%m-%d") ~ 22,
+      TRUE ~ week
+    ),
+    season = ifelse(date < as.POSIXct( paste0(season, "-04-01"), format = "%Y-%m-%d"), season - 1, season)
   ) %>%
-  dplyr::select(season, timestamp, date, week, type, type_desc, franchise_id, player_id)
+  dplyr::select(season, timestamp, date, week, type, type_desc, franchise_id, player_id) %>%
+  dplyr::arrange(timestamp)
 
 cli::cli_alert_info("Write Data")
 readr::write_csv(transactions, paste0("rfl_transactions_", current_season, ".csv"))
