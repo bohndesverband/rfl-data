@@ -7,6 +7,7 @@ cli::cli_alert_info("Create Data")
 current_season <- nflreadr::most_recent_season()
 current_week <- nflreadr::get_current_week() - 1
 
+# 2016 & >= 2020 1:13, 1:12
 #for (current_week in 1:13) {
   #current_week <- 3
 
@@ -20,6 +21,21 @@ current_week <- nflreadr::get_current_week() - 1
     dplyr::filter(!is.na(player_score) & week <= current_week) %>%  # remove all players that did not play
     dplyr::distinct() %>%  # remove doublicates from doubleheader matchups
     # combine defense positions, since there are no single positions (except LB)
+    dplyr::mutate(
+      pos = dplyr::case_when(
+        pos %in% c("DT", "DE") ~ "DL",
+        pos %in% c("CB", "S") ~ "DB",
+        TRUE ~ pos
+      )
+    )
+
+  all_players <- purrr::map_df(current_season, function(x) {
+    readr::read_csv(
+      glue::glue("https://github.com/bohndesverband/rfl-data/releases/download/playerscores_data/rfl_playerscores_{x}.csv"),
+      col_types = "iiccccn"
+    )
+  }) %>%
+    dplyr::filter(week <= current_week) %>%
     dplyr::mutate(
       pos = dplyr::case_when(
         pos %in% c("DT", "DE") ~ "DL",
@@ -174,8 +190,8 @@ current_week <- nflreadr::get_current_week() - 1
     dplyr::select(-points_average_player)
 
   # war calculation ----
-  war <- starter %>%
-    dplyr::select(season, week, player_id, pos, player_score) %>%
+  war <- all_players %>%
+    dplyr::select(season, week, player_id, pos, player_score = points) %>%
     dplyr::distinct() %>%
 
     # calc season totals
@@ -183,6 +199,7 @@ current_week <- nflreadr::get_current_week() - 1
     dplyr::summarise(
       points = sum(player_score),
       games = dplyr::n(),
+      pos = dplyr::last(pos),
       .groups = "drop"
     ) %>%
 
@@ -193,9 +210,6 @@ current_week <- nflreadr::get_current_week() - 1
       games_played = sum(games),
       games_missed = total_games - games
     ) %>%
-
-    # add positions back
-    dplyr::left_join(starter %>%  dplyr::select(player_id, pos) %>%  dplyr::distinct(), by = "player_id", multiple = "first") %>%
 
     # add avg player data
     dplyr::left_join(avg_player_scores %>%  dplyr::select(pos, points_average_player), by = "pos") %>%
@@ -212,15 +226,17 @@ current_week <- nflreadr::get_current_week() - 1
 
     # add replacement data
     dplyr::left_join(replacement_player_points, by = "pos") %>%
+    #filter(player_id == "10266")
 
     # further calculations
     dplyr::group_by(player_id) %>%
     dplyr::summarise(
-      points = sum(points),
-      across(c(games_played, games_missed, win_probability, avg_team_points, win_probability_replacement, replacement_wins), mean),
+      points = sum(points, na.rm = TRUE),
+      across(c(games_played, games_missed, win_probability, avg_team_points, win_probability_replacement, replacement_wins), ~ mean(.x, na.rm = TRUE)),
       win_probability = ifelse(
         games_missed == 0, win_probability, (win_probability + (win_probability_replacement * games_missed)) / (games_missed + 1)
       ),
+      pos = dplyr::last(pos),
       .groups = "drop"
     ) %>%
     dplyr::ungroup() %>%
@@ -230,7 +246,6 @@ current_week <- nflreadr::get_current_week() - 1
       war = round(expected_wins - replacement_wins, 2) * 2,
       season = current_season
     ) %>%
-    dplyr::left_join(starter %>%  dplyr::select(player_id, pos) %>%  dplyr::distinct(), by = "player_id") %>%
     dplyr::select(season, week, player_id, pos, points, war, games_played, games_missed) %>%
     dplyr::arrange(dplyr::desc(war))
 
