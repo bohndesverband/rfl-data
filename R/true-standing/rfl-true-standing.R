@@ -6,7 +6,7 @@ cli::cli_alert_info("Create Data")
 
 current_season = nflreadr::get_current_season()
 current_week = nflreadr::get_current_week() - 1
-# current_week <- 13
+#current_week <- 13
 
 # league data ----
 league <- jsonlite::read_json(paste0("https://www45.myfantasyleague.com/", current_season, "/export?TYPE=league&L=63018&APIKEY=&JSON=1")) %>%
@@ -121,14 +121,13 @@ if (current_week <= 13) {
       eff = round(pf / pp, 2),
       pf_avg = mean(pf),
       games_total = ifelse(current_season > 2016 & current_season < 2020, 24, 26),
-      wins_expected = round((wins * pf^2.37) / (pf^2.37 + pf_avg^2.37), 2),
+      wins_expected = round((wins * pf^2.37) / (pf^2.37 + pf_avg^2.37), 1),
       luck = round((2 * pf_avg) / pa, 2),
       quality = round(pf / pf_avg, 2),
       pf_rank = dplyr::dense_rank(dplyr::desc(pf)),
       pp_rank = dplyr::dense_rank(dplyr::desc(pp)),
-      pa_rank = dplyr::dense_rank(dplyr::desc(pp)),
-      eff_rank = dplyr::dense_rank(dplyr::desc(eff)),
       pa_rank = dplyr::dense_rank(pa),
+      eff_rank = dplyr::dense_rank(dplyr::desc(eff)),
       record_rank = dplyr::dense_rank(dplyr::desc(wins)),
       all_play_rank = dplyr::dense_rank(dplyr::desc(all_play_wins)),
       luck_rank = dplyr::dense_rank(dplyr::desc(luck)),
@@ -143,6 +142,7 @@ if (current_week <= 13) {
     dplyr::arrange(week) %>%
     dplyr::mutate(
       wins_season = cumsum(wins),
+      wins_expected_season = round(cumsum(wins_expected), 1),
       pf_season = round(cumsum(pf), 2),
       pp_season = round(cumsum(pp), 2),
       pa_season = round(cumsum(pa), 2),
@@ -157,11 +157,11 @@ if (current_week <= 13) {
     dplyr::arrange(week) %>%
     dplyr::mutate(
       games_left = games_total - (week * 2),
-      wins_expected_season = round(wins_season + (games_left * pf_season^2.37) / (pf_season^2.37 + pf_avg^2.37), 2),
+      wins_expected_end_of_season = round(wins_season + (games_left * pf_season^2.37) / (pf_season^2.37 + pf_avg^2.37), 1),
       luck_season = round((2 * pf_avg) / pa_season, 2),
       quality_season = round(pf_season / pf_avg, 2),
     ) %>%
-    #filter(franchise_id == "0007")
+    #filter(franchise_id == "0035") %>%
 
     # create divison ranking
     dplyr::group_by(week, div_id) %>%
@@ -213,10 +213,11 @@ if (current_week <= 13) {
     dplyr::group_by(week) %>%
     dplyr::mutate(
       dplyr::across(
-        c(pf_season, pp_season, pa_season, wins_season, all_play_wins_season, eff_season, wins_expected_season, luck_season, quality_season),
+        c(pf_season, pp_season, wins_season, all_play_wins_season, eff_season, wins_expected_end_of_season, luck_season, quality_season),
         ~ dplyr::min_rank(dplyr::desc(.x)),
         .names = "{.col}_rank"
-      )
+      ),
+      pa_season_rank = dplyr::min_rank(pa_season),
     ) %>%
 
     # cleanup
@@ -235,7 +236,6 @@ if (current_week <= 13) {
   cli::cli_alert_info("Write Data")
   #readr::write_csv(true_standing, "data/true-standing/rfl-true-standing-2023.csv")
   readr::write_csv(true_standing, paste0("rfl_standing_", current_season, ".csv"))
-
 
   cli::cli_alert_info("Upload Data")
   piggyback::pb_upload(paste0("rfl_standing_", current_season, ".csv"), "bohndesverband/rfl-data", "standing_data", overwrite = TRUE)
